@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE BDFacultades SYSTEM "BDFacultades.dtd">
+<BDFacultades>
+    <facultades>
+        <facultad Código="1">
+            <nombre>ESIT</nombre>
+        </facultad>
+    </facultades>
+    
+    <investigadores>
+        <investigador DNI="12345678W">
+            <NomApell>Antonio Pérez</NomApell>
+            <facultad Código="1"><nombre>ESIT</nombre></facultad>
+        </investigador>
+    </investigadores>
+    
+    <equipos>
+        <equipo NumSerie="123">
+            <Nombre>InvestigadoresAlPoder</Nombre>
+            <facultad Código="1"><nombre>ESIT</nombre></facultad>
+        </equipo>
+    </equipos>
+    
+    <reservas>
+        <reserva>
+            <comienzo>18-2-2021 18:00</comienzo>
+            <fin>18-2-2021 20:30</fin>
+        </reserva>
+    </reservas>
+</BDFacultades>

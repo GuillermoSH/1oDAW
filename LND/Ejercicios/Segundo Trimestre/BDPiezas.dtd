@@ -1,0 +1,15 @@
+<!ELEMENT BDPiezas (piezas,proveedores,suministros)>
+    <!ELEMENT piezas (pieza+)>
+        <!ELEMENT pieza (nombre)>
+            <!ATTLIST pieza Código CDATA #REQUIRED>
+            <!ELEMENT nombre (#PCDATA)>
+
+    <!ELEMENT proveedores (proveedor+)>
+        <!ELEMENT proveedor (nombre)>
+            <!ATTLIST proveedor id CDATA #REQUIRED>
+
+    <!ELEMENT suministros (suministra*)>
+        <!ELEMENT suministra (precio)>
+            <!ATTLIST suministra Código_Pieza CDATA #REQUIRED
+                                 idProveedor CDATA #REQUIRED>
+            <!ELEMENT precio (#PCDATA)>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE BDProveedores SYSTEM "BDProveedores.dtd">
+<BDProveedores>
+    <proveedores>
+        <proveedor Categoría="Alimentación" nro_pro="1">
+            <nom_p>Antonio</nom_p>
+            <ciud_p>Madrid</ciud_p>
+        </proveedor>
+    </proveedores>
+
+    <items>
+        <item nro_i="1">
+            <descripcion_i>Manzana Reineta de alta calidad</descripcion_i>
+            <ciudad_i>Salamanca</ciudad_i>
+        </item>
+    </items>
+
+    <pedidos>
+        <pedido nro_pe="1">
+            <nro_c>1</nro_c>
+            <nro_i>1</nro_i>
+            <nro_pro>1</nro_pro>
+            <cantidad>453</cantidad>
+            <precio>648.12</precio>
+        </pedido>
+    </pedidos>
+    
+    <clientes>
+        <cliente nro_c="1">
+            <nom_c>Fulanito</nom_c>
+            <ciudad_c>Cuenca</ciudad_c>
+        </cliente>
+    </clientes>
+</BDProveedores>

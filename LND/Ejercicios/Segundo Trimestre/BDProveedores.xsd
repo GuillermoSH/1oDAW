@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1" xml:lang="es">
+ <xs:element name="BDProveedores">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="proveedores">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="proveedor" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="nom_p" type="xs:string"/>
+                                    <xs:element name="categoria" type="xs:string"/>
+                                    <xs:element name="ciud_p" type="xs:string"/>
+                                </xs:sequence>                           
+                                    <xs:attribute name="nro_pro" type="xs:integer" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="items">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="item" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="descripcion_i" type="xs:string"/>
+                                    <xs:element name="ciudad_i" type="xs:string"/>
+                                </xs:sequence>
+                                        <xs:attribute name="nro_i" type="xs:integer"/>                
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="pedidos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="pedido" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="cantidad" type="xs:integer"/> 
+                                    <xs:element name="precio">
+                                    	<xs:simpleType>
+                                    		<xs:restriction base="xs:string">
+                                    			<xs:pattern value="[0-9]+(,[0-9]{1,2})?"/>
+                                    		</xs:restriction>
+                                    	</xs:simpleType>
+                                    </xs:element>                               
+                                </xs:sequence>
+                                    <xs:attribute name="nro_pe" type="xs:integer"/>                                        
+                                    <xs:attribute name="nro_c" type="xs:integer"/>
+                                    <xs:attribute name="nro_pro" type="xs:integer"/>                                        
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>            
+            <xs:element name="clientes">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="cliente" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="nom_c" type="xs:string"/>
+                                    <xs:element name="ciudad_c" type="xs:string"/>
+                                </xs:sequence>
+                          				<xs:attribute name="nro_c" type="xs:integer"/>                         				                                        
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+ </xs:element>
+</xs:schema>

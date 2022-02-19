@@ -1,0 +1,28 @@
+<!ELEMENT BDProveedores (proveedores,items,pedidos,clientes)>
+    <!ELEMENT proveedores (proveedor+)>
+        <!ELEMENT proveedor (nom_p,ciud_p)>
+            <!ATTLIST proveedor nro_pro CDATA #REQUIRED
+                                Categoría (Alimentación|Muebles|Tecnología|Limpieza|Textil|Jardinería|Playa|Deportes|Ferretería) #REQUIRED>
+            <!ELEMENT nom_p (#PCDATA)>
+            <!ELEMENT ciud_p (#PCDATA)>
+
+    <!ELEMENT items (item+)>
+        <!ELEMENT item (descripcion_i,ciudad_i)>
+            <!ATTLIST item nro_i CDATA #REQUIRED>
+            <!ELEMENT descripcion_i (#PCDATA)>
+            <!ELEMENT ciudad_i (#PCDATA)>
+
+    <!ELEMENT pedidos (pedido+)>
+        <!ELEMENT pedido (nro_c,nro_i,nro_pro,cantidad,precio)>
+            <!ATTLIST pedido nro_pe CDATA #REQUIRED>
+            <!ELEMENT nro_c (#PCDATA)>
+            <!ELEMENT nro_i (#PCDATA)>
+            <!ELEMENT nro_pro (#PCDATA)>
+            <!ELEMENT cantidad (#PCDATA)>
+            <!ELEMENT precio (#PCDATA)>
+
+    <!ELEMENT clientes (cliente+)>
+        <!ELEMENT cliente (nom_c,ciudad_c)>
+            <!ATTLIST cliente nro_c CDATA #REQUIRED>
+            <!ELEMENT nom_c (#PCDATA)>
+            <!ELEMENT ciudad_c (#PCDATA)>

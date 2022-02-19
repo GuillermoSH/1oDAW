@@ -1,0 +1,7 @@
+<!ELEMENT dibujo (figura+)>   
+    <!ELEMENT figura (circulo | cuadrado)>
+        <!ELEMENT circulo (centro,radio)>
+        <!ELEMENT centro (#PCDATA)>
+        <!ELEMENT radio (#PCDATA)>
+    <!ELEMENT cuadrado (lado)>
+        <!ELEMENT lado (#PCDATA)>

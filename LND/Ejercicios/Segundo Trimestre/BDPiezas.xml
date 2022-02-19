@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE BDPiezas SYSTEM "BDPiezas.dtd">
+<BDPiezas>
+    <piezas>
+        <pieza Código='_1'>
+            <nombre>Tuerca del nº8</nombre>
+        </pieza>
+        <pieza Código='_2'>
+            <nombre>Tornillo del nº8</nombre>
+        </pieza>
+    </piezas>
+    <proveedores>
+        <proveedor id='1'>
+            <nombre>Suministros del Sur, S.A.</nombre>
+        </proveedor>
+        <proveedor id='2'>
+            <nombre>Suministros del Norte, S.A.</nombre>
+        </proveedor>
+    </proveedores>
+    <suministros>
+        <suministra Código_Pieza='1' idProveedor='1'>
+            <precio>0.55</precio>
+        </suministra>
+        <suministra Código_Pieza='1' idProveedor='2'>
+            <precio>0.50</precio>
+        </suministra>
+    </suministros>
+</BDPiezas>

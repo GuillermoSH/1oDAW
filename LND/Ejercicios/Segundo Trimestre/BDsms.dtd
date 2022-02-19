@@ -1,0 +1,9 @@
+<!ELEMENT BDsms (sms|sms2)*>
+    <!ELEMENT sms (teléfono,fecha,hora,mensaje)>
+        <!ELEMENT teléfono (#PCDATA)>
+        <!ELEMENT fecha (#PCDATA)>
+        <!ELEMENT hora (#PCDATA)>
+            <!ATTLIST hora zona CDATA #REQUIRED>
+        <!ELEMENT mensaje (#PCDATA)>
+    <!ELEMENT sms2 (móvil,fecha,hora,mensaje)>
+        <!ELEMENT móvil (#PCDATA)>

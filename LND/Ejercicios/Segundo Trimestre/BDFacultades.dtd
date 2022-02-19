@@ -1,0 +1,22 @@
+<!ELEMENT BDFacultades (facultades,investigadores,equipos,reservas)>
+    <!ELEMENT facultades (facultad+)>
+        <!ELEMENT facultad (nombre)>
+            <!ELEMENT nombre (#PCDATA)>
+            <!ATTLIST facultad Código CDATA #REQUIRED>
+
+    <!ELEMENT investigadores (investigador+)>
+        <!ELEMENT investigador (NomApell,facultad)>
+            <!ELEMENT NomApell (#PCDATA)>
+            <!ATTLIST investigador DNI CDATA #REQUIRED>
+
+    <!ELEMENT equipos (equipo+)>
+        <!ELEMENT equipo (Nombre,facultad)>
+            <!ELEMENT Nombre (#PCDATA)>
+            <!ATTLIST equipo NumSerie CDATA #REQUIRED>
+    
+    <!ELEMENT reservas (reserva+)>
+        <!ELEMENT reserva (comienzo,fin)>
+            <!ELEMENT comienzo (#PCDATA)>
+            <!ELEMENT fin (#PCDATA)>
+            <!ATTLIST investigador DNI CDATA #REQUIRED>
+            <!ATTLIST equipo NumSerie CDATA #REQUIRED>

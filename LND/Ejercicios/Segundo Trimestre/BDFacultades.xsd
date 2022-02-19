@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1" xml:lang="es">
+ <xs:element name="BDFacultades">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="facultades">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="facultad" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="nombreFac" type="xs:string"/>
+                                </xs:sequence>                           
+                                    <xs:attribute name="codigo" type="xs:integer" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="investigadores">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="investigador" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="nomapell" type="xs:string"/>
+                                    <xs:element name="facultad" type="xs:string"/>
+                                </xs:sequence>
+                                	<xs:attribute name="dni">
+	                                   <xs:simpleType>
+	                                    	<xs:restriction base="xs:string">
+	                                    		<xs:pattern value="[0-9]{8}[A-HJ-NP-TV-Z]"/>
+	                                    	</xs:restriction>
+	                                    </xs:simpleType>
+                                    </xs:attribute>        
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="equipos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="equipo" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="nombreEqui" type="xs:string"/>
+                                    <xs:element name="facultad" type="xs:string"/>                             
+                                </xs:sequence>
+                                    <xs:attribute name="numserie" type="xs:integer"/>                                        
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="reservas">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reserva" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="comienzo" type="xs:date"/>
+                                    <xs:element name="fin" type="xs:date"/>
+                                </xs:sequence>
+                          				<xs:attribute name="dni">
+	                                   <xs:simpleType>
+	                                    	<xs:restriction base="xs:string">
+	                                    		<xs:pattern value="[0-9]{8}[A-HJ-NP-TV-Z]"/>
+	                                    	</xs:restriction>
+	                                    </xs:simpleType>
+                                    	</xs:attribute>                           				                                        
+                                        <xs:attribute name="numserie" type="xs:integer"/>                
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+ </xs:element>
+</xs:schema>

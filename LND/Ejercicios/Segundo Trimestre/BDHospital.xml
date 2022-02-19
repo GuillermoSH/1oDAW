@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE BDHospital SYSTEM "BDHospital.dtd">
+<BDHospital>
+    <hospitales>
+        <hospital hospital_cod="1">
+            <nombre>Hospital Universitario de Canarias</nombre>
+            <direccion>C/Por ahi nº1 San Cristobal de la Laguna, Santa Cruz de Tenerife</direccion>
+            <telefono>123456789</telefono>
+            <num_camas>164</num_camas>
+        </hospital>
+    </hospitales>
+    
+    <salas>
+        <sala sala_cod="1">
+            <nombre>Sala Pediatría</nombre>
+            <num_cama>12</num_cama>
+        </sala>
+    </salas>
+    
+    <plantillas>
+        <plantilla empleado_num="321">
+            <apellido>Pérez</apellido>
+            <funcion>Administración</funcion>
+            <turno>Primer turno</turno>
+            <salario>1352.54</salario>
+        </plantilla>
+    </plantillas>
+    
+    <ocupacion inscripcion="123">
+        <cama>13</cama>
+    </ocupacion>
+
+    <doctores>
+        <doctor doctor_num="1">
+            <apellido>Hernández</apellido>
+            <especialidad>Pediatría</especialidad>
+        </doctor>
+    </doctores>
+
+    <enfermos>
+        <enfermo nss="73512">
+            <apellido>Matos</apellido>
+            <direccion>C/Los espaguetis nº45 La Orotava, Santa Cruz de Tenerife</direccion>
+            <fecha_nac>31-01-1965</fecha_nac>
+            <s>No se que es</s>
+        </enfermo>
+    </enfermos>
+</BDHospital>

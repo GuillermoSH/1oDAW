@@ -1,0 +1,43 @@
+<!ELEMENT BDHospital (hospitales,salas,plantillas,ocupacion,doctores,enfermos)>
+    <!ELEMENT hospitales (hospital+)>
+        <!ELEMENT hospital (nombre,direccion,telefono,num_camas)>
+            <!ELEMENT nombre (#PCDATA)>
+            <!ELEMENT direccion (#PCDATA)>
+            <!ELEMENT telefono (#PCDATA)>
+            <!ELEMENT num_camas (#PCDATA)>
+            <!ATTLIST hospital hospital_cod CDATA #REQUIRED>
+
+    <!ELEMENT salas (sala+)>
+        <!ELEMENT sala (nombre,num_cama)>
+            <!ELEMENT num_cama (#PCDATA)>
+            <!ATTLIST hospital hospital_cod IDREF #REQUIRED>
+            <!ATTLIST sala sala_cod CDATA #REQUIRED>
+
+    <!ELEMENT plantillas (plantilla+)>
+        <!ELEMENT plantilla (apellido,funcion,turno,salario)>
+            <!ELEMENT apellido (#PCDATA)>
+            <!ELEMENT funcion (#PCDATA)>
+            <!ELEMENT turno (#PCDATA)>
+            <!ELEMENT salario (#PCDATA)>
+            <!ATTLIST hospital hospital_cod IDREF #REQUIRED>
+            <!ATTLIST sala sala_cod IDREF #REQUIRED>
+            <!ATTLIST plantilla empleado_num CDATA #REQUIRED>
+
+    <!ELEMENT ocupacion (cama)>
+        <!ELEMENT cama (#PCDATA)>
+        <!ATTLIST hospital hospital_cod IDREF #REQUIRED>
+        <!ATTLIST sala sala_cod IDREF #REQUIRED>
+        <!ATTLIST ocupacion inscripcion CDATA #REQUIRED>
+
+    <!ELEMENT doctores (doctor+)>
+        <!ELEMENT doctor (apellido,especialidad)>
+            <!ELEMENT especialidad (#PCDATA)>
+            <!ATTLIST hospital hospital_cod IDREF #REQUIRED>
+            <!ATTLIST doctor doctor_num CDATA #REQUIRED>
+
+    <!ELEMENT enfermos (enfermo+)>
+        <!ELEMENT enfermo (apellido,direccion,fecha_nac,s)>
+            <!ELEMENT fecha_nac (#PCDATA)>
+            <!ELEMENT s (#PCDATA)>
+            <!ATTLIST ocupacion inscripcion IDREF #REQUIRED>
+            <!ATTLIST enfermo nss CDATA #REQUIRED>

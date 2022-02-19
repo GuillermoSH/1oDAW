@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1" xml:lang="es">
+    <xs:element name="BDHospital">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Tabla Hospitales -->
+                <xs:element name="Hospitales">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Hospital" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre" type="xs:string"/>
+                                        <xs:element name="direccion" type="xs:string"/>
+                                        <xs:element name="telefono" type="tipoTelefono"/>
+                                        <xs:element name="num_camas" type="xs:positiveInteger"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="hospital_cod" type="xs:positiveInteger" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- Tabla Salas -->
+                <xs:element name="Salas">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Sala" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre" type="tipoEspecialidad"/>
+                                        <xs:element name="num_cama" type="xs:nonNegativeInteger"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="hospital_cod" type="xs:positiveInteger" use="required"/>
+                                    <xs:attribute name="sala_cod" type="xs:positiveInteger" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- Tabla Plantillas -->
+                <xs:element name="Plantillas">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Plantilla" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="apellido" type="xs:string"/>
+                                        <xs:element name="funcion" type="tipoFuncion"/>
+                                        <xs:element name="turno" type="tipoTurno"/>
+                                        <xs:element name="salario" type="tipoSalario"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="hospital_cod" type="xs:positiveInteger" use="required"/>
+                                    <xs:attribute name="sala_cod" type="xs:positiveInteger" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- Tabla Ocupaciones -->
+                <xs:element name="Ocupaciones">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Ocupacion" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="inscripcion" type="xs:positiveInteger" use="required"/>
+                                    <xs:attribute name="hospital_cod" type="xs:positiveInteger" use="required"/>
+                                    <xs:attribute name="sala_cod" type="xs:positiveInteger" use="required"/>
+                                    <xs:attribute name="cama" type="xs:positiveInteger" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- Tabla Doctores -->
+                <xs:element name="Doctores">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Doctor" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="hospital_cod" type="xs:positiveInteger" use="required"/>
+                                    <xs:attribute name="doctor_num" type="xs:positiveInteger" use="required"/>
+                                    <xs:attribute name="apellido" type="xs:string" use="required"/>
+                                    <xs:attribute name="especialidad" type="tipoEspecialidad" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- Tabla Enfermos -->
+                <xs:element name="Enfermos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Enfermo" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="inscripcion" type="xs:positiveInteger" use="required"/>
+                                    <xs:attribute name="apellido" type="xs:string" use="required"/>
+                                    <xs:attribute name="fecha_nac" type="xs:date" use="required"/>
+                                    <xs:attribute name="s" type="tipoSexo" use="required"/>
+                                    <xs:attribute name="nss" type="tipoNSS" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="tipoTelefono">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[6-9][0-9]{8}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoEspecialidad">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(Pediatría|Oftalmología|Podología)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoFuncion">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(Auxiliar Administrativo|Administrativo|Celador)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoTurno">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(Mañana|Tarde|Noche)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoSalario">
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoSexo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(F|M|H)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoNSS">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(0[1-9]|[1-4][0-9]|5[12])[0-9]{10}"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

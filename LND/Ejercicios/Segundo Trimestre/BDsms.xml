@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE BDsms SYSTEM "BDsms.dtd">
+<BDsms>
+    <sms>
+        <teléfono>955551133</teléfono>
+        <fecha>2001-07-01</fecha>
+        <hora zona="GMT+2">23:55:00</hora>
+        <mensaje>Juego: Tetris</mensaje>
+    </sms>
+    <sms>
+        <teléfono>966558833</teléfono>
+        <fecha>2001-02-14</fecha>
+        <hora zona="GMT-2">13:55:00</hora>
+        <mensaje>Juego2: Arkanoid</mensaje>
+    </sms>
+    <sms2>
+        <móvil>651232823</móvil>
+        <fecha>2021-01-10</fecha>
+        <hora zona="GMT+1">17:25:00</hora>
+        <mensaje>Juego4: Rust</mensaje>
+    </sms2>
+    <sms>
+        <teléfono>966881133</teléfono>
+        <fecha>2011-04-21</fecha>
+        <hora zona="GMT-5">02:55:00</hora>
+        <mensaje>Juego3: Comecocos</mensaje>
+    </sms>
+</BDsms>

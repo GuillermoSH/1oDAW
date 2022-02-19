@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dibujo SYSTEM "dibujo.dtd">
+<dibujo>
+    <figura>
+        <circulo>
+            <centro>1.5</centro>
+            <radio>5.5</radio>
+        </circulo>
+    </figura>
+    <figura>
+        <cuadrado>
+            <lado>2</lado>
+        </cuadrado>
+    </figura>
+</dibujo>

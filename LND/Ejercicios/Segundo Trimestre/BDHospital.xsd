@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1" xml:lang="es">
+ <xs:element name="BDHospital">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="hospitales">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="hospital" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="nombre" type="xs:string"/>
+                                    <xs:element name="direccion" type="xs:string"/>
+                                    <xs:element name="telefono">
+                                    	<xs:simpleType>
+                                    		<xs:restriction base="xs:integer">
+                                    			<xs:pattern value="[6-9][0-9]{8}"/>
+                                    		</xs:restriction>
+                                    	</xs:simpleType>
+                                    </xs:element> 
+                                    <xs:element name="numero_camas" type="xs:integer"/>
+                                </xs:sequence>                           
+                                    <xs:attribute name="hospital_cod" type="xs:integer" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="salas">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="sala" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="nombre" type="xs:string"/>
+                                    <xs:element name="num_cama" type="xs:integer"/>
+                                </xs:sequence>
+                                        <xs:attribute name="hospital_cod" type="xs:integer"/>                                        
+                                        <xs:attribute name="sala_cod" type="xs:integer"/>              
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="plantillas">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="plantilla" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="apellido" type="xs:string"/>
+                                    <xs:element name="funcion" type="xs:string"/>
+                                    <xs:element name="turno" type="xs:string"/>
+                                    <xs:element name="salario" type="xs:integer"/>                                
+                                </xs:sequence>
+                                    <xs:attribute name="hospital_cod" type="xs:integer"/>                                        
+                                    <xs:attribute name="sala_cod" type="xs:integer"/>
+                                    <xs:attribute name="empleado_num" type="xs:integer"/>                                        
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ocupaciones">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ocupacion" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="cama" type="xs:int"/>
+                                </xs:sequence>
+                                        <xs:attribute name="hospital_cod" type="xs:integer"/>                                        
+                                        <xs:attribute name="sala_cod" type="xs:integer"/>
+                                        <xs:attribute name="inscripcion" type="xs:integer"/>                
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="doctores">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="doctor" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="apellido" type="xs:string"/>
+                                    <xs:element name="especialidad" type="xs:string"/>
+                                </xs:sequence>
+                                        <xs:attribute name="hospital_cod" type="xs:integer"/>                                        
+                                        <xs:attribute name="doctor_num" type="xs:integer"/>                
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="enfermos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="enfermo" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="apellido" type="xs:string"/>
+                                    <xs:element name="direccion" type="xs:string"/>
+                                    <xs:element name="fecha_nac" type="xs:date"/>
+                                </xs:sequence>
+                          				<xs:attribute name="nss">
+	                                    	<xs:simpleType>
+	                                    		<xs:restriction base="xs:integer">
+	                                    			<xs:pattern value="[0-9]{12}"/>
+	                                    		</xs:restriction>
+	                                    	</xs:simpleType>
+                                    	</xs:attribute>                           				                                        
+                                        <xs:attribute name="inscripcion" type="xs:integer"/>                
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+ </xs:element>
+</xs:schema>
