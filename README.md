@@ -16,4 +16,6 @@
     - [Segundo Trimestre.](https://github.com/GuillermoSH/1oDAW/tree/main/LND/Ejercicios/Segundo%20Trimestre)
   - [Examenes.](/LND/Examenes)
 - [**:bar_chart: BAE.**](/BAE)
+  - [Primer Trimestre](https://github.com/GuillermoSH/1oDAW/tree/main/BAE/Tareas/Primer%20Trimestre)
+  - [Segundo Trimestre](https://github.com/GuillermoSH/1oDAW/tree/main/BAE/Tareas/Segundo%20Trimestre)
 - [**:floppy_disk: SSF.**](/SSF)
