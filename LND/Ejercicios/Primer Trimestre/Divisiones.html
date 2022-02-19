@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="capa.css">
+</head>
+
+<style>
+	* {margin: 0;padding: 0;border: 0;}
+	header{
+		background-color: red;
+		height: 5vh; /* viewport height(vh) y viewport width(vw) porcentaje de tamaño con respecto a la ventana */
+		background-color: darkorange;
+	}
+
+	nav, main{ /* cambio simultáneo */
+		float: left; /* para juntar las div en una misma línea */
+		width: 25%;
+		height: 90vh;
+		background-color: darkcyan;
+	}
+
+	main{
+		width: 75%;
+		background-color: darkgoldenrod;
+	}
+
+	footer{
+		clear: both; /* cortar flotacion de capas */
+		height: 5vh;
+		background-color: darkkhaki;
+	}
+
+</style>
+
+<body>
+	<header>
+		Cabecera
+	</header>
+
+	<nav>
+		Menú
+	</nav>
+
+	<main>
+		Main
+	</main>
+
+	<footer>
+		Footer
+	</footer>
+
+</body>
+</html>
