@@ -11,5 +11,6 @@
   - [Ejercicios.](/LND/Ejercicios)
     - [Primer Trimestre.](https://github.com/GuillermoSH/1oDAW/tree/main/LND/Ejercicios/Primer%20Trimestre)
     - [Segundo Trimestre.](https://github.com/GuillermoSH/1oDAW/tree/main/LND/Ejercicios/Segundo%20Trimestre)
+  - [Examenes.](/LND/Examenes)
 - [**:bar_chart: BAE.**](/BAE)
 - [**:floppy_disk: SSF.**](/SSF)
