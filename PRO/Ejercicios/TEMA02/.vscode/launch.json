@@ -1,0 +1,504 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Eje2extraT2",
+            "request": "launch",
+            "mainClass": "Eje2extraT2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Eje6extraT2",
+            "request": "launch",
+            "mainClass": "Eje6extraT2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Eje7extraT2",
+            "request": "launch",
+            "mainClass": "Eje7extraT2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio07T2",
+            "request": "launch",
+            "mainClass": "Ejercicio07T2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio07T2CorrecciónProfesor",
+            "request": "launch",
+            "mainClass": "Ejercicio07T2CorrecciónProfesor",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio08T2",
+            "request": "launch",
+            "mainClass": "Ejercicio08T2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio10T2_profesor",
+            "request": "launch",
+            "mainClass": "Ejercicio10T2_profesor",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio11T2",
+            "request": "launch",
+            "mainClass": "Ejercicio11T2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio13T2",
+            "request": "launch",
+            "mainClass": "Ejercicio13T2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio13T2_profesor",
+            "request": "launch",
+            "mainClass": "Ejercicio13T2_profesor",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio14T2",
+            "request": "launch",
+            "mainClass": "Ejercicio14T2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio14T2_profesor",
+            "request": "launch",
+            "mainClass": "Ejercicio14T2_profesor",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio15",
+            "request": "launch",
+            "mainClass": "Ejercicio15",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio15T2",
+            "request": "launch",
+            "mainClass": "Ejercicio15T2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio15_profesor",
+            "request": "launch",
+            "mainClass": "Ejercicio15_profesor",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio16_profesor",
+            "request": "launch",
+            "mainClass": "Ejercicio16_profesor",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio17T2_pablo",
+            "request": "launch",
+            "mainClass": "Ejercicio17T2_pablo",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio17T2_profesor",
+            "request": "launch",
+            "mainClass": "Ejercicio17T2_profesor",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio17T2_propio",
+            "request": "launch",
+            "mainClass": "Ejercicio17T2_propio",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio1Extra",
+            "request": "launch",
+            "mainClass": "Ejercicio1Extra",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio21T2_profesor",
+            "request": "launch",
+            "mainClass": "Ejercicio21T2_profesor",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio2T2",
+            "request": "launch",
+            "mainClass": "Ejercicio2T2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio3T2",
+            "request": "launch",
+            "mainClass": "Ejercicio3T2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio5T2",
+            "request": "launch",
+            "mainClass": "Ejercicio5T2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch EjercicioImpuestos",
+            "request": "launch",
+            "mainClass": "EjercicioImpuestos",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch EjercicioInventado",
+            "request": "launch",
+            "mainClass": "EjercicioInventado",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch EjercicioInventado_profesor",
+            "request": "launch",
+            "mainClass": "EjercicioInventado_profesor",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch EjercicioPropio",
+            "request": "launch",
+            "mainClass": "EjercicioPropio",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio1",
+            "request": "launch",
+            "mainClass": "Ejercicios.Ejercicio1",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio2",
+            "request": "launch",
+            "mainClass": "Ejercicios.Ejercicio2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio4",
+            "request": "launch",
+            "mainClass": "Ejercicios.Ejercicio4",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio5",
+            "request": "launch",
+            "mainClass": "Ejercicios.Ejercicio5",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio1(1)",
+            "request": "launch",
+            "mainClass": "EjerciciosLibro.Ejercicios1_6.Ejercicio1",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio2(1)",
+            "request": "launch",
+            "mainClass": "EjerciciosLibro.Ejercicios1_6.Ejercicio2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio3",
+            "request": "launch",
+            "mainClass": "EjerciciosLibro.Ejercicios1_6.Ejercicio3",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio4(1)",
+            "request": "launch",
+            "mainClass": "EjerciciosLibro.Ejercicios1_6.Ejercicio4",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio5(1)",
+            "request": "launch",
+            "mainClass": "EjerciciosLibro.Ejercicios1_6.Ejercicio5",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio6",
+            "request": "launch",
+            "mainClass": "EjerciciosLibro.Ejercicios1_6.Ejercicio6",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio7",
+            "request": "launch",
+            "mainClass": "EjerciciosLibro.Ejercicios1_6.Ejercicio7",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio8",
+            "request": "launch",
+            "mainClass": "EjerciciosLibro.Ejercicios1_6.Ejercicio8",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio1(2)",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio1",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio10",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio10",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio11",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio11",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio12",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio12",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio13",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio13",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio14",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio14",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio15(1)",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio15",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio16",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio16",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio17",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio17",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio18",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio18",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio1Extra(1)",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio1Extra",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio2(2)",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio2",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio21",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio21",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio22",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio22",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio2Extra",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio2Extra",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio3(1)",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio3",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio3Extra",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio3Extra",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio4(2)",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio4",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio4Extra",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio4Extra",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio5(2)",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio5",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio5Extra",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio5Extra",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio6(1)",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio6",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio6Extra",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio6Extra",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio7(1)",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio7",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio7Extra",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio7Extra",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio8(1)",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio8",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio8Extra",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio8Extra",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio9Extra",
+            "request": "launch",
+            "mainClass": "EjerciciosNuevos.Ejercicio9Extra",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicios_For",
+            "request": "launch",
+            "mainClass": "Ejercicios_For",
+            "projectName": "TEMA02"
+        },
+        {
+            "type": "java",
+            "name": "Launch estres",
+            "request": "launch",
+            "mainClass": "estres",
+            "projectName": "TEMA02"
+        }
+    ]
+}
