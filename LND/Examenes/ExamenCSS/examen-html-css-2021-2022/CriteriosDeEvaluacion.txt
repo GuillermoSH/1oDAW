@@ -1,0 +1,8 @@
+Criterios de Evaluación del Exámen
+----------------------------------
+Disposición capas - 1 pto.
+Cabecera          - 1 pto.
+Menú              - 4 ptos.
+Contenido         - 1 pto.
+Páginas Contenido.- 2 ptos.
+Pié               - 1 pto.

@@ -1,0 +1,25 @@
+<!ELEMENT banco (clientes,movimientos)>
+	<!ELEMENT clientes (cliente+)>
+		<!ELEMENT cliente (#PCDATA)>
+	            <!ATTLIST cliente
+	                dni CDATA #REQUIRED
+	                nombre CDATA #REQUIRED
+	                apellido1 CDATA #REQUIRED
+	                apellido2 CDATA #IMPLIED
+	                email CDATA #REQUIRED
+	                direccion CDATA #REQUIRED
+	                telefMovil CDATA #REQUIRED
+	                numCuent CDATA #REQUIRED
+	                cuenta (C|E|A) #REQUIRED
+	                saldo CDATA #REQUIRED
+	            >
+	 <!ELEMENT movimientos (movimiento+)>	 	
+		<!ELEMENT movimiento (#PCDATA)>
+	            <!ATTLIST movimiento
+	                dni CDATA #REQUIRED
+	                fecha CDATA #REQUIRED
+	                hora CDATA #REQUIRED
+	                tipo (I|R) #REQUIRED
+	                cant CDATA #REQUIRED
+	            >
+	           

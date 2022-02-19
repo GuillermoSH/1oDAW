@@ -1,0 +1,79 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1" xml:lang="es">
+	<xs:element name="BDBanco">
+		<xs:complexType>
+            <xs:sequence>
+                <!-- Tabla Clientes -->
+                <xs:element name="clientes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="cliente" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="e-mail" type="xs:string"/>
+                                        <xs:element name="direccion" type="xs:string"/>
+                                        <xs:element name="telefono" type="tipoTelefono"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="num_cuenta" type="tipoNumCuenta" use="required"/>
+                                    <xs:attribute name="dni" type="tipoDNI" use="required"/>
+                                    <xs:attribute name="nombre" type="xs:string" use="required"/>
+                                    <xs:attribute name="apellido1" type="xs:string" use="required"/>
+                                    <xs:attribute name="apellido2" type="xs:string"/>
+                                    <xs:attribute name="tipo_cuenta" type="tipoCuenta" use="required"/>
+                                    <xs:attribute name="saldo" type="tipoSaldo" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- Tabla Movimientos -->
+                <xs:element name="movimientos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="movimiento" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="cantidad" type="tipoSaldo"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="dni" type="tipoDNI" use="required"/>
+                                    <xs:attribute name="fecha" type="xs:date" use="required"/>
+                                    <xs:attribute name="hora" type="xs:time" use="required"/>
+                                    <xs:attribute name="tipo" type="tipoMovimiento" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="tipoNumCuenta">
+        <xs:restriction base="xs:long">
+            <xs:pattern value="[1-9][0-9]{4}-[1-9][0-9]{4}-[1-9][0-9]{2}-[1-9][0-9]{10}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoTelefono">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[6-9][0-9]{8}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoDNI">
+	    <xs:restriction base="xs:string">
+	        <xs:pattern value="[0-9]{8}[A-HJ-NP-TV-Z]"/>
+	    </xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tipoCuenta">
+	    <xs:restriction base="xs:string">
+	        <xs:pattern value="(C|A|E)"/>
+	    </xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tipoSaldo">
+	    <xs:restriction base="xs:decimal">
+	        <xs:fractionDigits value="2"/>
+	    </xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tipoMovimiento">
+	    <xs:restriction base="xs:string">
+	        <xs:pattern value="(I|R)"/>
+	    </xs:restriction>
+	</xs:simpleType>
+</xs:schema>

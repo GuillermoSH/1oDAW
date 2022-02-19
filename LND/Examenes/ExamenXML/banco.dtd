@@ -1,0 +1,21 @@
+<!ELEMENT BDBanco (clientes,movimientos)>
+	<!ELEMENT clientes (cliente+)>
+		<!ELEMENT cliente (e-mail,direccion,telefono)>
+			<!ELEMENT e-mail (#PCDATA)>
+			<!ELEMENT direccion (#PCDATA)>
+			<!ELEMENT telefono (#PCDATA)>
+			<!ATTLIST cliente num_cuenta CDATA #REQUIRED>
+			<!ATTLIST cliente dni CDATA #REQUIRED>
+			<!ATTLIST cliente nombre CDATA #REQUIRED>
+			<!ATTLIST cliente apellido1 CDATA #REQUIRED>
+			<!ATTLIST cliente apellido2 CDATA #REQUIRED>
+			<!ATTLIST cliente tipo_cuenta CDATA #REQUIRED>
+			<!ATTLIST cliente saldo CDATA #REQUIRED>
+			
+	<!ELEMENT movimientos (movimiento+)>
+		<!ELEMENT movimiento (cantidad)>
+			<!ELEMENT cantidad (#PCDATA)>
+			<!ATTLIST movimiento dni IDREF #REQUIRED>
+			<!ATTLIST movimiento fecha CDATA #REQUIRED>
+			<!ATTLIST movimiento hora CDATA #REQUIRED>
+			<!ATTLIST movimiento tipo CDATA #REQUIRED>

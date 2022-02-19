@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE banco SYSTEM "banco.dtd"> -->
+<banco xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="banco.xsd">
+    <clientes>
+        <cliente dni="41341431G" nombre="Carlos" apellido1="Rodriguez" apellido2="Torres"
+        email="carlitosrd@gmail.com" direccion="Crta Los caminos" telefMovil="654123523" 
+        numCuent="4123-1234-23-4325342351" cuenta="C" saldo="353.83"/>
+        
+        <cliente dni="81331431Y" nombre="Andres" apellido1="Castillo"
+        email="andCas@gmail.com" direccion="Crta Drago" telefMovil="674123523" 
+        numCuent="3123-1234-23-4325342351" cuenta="E" saldo="233.53"/>
+        
+        <cliente dni="71344431J" nombre="Roberto" apellido1="Torres" apellido2="Torres"
+        email="rbrd@gmail.com" direccion="Crta Las Dehesas" telefMovil="634123593" 
+        numCuent="8123-1234-23-4325342351" cuenta="C" saldo="133.53"/>
+        
+        <cliente dni="21351431K" nombre="Francisco" apellido1="Perez" 
+        email="frrd443@gmail.com" direccion="Crta Los Roques" telefMovil="654328523" 
+        numCuent="6123-1234-23-4325342351" cuenta="A" saldo="633.53"/>
+
+       
+        
+    </clientes>
+ 	<movimientos>
+ 		<movimiento dni="41341431G" fecha="2001-02-15" hora="12:30:12" tipo="I" cant="43.12"/>
+ 		<movimiento dni="41341431G" fecha="2001-01-12" hora="14:35:15" tipo="R" cant="90.12"/>
+ 		
+ 		<movimiento dni="81331431Y" fecha="2001-05-16" hora="15:37:14" tipo="I" cant="544.12"/>
+ 		<movimiento dni="81331431Y" fecha="2001-06-19" hora="17:23:13" tipo="R" cant="54.12"/>
+ 		
+ 		<movimiento dni="71344431J" fecha="2001-09-13" hora="19:14:11" tipo="I" cant="512.12"/>
+ 		<movimiento dni="71344431J" fecha="2001-08-11" hora="20:45:19" tipo="I" cant="534.12"/>
+ 		
+ 		<movimiento dni="21351431K" fecha="2001-07-20" hora="23:32:17" tipo="R" cant="454.12"/>
+ 		<movimiento dni="21351431K" fecha="2001-04-25" hora="07:31:15" tipo="R" cant="74.12"/>
+ 	
+ 	
+ 	</movimientos>
+
+</banco>

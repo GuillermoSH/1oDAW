@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <BDBanco xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="banco.xsd"> -->
+<!DOCTYPE BDBanco SYSTEM "banco.dtd">
+<BDBanco>
+	<clientes>
+		<cliente num_cuenta="1234-1234-12-1234567890" dni="12345678Z" nombre="María" apellido1="Martínez" apellido2="Cabrera" tipo_cuenta="C" saldo="723.33">
+			<e-mail>marMaHer@gmail.com</e-mail>
+			<direccion>Avda. Los Majuelos, 13, 6-B</direccion>
+			<telefono>675332211</telefono>
+		</cliente>
+		<cliente num_cuenta="4321-1234-12-1234567890" dni="43212342Z" nombre="Pedro" apellido1="Pérez" apellido2="Hernández" tipo_cuenta="A" saldo="1723.33">
+			<e-mail>pedpher@gmail.com</e-mail>
+			<direccion>Avda. Gran Vía, 33, 7-B</direccion>
+			<telefono>656342134</telefono>
+		</cliente>
+		<cliente num_cuenta="4321-1234-13-1234567890" dni="43241234F" nombre="Ana" apellido1="Pérez" apellido2="Hernández" tipo_cuenta="E" saldo="1423.33">
+			<e-mail>anapher@gmail.com</e-mail>
+			<direccion>Avda. Gran Vía, 33, 7-B</direccion>
+			<telefono>651234431</telefono>
+		</cliente>
+		<cliente num_cuenta="4321-4321-12-1234567890" dni="43451122T" nombre="Juan" apellido1="Pérez" apellido2="Hernández" tipo_cuenta="A" saldo="2623.33">
+			<e-mail>jpher@gmail.com</e-mail>
+			<direccion>Avda. Gran Vía, 33, 7-B</direccion>
+			<telefono>656332211</telefono>
+		</cliente>
+	</clientes>
+	<movimientos>
+		<movimiento dni="12345678Z" fecha="2000-10-02" hora="12:03" tipo="I">
+			<cantidad>33.25</cantidad>
+		</movimiento>
+		<movimiento dni="12345678Z" fecha="2012-03-21" hora="11:43" tipo="R">
+			<cantidad>43.25</cantidad>
+		</movimiento>
+		<movimiento dni="43212342Z" fecha="2002-11-02" hora="10:23" tipo="R">
+			<cantidad>53.25</cantidad>
+		</movimiento>
+		<movimiento dni="43212342Z" fecha="2003-03-21" hora="11:43" tipo="I">
+			<cantidad>20.00</cantidad>
+		</movimiento>
+		<movimiento dni="43241234F" fecha="2000-04-24" hora="15:33" tipo="R">
+			<cantidad>4.54</cantidad>
+		</movimiento>
+		<movimiento dni="43241234F" fecha="2010-11-24" hora="16:03" tipo="I">
+			<cantidad>10.00</cantidad>
+		</movimiento>
+		<movimiento dni="43451122T" fecha="2020-04-24" hora="10:21" tipo="R">
+			<cantidad>12.10</cantidad>
+		</movimiento>
+		<movimiento dni="43451122T" fecha="2021-05-23" hora="19:23" tipo="I">
+			<cantidad>40.00</cantidad>
+		</movimiento>
+	</movimientos>
+</BDBanco>

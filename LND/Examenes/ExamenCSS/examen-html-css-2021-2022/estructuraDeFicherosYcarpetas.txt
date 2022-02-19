@@ -1,0 +1,23 @@
+.
+├── index.css
+├── index.html
+└── recursos
+    ├── imagenes
+    │   ├── componentes
+    │   │   ├── cpu.jpg
+    │   │   ├── monitor.png
+    │   │   ├── placa.jpg
+    │   │   ├── ram.png
+    │   │   ├── raton.png
+    │   │   └── teclado.jpg
+    │   └── fondos
+    │       └── placabase.png
+    └── partes
+        ├── componentes.css
+        ├── cpu.html
+        ├── monitor.html
+        ├── placa.html
+        ├── ram.html
+        ├── teclado.html
+        └── texto.txt
+

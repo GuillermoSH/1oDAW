@@ -1,0 +1,27 @@
+Placa Base
+----------
+La placa base, también conocida como tarjeta madre, placa madre o placa principal (motherboard o mainboard en inglés), es una tarjeta de circuito impreso a la que se conectan los componentes que constituyen la computadora. Es una parte fundamental para montar cualquier computadora personal de escritorio o portátil o algún dispositivo. Tiene instalados una serie de circuitos integrados, entre los que se encuentra el circuito integrado auxiliar (chipset), que sirve como centro de conexión entre el microprocesador (CPU), la memoria de acceso aleatorio (RAM), las ranuras de expansión y otros dispositivos.
+
+Cpu
+---
+La unidad central de procesamiento o unidad de procesamiento central (conocida por las siglas CPU, del inglés: central processing unit), es el hardware dentro de un ordenador u otros dispositivos programables, que interpreta las instrucciones de un programa informático mediante la realización de las operaciones básicas aritméticas, lógicas y de entrada/salida del sistema. El término, y su acrónimo, han estado en uso en la industria de la Informática por lo menos desde el principio de los años 1960.1​ La forma, el diseño de CPU y la implementación de las CPU ha cambiado drásticamente desde los primeros ejemplos, pero su operación fundamental sigue siendo la misma.
+
+RAM
+---
+La memoria de acceso aleatorio (Random Access Memory, RAM) se utiliza como memoria de trabajo de computadoras y otros dispositivos para el sistema operativo, los programas y la mayor parte del software. En la RAM se cargan todas las instrucciones que ejecuta la unidad central de procesamiento (procesador) y otras unidades del computador, además de contener los datos que manipulan los distintos programas. Se denominan «de acceso aleatorio» porque se puede leer o escribir en una posición de memoria con un tiempo de espera igual para cualquier posición, no siendo necesario seguir un orden para acceder (acceso secuencial) a la información de la manera más rápida posible.
+
+Monitor
+-------
+La función principal del monitor es evidentemente la visual. Gracias a él, podemos ver el trabajo y las órdenes que estamos realizando, o bien visualizar otros contenidos, revisar información almacenada y un innumerable etcétera de tareas.
+
+Las principales características que definen a un monitor son en primer lugar, la resolución, que según sea mayor o menor nos dará una imagen más nítida o menos. La resolución se mide en ppi (puntos por pulgada, points per inch en inglés) o bien en pixels, que son el resultado de multiplicar los puntos horizontales por los verticales que es capaz de mostrar un monitor.
+
+Otra característica asociada a los monitores es el tamaño de imagen capaz de mostrar, y que se define por las pulgadas. Estas se obtienen midiendo directamente la diagonal desde una esquina inferior a otra superior. Evidentemente a mayor numero de pulgadas, mayor será el tamaño de imagen, pero no debemos confundir esto con la resolución. Una imagen puede ser enorme, pero muy poco definida. La definición, recordemos, siempre viene expresada en ppi.
+
+
+El Teclado
+----------
+El teclado es uno de los dispositivos de ingreso de datos más importantes de una computadora. Éste te permite introducir las órdenes y los datos que quieras que la computadora procese. El mismo es muy fácil de usar y de transportar, de hecho, es uno de los componentes más sencillos de la computadora. Debido a estas propiedades, el teclado es la forma predilecta de ingreso de datos alrededor del mundo.
+La estructura externa
+
+El estructura externa de un teclado está hecha principalmente de plástico. Dicho teclado alberga las cubiertas de las teclas, los chips y los circuitos internos. Normalmente, hay de 103 a 105 cubiertas de teclas incrustadas sobre la estructura externa. En la esquina superior derecha de muchos teclados hay tres diodos emisores de luz (LED) que cuando se encienden muestran la activación de las teclas de mandos: Num Lock, Scroll Lock y Caps Lock. La primera es para bloquear los números, la segunda controla el desplazamiento horizontal y la tercera bloquea el texto de salida para que sea sólo en mayúsculas.

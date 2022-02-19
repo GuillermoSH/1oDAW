@@ -1,0 +1,107 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1" xml:lang="es">
+ <xs:element name="banco">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="clientes">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="cliente" maxOccurs="unbounded">
+                            <xs:complexType> 
+                            	<xs:simpleContent>  
+                            		<xs:extension base="xs:string">                    
+                                    <xs:attribute name="dni" type="tipoDNI" use="required"/>
+                            		<xs:attribute name="nombre" type="xs:string" use="required"/>
+                            		<xs:attribute name="apellido1" type="xs:string" use="required"/>
+                            		<xs:attribute name="apellido2" type="xs:string"/>
+                            		<xs:attribute name="email" type="tipoEmail" use="required"/>
+                            		<xs:attribute name="direccion" type="xs:string" use="required"/>
+                            		<xs:attribute name="telefMovil" type="tipoTefMov" use="required"/>
+                            		<xs:attribute name="numCuent" type="tipoNumCuent" use="required"/>
+                            		<xs:attribute name="cuenta" type="tipoCuent" use="required"/>
+                            		<xs:attribute name="saldo" type="tipoDec" use="required"/>
+                            		</xs:extension>  
+                            	</xs:simpleContent> 
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            
+            <xs:element name="movimientos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="movimiento" maxOccurs="unbounded">
+                            <xs:complexType> 
+                            	<xs:simpleContent>  
+                            		<xs:extension base="xs:string">                    
+                                    <xs:attribute name="dni" type="tipoDNI" use="required"/>
+                                    <xs:attribute name="fecha" type="xs:date" use="required"/>
+                                    <xs:attribute name="hora" type="xs:time" use="required"/>
+                                    <xs:attribute name="tipo" type="tipoMov" use="required"/>
+                                    <xs:attribute name="cant" type="tipoDec" use="required"/>
+                            		</xs:extension>  
+                            	</xs:simpleContent> 
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+                      
+            
+        </xs:sequence>
+    </xs:complexType>
+ </xs:element>
+
+  <xs:simpleType name="tipoTexto">
+ 	<xs:restriction base="xs:string">
+ 		<xs:whiteSpace value="replace"/> 
+	</xs:restriction>
+  </xs:simpleType> 
+  
+  <xs:simpleType name="tipoDNI">
+ 	<xs:restriction base="xs:string">
+ 		<xs:pattern value="[0-9]{8}[A-HJ-NP-TV-Z]"/>
+	</xs:restriction>
+  </xs:simpleType> 
+  
+  <xs:simpleType name="tipoCuent">
+ 	<xs:restriction base="xs:string">
+ 		<xs:pattern value="C|A|E"/>
+	</xs:restriction>
+  </xs:simpleType> 
+  
+    <xs:simpleType name="tipoMov">
+ 	<xs:restriction base="xs:string">
+ 		<xs:pattern value="I|R"/>
+	</xs:restriction>
+  </xs:simpleType> 
+  
+  <xs:simpleType name="tipoDec">
+ 	<xs:restriction base="xs:decimal">
+ 	<xs:fractionDigits value="2"/>
+	</xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="tipoTefMov">
+ 	<xs:restriction base="xs:integer">
+		<xs:pattern value="6[0-9]{8}"/>
+	</xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="tipoEmail">
+ 	<xs:restriction base="xs:string">
+ 		<xs:pattern value="[a-zA-Z0-9\.\-_]+@([a-zA-Z0-9\-_]+\.){1,126}[a-z]{2,4}"/>
+	</xs:restriction>
+  </xs:simpleType> 
+  
+  <xs:simpleType name="tipoNumCuent">
+ 	<xs:restriction base="xs:string">
+ 		<xs:pattern value="([0-9]{4}\-){2}[0-9]{2}\-[0-9]{10}"/>
+	</xs:restriction>
+  </xs:simpleType> 
+
+ 
+ 
+ 
+ 
+</xs:schema>
