@@ -10,6 +10,6 @@
 - [**:globe_with_meridians: LND.**](/LND)
   - [Ejercicios.](/LND/Ejercicios)
     - [Primer Trimestre.](https://github.com/GuillermoSH/1oDAW/tree/main/LND/Ejercicios/Primer%20Trimestre)
-    - [Segundo Trimestre.](/LND/Segundo%20Trimestre/)
+    - [Segundo Trimestre.](https://github.com/GuillermoSH/1oDAW/tree/main/LND/Ejercicios/Segundo%20Trimestre)
 - [**:bar_chart: BAE.**](/BAE)
 - [**:floppy_disk: SSF.**](/SSF)
