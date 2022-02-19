@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    
+    <meta charset="UTF-8">
+    
+    <title>Ejercicio9</title>
+
+</head>
+
+<style>
+    select optgroup{
+        font-style: italic;
+    }
+
+    #nombre1{
+        border-radius: 5px;
+    }
+    #nombre2{
+        border-radius: 5px;
+    }
+    #apellidos1{
+        border-radius: 5px;
+    }
+    #apellidos2{
+        border-radius: 5px;
+    }
+    #contraseña{
+        border-radius: 5px;
+    }
+    #comentarios{
+        border-radius: 5px;
+    }
+
+
+</style>
+
+<body>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        
+        <table style="border: 3px lightsteelblue; border-style: outset; background: silver; color: blue;">
+            
+            <tr>
+                <td style="border:3px lightsteelblue; border-style: inset; text-align: center; border-collapse: collapse;"> <!-- neomorphism.io -->
+                    <table>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <label>Alumno 1</label>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <label for="nombre1">Nombre:</label>
+                            </td>
+                            
+                            <td>
+                                <input type="text" name="nombre1" id="nombre1" size="30"/>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <label for="apellidos1">Apellidos:</label>
+                            </td>
+                            
+                            <td>
+                                <input type="text" name="apellidos1" id="apellidos1" size="30"/>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+                
+                <td style="border:3px lightsteelblue; border-style: inset; border-collapse: collapse;">
+                    <table>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <label >Alumno 2</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="nombre2">Nombre:</label>
+                            </td>
+
+                            <td>
+                                <input type="text" name="nombre2" id="nombre2" size="30"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="apellidos2">Apellidos:</label>
+                            </td>
+
+                            <td>
+                                <input type="text" name="apellidos2" id="apellidos2" size="30"/>
+                            </td>
+                        </tr> 
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="border: 3px lightsteelblue; border-style: inset; border-collapse: collapse;">
+                    <label for="contraseña">Password:</label>
+                    <input type="password" name="contraseña" id="contraseña" size="30"/>
+                </td>
+                    
+                <td style="text-align: center; border: 3px lightsteelblue; border-style: inset; border-collapse: collapse;">
+                    <input type="radio" name="grupo" id="grupo1" value="Grupo1"/><label for="grupo1">Grupo 1</label>
+                    <input type="radio" name="grupo" id="grupo2" value="Grupo2"/><label for="grupo2">Grupo 2</label>
+                </td>              
+            </tr>
+
+            <tr>
+                <td style="border:3px lightsteelblue; border-style: inset; border-collapse: collapse;">
+                    <table style="margin: auto">
+                        <td>
+                            <tr>
+                                <td style="text-align: center;">
+                                    <label for="lenguajes">Lenguaje(s) de programación usado(s):</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="text-align: center;">
+                                    <input type="checkbox" name="c" id="c" value="c"/><label for="c">C</label>
+                                    <input type="checkbox" name="c++" id="c++" value="c++"/><label for="c++">C++</label>
+                                    <input type="checkbox" name="java" id="java" value="java"/><label for="java">Java</label>
+                                    <input type="checkbox" name="perl" id="perl" value="perl"/><label for="perl">Perl</label>
+                                    <input type="checkbox" name="otros" id="otros" value="otros"/><label for="otros">Otros</label>
+                                </td>
+                            </tr>
+                        </td>
+                    </table>
+                </td>
+
+                <td style="text-align: center; border: 3px lightsteelblue; border-style: inset; border-collapse: collapse;">
+                    
+                    <select name="fotoscarnet" id="fotoscarnet">
+                        <option>fotos carnet</option>
+                        <optgroup label="Práctica 1"></optgroup>
+                            <option>prac 1: fichero HTML</option>
+                            <option>prac 1: fuente CGI</option>
+                            <option>prac 1: todo</option>
+                        <optgroup label="Práctica 2"></optgroup>
+                            <option>prac 2: fichero HTML</option>
+                            <option>prac 2: memoria</option>
+                            <option>prac 2: todo</option>
+                    </select>
+
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="2" style="border: 3px lightsteelblue; text-align: center; border-collapse: collapse; border-style: inset;">
+                    <table style="margin: auto">
+                        <tr>
+                            <td>
+                                <label for="comentarios">Comentarios:</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <textarea name="comentarios" id="comentarios" cols="70" rows="10"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="border: 3px lightsteelblue; border-style: inset; border-collapse: collapse;">
+                    
+                </td>
+                <td style="text-align: center; border: 3px lightsteelblue; border-style: inset; border-collapse: collapse;">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Restablecer</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

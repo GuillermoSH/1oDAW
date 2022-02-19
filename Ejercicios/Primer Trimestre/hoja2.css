@@ -1,0 +1,33 @@
+#mini{
+	width: 40px;
+	height: 40px;
+}
+
+#grande{
+	width: 80px;
+	height: 80px;
+}
+
+.negrita{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.colores{
+	width: 15px;
+	height: 15px;
+}
+
+table{
+	border: 5px solid grey;
+	text-align: center;
+	margin: auto;
+	width: 75%;
+	border-collapse: collapse;
+}
+
+td{
+	border: 2px solid lightgrey;
+	width: 140px;
+	height: 120px;
+}
