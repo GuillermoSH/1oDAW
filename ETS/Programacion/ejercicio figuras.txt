@@ -1,0 +1,20 @@
+funcion area_base(a,b)
+	retorna a x b;
+
+pedir_dato(v){
+	valor=indica el valor parametro +v;
+}
+
+area_cuadrado(l){
+	retorna area_base(l,l);
+}
+area_rectangulo(a,b){
+	retorna area_base(a,b);
+}
+area_triangulo(b,h){
+	retorna area_base(b,h);
+}
+area_rombo(D,d){
+	retorna area_trinagulo(D,d);
+}
+
