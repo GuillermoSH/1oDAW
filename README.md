@@ -8,5 +8,8 @@
   - [Programacion.](/ETS/Programacion)
     - [Proyectos](/ETS/Programacion/Proyectos)
 - [**:globe_with_meridians: LND.**](/LND)
+  - [Ejercicios.](/LND/Ejercicios)
+    - [Primer Trimestre.](/LND/Primer%20Trimestre/)
+    - [Segundo Trimestre.](/LND/Segundo%20Trimestre/)
 - [**:bar_chart: BAE.**](/BAE)
 - [**:floppy_disk: SSF.**](/SSF)
