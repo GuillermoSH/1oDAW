@@ -1,0 +1,57 @@
+#!/bin/bash
+
+################################################################
+#
+# NOMBRE: menu.sh
+# AUTOR: Guillermo Sicilia Hernández
+# FECHA: 28-01-2022
+#
+# OBJETIVO: Pruebas de menú
+# ENTRADAS: Ninguna
+# SALIDAS: Operación elegida
+#
+# VERSIONES: 0.1
+#
+################################################################
+
+# Mostrar el menú
+echo "+-----------------------------------------+"
+echo "|·············   M E N Ú   ··············|"
+echo "+-----------------------------------------+"
+echo "|                                         |"
+echo "| 1) Espacio libre en disco (%)           |"
+echo "| 2) Espacio libre en disco (tamaño)      |"
+echo "| 3) Mi nombre de usuario                 |"
+echo "| 4) El nombre de la máquina              |"
+echo "+-----------------------------------------+"
+
+# Capturar la opcion del usuario
+read -p "Introduzca una opción: " opcion
+
+# Switch de acciones con las opciones dadas al usuario
+case "$opcion" in
+ 1)
+ 	echo ""
+	df -h | head -n -6 | tail -n 1
+	;;
+
+ 2)
+	echo ""
+	df -h
+	;;
+
+ 3)
+	echo ""
+	echo "Mi usuario es $USER o $(whoami)"
+	;;
+
+ 4)
+	echo ""
+	echo "El nombre de la máquina es: $(hostname)"
+	;;
+
+ *)
+	echo ""
+	echo "La opción introducida no es válida"
+	;;
+esac
