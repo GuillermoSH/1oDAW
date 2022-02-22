@@ -19,3 +19,5 @@
   - [Primer Trimestre](https://github.com/GuillermoSH/1oDAW/tree/main/BAE/Tareas/Primer%20Trimestre)
   - [Segundo Trimestre](https://github.com/GuillermoSH/1oDAW/tree/main/BAE/Tareas/Segundo%20Trimestre)
 - [**:floppy_disk: SSF.**](/SSF)
+  - [Ejercicios](https://github.com/GuillermoSH/1oDAW/tree/main/SSF/Ejercicios)
+    - [Scripts](https://github.com/GuillermoSH/1oDAW/tree/main/SSF/Ejercicios/Scripts)
