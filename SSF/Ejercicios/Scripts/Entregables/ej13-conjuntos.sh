@@ -59,10 +59,16 @@ fi
 
 declare -a conjuntoC
 
-for i in `seq 1 1 $num_elem`
+mitad=$(( (${#conjuntoC[@]} - 1) / 2 ))
+
+for (( i = 1; i <= $elementosC; i++ ))
 do
-	mitad=$(( ${#conjuntoC[@]} / 2 ))
-	conjuntoC=( ${conjuntoC[@]::$mitad} $i ${conjuntoC[@]:$mitad} )
+	if [ $((i%2)) -eq 0 ]
+	then
+		conjuntoC=( ${conjuntoC[@]::$mitad} $RANDOM ${conjuntoC[@]:$mitad} )
+	else
+	    conjuntoC=( ${conjuntoC[@]::$mitad} $i ${conjuntoC[@]:$mitad} )
+	fi
 done
 echo ""
 echo "Conjunto C = ${conjuntoC[@]}"
