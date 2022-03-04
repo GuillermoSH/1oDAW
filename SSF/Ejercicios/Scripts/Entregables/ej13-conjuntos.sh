@@ -67,7 +67,7 @@ do
 	then
 		conjuntoC=( ${conjuntoC[@]::$mitad} $RANDOM ${conjuntoC[@]:$mitad} )
 	else
-	    conjuntoC=( ${conjuntoC[@]::$mitad} $i ${conjuntoC[@]:$mitad} )
+		conjuntoC=( ${conjuntoC[@]::$mitad} $i ${conjuntoC[@]:$mitad} )
 	fi
 done
 echo ""
