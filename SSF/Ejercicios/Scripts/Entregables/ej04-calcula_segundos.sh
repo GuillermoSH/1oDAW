@@ -4,14 +4,14 @@
 #
 # NOMBRE: ej04-calcula_segundos.sh
 #
-# OBJETIVO:
-# FECHA:08-02-2022
-# AUTOR: Guillermo Sicilia Hernández
+# OBJETIVO: devolver el total de segundos del tiempo indicado
+# FECHA: 28-02-2022
+# AUTOR: Guillermo y Denisse
 # 
-# ENTRADAS:
-# SALIDAS:
+# ENTRADAS(4): dias, horas, minutos y segundos
+# SALIDAS: la suma de segundos
 #
-# VERSIONES: 0.1
+# VERSIONES: 1.0
 #
 ##################################################################
  
@@ -21,29 +21,25 @@ minutos=$3
 segundos=$4
 if [ -z "$dias" ]
 then
-        echo "El valor de los dias no se ha introducido, introdúzcalo a continuación:"
-        read dias
+    read -p "El valor de los dias no se ha introducido, introdúzcalo a continuación: " dias
 fi
 if [ -z "$horas" ]
 then
-        echo "El valor de las horas no se ha introducido, introdúzcalo a continuación"
-        read horas
+    read -p "El valor de las horas no se ha introducido, introdúzcalo a continuación: " horas
 fi
 if [ -z "$minutos" ]
 then
-        echo "El valor de los minutos no se ha introducido, introdúzcalo a continuación:"
-        read minutos
+    read -p "El valor de los minutos no se ha introducido, introdúzcalo a continuación: " minutos
 fi
 if [ -z "$segundos" ]
 then
-        echo "El valor de los segundos no se ha introducido, introdúzcalo a continuación"
-        read segundos
+    read -p "El valor de los segundos no se ha introducido, introdúzcalo a continuación: " segundos
 fi
-if [ -z "$dias" -o -z "$horas" -o -z "$minutos" -o -z "$segundos" ]
-#Una alternativa a la condición de este if sería: $# -ne 4
+
+if [ $# -ne 4 ]
 then
-        echo "Error, no se introdujo alguno de los valores"
-        exit 1
+	echo "Error404, no se han encontrado todos los parametros."
+	exit 1
 fi
 
 #Factores de conversión

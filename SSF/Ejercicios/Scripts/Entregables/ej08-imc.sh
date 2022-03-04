@@ -4,57 +4,52 @@
 #
 # NOMBRE: ej08-imc.sh
 #
-# OBJETIVO:
-# FECHA:08-02-2022
-# AUTOR: Guillermo Sicilia Hernández
+# OBJETIVO: calculo del indice de masa corporal
+# FECHA: 28-02-2022
+# AUTOR: Guillermo y Denisse
 # 
-# ENTRADAS:
-# SALIDAS:
+# ENTRADAS(2): altura y peso
+# SALIDAS: string con la respuesta dependiendo del IMC
 #
-# VERSIONES: 0.1
+# VERSIONES: 1.0
 #
 ##################################################################
  
 altura=$1
 peso=$2
+
 if [ -z "$altura" ]
 then
-	echo "El valor de la altura no se ha introducido, introduzcalo a continuación:"
-	read altura
+	read -p "La altura no se ha introducido, introduzcalo a continuación: " altura
 fi
+
 if [ -z "$peso" ]
 then
-	echo "El peso no se ha introducido, introduzcalo a continuación:"
-	read peso
+	read -p "El peso no se ha introducido, introduzcalo a continuación: " peso
 fi
-if [ $# -ne 2 ]
-then
-	echo "Error, no se han introducido todo los parametros"
-	exit 1
-fi
+
 IMC=$(( 10000 * peso / (altura * altura) ))
-echo "El valor del IMC es $IMC, es decir, "
-if [ $IMC lt 16 ]
+if [ "$IMC" -lt 16 ]
 then
-	echo "Delgadez severa"
-elif [ $IMC lt 17 ]
+	echo "El valor del IMC es $IMC, es decir, delgadez severa."
+elif [ "$IMC" -lt 17 ]
 then
-	echo "Delgadez moderada"
-elif [ $IMC lt 18.5 ]
+	echo "El valor del IMC es $IMC, es decir, delgadez moderada."
+elif [ "$IMC" -lt 19 ]
 then
-	echo "Delgadez leve"
-elif [ $IMC lt 25 ]
+	echo "El valor del IMC es $IMC, es decir, delgadez leve."
+elif [ "$IMC" -lt 25 ]
 then
-	echo "Normal"
-elif [ $IMC lt 30 ]
+	echo "El valor del IMC es $IMC, es decir, normal."
+elif [ "$IMC" -lt 30 ]
 then
-	echo "Preobesidad"
-elif [ $IMC lt 35 ]
+	echo "El valor del IMC es $IMC, es decir, preobesidad."
+elif [ "$IMC" -lt 35 ]
 then
-	echo "obesidad leve"
-elif [ $IMC lt 40 ]
+	echo "El valor del IMC es $IMC, es decir, obesidad leve."
+elif [ "$IMC" -lt 40 ]
 then
-	echo "Obesidad media"
+	echo "El valor del IMC es $IMC, es decir, obesidad media."
 else
-	echo "Obesidad mórbida"
+	echo "El valor del IMC es $IMC, es decir, obesidad mórbida."
 fi

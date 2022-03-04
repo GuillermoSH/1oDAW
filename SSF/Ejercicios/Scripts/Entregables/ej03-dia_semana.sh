@@ -4,42 +4,34 @@
 #
 # NOMBRE: ej03-dia_semana.sh
 #
-# OBJETIVO:
-# FECHA:08-02-2022
-# AUTOR: Guillermo Sicilia Hernández
+# OBJETIVO: imprimir dia de la semana
+# FECHA: 28-02-2022
+# AUTOR: Guillermo y Denisse
 # 
-# ENTRADAS:
-# SALIDAS:
+# ENTRADAS(3): dia, mes y año
+# SALIDAS: string del dia de la semana
 #
-# VERSIONES: 0.1
+# VERSIONES: 1.0
 #
 ##################################################################
  
 dia=$1
 mes=$2
 anio=$3
+
 if [ -z "$dia" ]
 then
-        echo "El valor del dia no se ha introducido, introdúzcalo a continuación:"
-        read dia
+    read -p "El valor del dia no se ha introducido, introdúzcalo a continuación: " dia
 fi
 if [ -z "$mes" ]
 then
-        echo "El valor del mes no se ha introducido, introdúzcalo a continuación"
-        read mes
+    read -p "El valor del mes no se ha introducido, introdúzcalo a continuación: " mes
 fi
 if [ -z "$anio" ]
 then
-	echo "El valor del año no se ha introducido, introdúzcalo a continuación:"
-	read anio
-fi
-if [ -z "$dia" -o -z "$mes" -o -z "$anio" ]
-#Una alternativa a la condición de este if sería: $# -ne 3
-then
-        echo "Error, no se introdujo alguno de los valores"
-        exit 1
+	read -p "El valor del año no se ha introducido, introdúzcalo a continuación: " anio
 fi
 
 diafech=`date -d "$anio-$mes-$dia" +"%A" 2> /dev/null`
 
-echo "El dia de la semana de la fecha indicada ($dia/$mes/$anio) fue/será $diafech"
+echo "El dia de la semana de la fecha indicada ($dia/$mes/$anio) fue/será $diafech."

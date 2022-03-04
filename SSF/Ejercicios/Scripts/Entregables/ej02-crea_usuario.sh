@@ -4,43 +4,41 @@
 #
 # NOMBRE: ej02-crea_usuario.sh
 #
-# OBJETIVO:
-# FECHA:08-02-2022
-# AUTOR: Guillermo Sicilia Hernández
+# OBJETIVO: imprimir los datos de usuario
+# FECHA: 28-02-2022
+# AUTOR: Guillermo y Denisse
 # 
-# ENTRADAS:
-# SALIDAS:
+# ENTRADAS(3): nombre, 1er apellido, nombre de usuario
+# SALIDAS: datos de usuario
 #
-# VERSIONES: 0.1
+# VERSIONES: 1.0
 #
 ##################################################################
  
 nombre=$1
 apellidos=$2
 usuario=$3
+
 if [ -z "$nombre" ]
 then
-	echo "No se ha introducido el valor para el nombre, introdúzcalo a continuación:"
-	read nombre
+	read -p "Tu nombre no ha sido introducido, introdúzcalo a continuación: " nombre
 fi
 if [ -z "$apellidos" ]
 then
-        echo "El valor de los apellidos no se ha introducido, introdúzcalo a continuación:"
-        read apellidos
+    read -p "El valor de los apellidos no se ha introducido, introdúzcalo a continuación: " apellidos
 fi
 if [ -z "$usuario" ]
 then
-        echo "El valor del usuario no se ha introducido, introdúzcalo a continuación"
-        read usuario
+    read -p "El valor del usuario no se ha introducido, introdúzcalo a continuación: " usuario
 fi
-if [ -z "$nombre" -o -z "$apellidos" -o -z "$usuario" ]
-#Una alternativa a la condición de este if sería: $# -ne 3
+
+if [ $# -ne 3 ]
 then
-        echo "Error, no se introdujo alguno de los valores"
-        exit 1
+	echo "Error404, no se han encontrado todos los parametros."
+	exit 1
 fi
 
 echo "Bienvenido, $nombre"
 echo "Tus datos son: $nombre $apellidos"
-echo "Vamos a crear tu usuario: $3"
+echo "Vamos a crear tu usuario: $usuario"
 echo "Tu nueva ID es: $RANDOM"

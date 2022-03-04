@@ -4,35 +4,28 @@
 #
 # NOMBRE: ej05-calcula_tiempos.sh
 #
-# OBJETIVO:
-# FECHA:08-02-2022
-# AUTOR: Guillermo Sicilia Hernández
+# OBJETIVO: devolver cuantos dias, horas, minutos y segundos
+# corresponden a los segundos indicados
+# FECHA: 28-02-2022
+# AUTOR: Guillermo y Denisse
 # 
-# ENTRADAS:
-# SALIDAS:
+# ENTRADAS(1): segundos
+# SALIDAS: los dias, horas, minutos y segundos que corresponden a
+# los segundos introducidos
 #
-# VERSIONES: 0.1
+# VERSIONES: 1.0
 #
 ##################################################################
  
 seg=$1
-if [ -z "$arg" ]
+if [ -z "$seg" ]
 then
-	echo "Introduce una cantidad de segundos para convertirlos:"
-	read seg
+	read -p "Introduce una cantidad de segundos para convertirlos: " seg
 fi
-if [ -z "$arg" ]
-then
-	echo "Error no se ha introducido el valor necesario para operar"
-	exit 1
-fi
-#equivalencias:
-#86400segundos 1 día
-#3600 segundos 1 hora
-#60 segundos 1 minuto
-dia=$(( $seg/86400 ))
-h=$((( $seg%86400)/3600 ))
-min=$(((($seg%86400)%3600)/60))
-segres=$(((($seg%86400)%3600)%60))
 
-echo "En $seg segundos hay $dia días, $h horas, $min minutos y $segres segundos"
+dia=$(( $seg/86400 ))
+horas=$((( $seg%86400)/3600 ))
+minutos=$(((($seg%86400)%3600)/60))
+segundos=$(((($seg%86400)%3600)%60))
+
+echo "$seg segundos son $dia día/s, $horas hora/s, $minutos minuto/s y $segundos segundos."

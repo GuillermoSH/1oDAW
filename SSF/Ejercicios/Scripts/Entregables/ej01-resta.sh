@@ -4,33 +4,32 @@
 #
 # NOMBRE: ej01-resta.sh
 #
-# OBJETIVO:
-# FECHA:08-02-2022
-# AUTOR: Guillermo Sicilia Hernández
+# OBJETIVO: pasar 2 argumentos y devolver la resta
+# FECHA: 28-02-2022
+# AUTOR: Guillermo y Denisse
 # 
-# ENTRADAS:
-# SALIDAS:
+# ENTRADAS(2): 2 numeros para la operacion
+# SALIDAS: resta de los dos numeros
 #
-# VERSIONES: 0.1
+# VERSION: 1.0
 #
 ##################################################################
 val1=$1
 val2=$2
+
 if [ -z "$val1" ]
 then
-	echo "El valor del primer parámetro no se ha introducido, introdúzcalo a continuación:"
-	read val1
+	read -p "El valor del primer parámetro no se ha introducido, introdúzcalo a continuación: " val1
 fi
+
 if [ -z "$val2" ]
 then
-	echo "El valor del segundo parámetro no se ha introducido, introdúzcalo a continuación"
-	read val2
+	read -p "El valor del segundo parámetro no se ha introducido, introdúzcalo a continuación: " val2
 fi
-if [ -z "$val1" -o -z "$val2" ]
-#Una alternativa a la condición de este if sería: $# -ne 2
-then
-	echo "Error, no se introdujo alguno de los valores"
-	exit 1
-fi
+
 #Realizamos la resta de los parámetros introducidos
-echo "La resta de $val1 - $val2 es:  $(( val1 - val2 ))"
+if [ "$val1" -gt "$val2" ] ; then
+    echo -e "La resta de $val1 - $val2 es: $(( val1 - val2 ))."
+else
+    echo -e "La resta de $val2 - $val1 es: $(( val2 - val1 ))."
+fi

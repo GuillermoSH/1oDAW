@@ -3,14 +3,14 @@
 ################################################################
 #
 # NOMBRE: menu.sh
-# AUTOR: Guillermo Sicilia Hernández
-# FECHA: 28-01-2022
+# AUTOR: Guillermo y Denisse
+# FECHA: 28-02-2022
 #
-# OBJETIVO: Pruebas de menú
-# ENTRADAS: Ninguna
-# SALIDAS: Operación elegida
+# OBJETIVO: pruebas de menú
+# ENTRADAS(1): opcion
+# SALIDAS: operación elegida
 #
-# VERSIONES: 0.1
+# VERSIONES: 1.0
 #
 ################################################################
 
