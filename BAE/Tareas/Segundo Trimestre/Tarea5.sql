@@ -105,7 +105,6 @@ VALUES ('P1','C1','T1',200),
 ('P5','C6','T4',500);
 
 |=================================== "4. CONSULTAS" ====================================|
-                    https://studylib.es/doc/4521827/ejercicios-sql-1-14
 
 1.  SELECT * FROM articulos WHERE ciudad='CACERES';
 
@@ -133,39 +132,38 @@ VALUES ('P1','C1','T1',200),
 
 13. SELECT p.ciudad,e.c,a.ciudad FROM envios e,proveedores p,articulos a WHERE e.p=p.p AND e.t=a.t;
 
-14. 
+14. SELECT p.ciudad,c,a.ciudad FROM envios e,proveedores p,articulos a WHERE e.p=p.p AND e.t=a.t AND p.ciudad<>a.ciudad;
 
+15. SELECT COUNT(*),COUNT(DISTINCT t),SUM(cantidad) FROM envios WHERE p='P2';
 
+16. SELECT c,t,SUM(cantidad) FROM envios GROUP BY c,t;
 
+17. SELECT DISTINCT e.t FROM envios e,articulos a WHERE e.t=a.t AND EXISTS (SELECT * FROM proveedores p WHERE p.ciudad!=a.ciudad AND p.p=e.p AND p.ciudad!='MADRID');
 
+18. SELECT DISTINCT p FROM envios WHERE c IN (SELECT c FROM envios WHERE p IN (SELECT p FROM envios NATURAL JOIN componentes WHERE color='ROJO'));
 
+19. SELECT DISTINCT t FROM envios WHERE c IN (SELECT c FROM envios GROUP BY c HAVING AVG(cantidad)>320);
 
+20. SELECT DISTINCT p FROM envios e WHERE cantidad>(SELECT AVG(cantidad FROM envios b WHERE b.c=e.c));
 
+21. SELECT c FROM envios WHERE t='T2' AND p='P2';
 
+22. SELECT e.* FROM envios e NATURAL JOIN componentes WHERE color<>'ROJO';
 
+23. SELECT c FROM envios WHERE t='T1' INTERSECT SELECT c FROM envios WHERE t='T2';
 
+24. SELECT p,COUNT(*) FROM envios WHERE c IN (SELECT c FROM componentes WHERE color='ROJO') GROUP BY p;
 
+25. SELECT DISTINCT color FROM componentes WHERE c IN (SELECT DISTINCT c FROM envios WHERE p='P1');
 
+26. SELECT e.*,c.ciudad FROM envios e,componentes c,articulos a,proveedores p WHERE e.t=a.t AND e.c=c.c AND e.p=p.p AND p.ciudad=c.ciudad AND p.ciudad=a.ciudad;
 
+27. SELECT DISTINCT cnombre FROM componentes WHERE c IN (SELECT c FROM envios GROUP BY c HAVING SUM(cantidad)>500);
 
+28. SELECT p FROM proveedores WHERE ciudad='SEVILLA' MINUS (SELECT p FROM envios GROUP BY p HAVING COUNT(DISTINCT t)>2);
 
+29. SELECT t FROM envios e,componentes c WHERE e.c=c.c GROUP BY t HAVING COUNT(DISTINCT ciudad)=1;
 
+30. SELECT t FROM envios GROUP BY t HAVING COUNT(DISTINCT c)=(SELECT COUNT(*) FROM componentes);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+31. SELECT p,t FROM envios e,componentes c WHERE e.c=c.c AND c.color='ROJO' GROUP BY p,t HAVING COUNT(*)>1;

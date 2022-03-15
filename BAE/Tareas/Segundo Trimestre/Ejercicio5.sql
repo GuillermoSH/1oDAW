@@ -218,9 +218,3 @@ VALUES ('111222',NULL,'16/06/96',NULL,'222333',NULL);
         ~~ RES: ERROR 1048 (23000): Column 'trabajo_cod' cannot be null ~~
 
 |============================== "3. MODIFY SIN SENTIDO" ================================|
-
-
-
-
-
-

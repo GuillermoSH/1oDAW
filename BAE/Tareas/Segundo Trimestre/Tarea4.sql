@@ -45,11 +45,11 @@ VALUES ('1','BRE2271','BRENDA','M','2','brenda@live.com','655-330-5736','SAMSUNG
 
 1.  SELECT nombre FROM usuarios;
 
-2.  SELECT nombre,MAX(saldo) FROM usuarios WHERE sexo='M';
+2.  SELECT MAX(saldo) FROM usuarios WHERE sexo='M';
 
 3.  SELECT nombre,telefono FROM usuarios WHERE marca IN('NOKIA','BLACKBERRY','SONY');
 
-4.  SELECT COUNT(usuario) FROM usuarios WHERE saldo<=0 OR activo=0;
+4.  SELECT COUNT(usuario) FROM usuarios WHERE saldo<=0 OR NOT activo;
 
 5.  SELECT usuario FROM usuarios WHERE nivel IN (1,2,3);
 
@@ -92,3 +92,55 @@ VALUES ('1','BRE2271','BRENDA','M','2','brenda@live.com','655-330-5736','SAMSUNG
 23. SELECT usuario FROM usuarios WHERE nivel IN(0,2);
 
 24. SELECT AVG(saldo) FROM usuarios WHERE marca='LG';
+
+"BLOQUE 3.-"
+
+25. SELECT usuario FROM usuarios WHERE nivel IN(1, 3);
+
+26. SELECT nombre, telefono FROM usuarios WHERE marca<>"BLACKBERRY";
+
+27. SELECT usuario FROM usuarios WHERE nivel = 3;
+
+28. SELECT usuario FROM usuarios WHERE nivel = 0;
+
+29. SELECT usuario FROM usuarios WHERE nivel = 1;
+
+30. SELECT sexo, COUNT(*) FROM usuarios GROUP BY sexo;
+
+31. SELECT usuario, telefono FROM usuarios WHERE compañia="AT&T";
+
+32. SELECT DISTINCT compañia FROM usuarios ORDER BY compañia DESC;
+
+33. SELECT usuario FROM usuarios WHERE NOT activo;
+
+34. SELECT telefono FROM usuarios WHERE saldo=0;
+
+35. SELECT MIN(saldo) FROM usuarios WHERE sexo='H';
+
+36. SELECT telefono FROM usuarios WHERE saldo>300;
+
+"BLOQUE 4.-"
+
+37. SELECT marca,COUNT(*) FROM usuarios GROUP BY marca;
+
+38. SELECT nombre,telefono FROM usuarios WHERE marca<>"LG";
+
+39. SELECT DISTINCT compañia FROM usuarios ORDER BY compañia ASC;
+
+40. SELECT SUM(saldo) FROM usuarios WHERE compañia='UNEFON';
+
+41. SELECT email FROM usuarios WHERE email LIKE "%hotmail.com";
+
+42. SELECT nombre FROM usuarios WHERE NOT activo OR saldo<=0;
+
+43. SELECT usuario, telefono FROM usuarios WHERE compañia IN('IUSACELL','TELCEL');
+
+44. SELECT DISTINCT marca FROM usuarios ORDER BY marca DESC;
+
+45. SELECT DISTINCT marca FROM usuarios ORDER BY RAND();
+
+46. SELECT usuario, telefono FROM usuarios WHERE compañia IN('IUSACELL','UNEFON');
+
+47. SELECT nombre, telefono FROM usuarios WHERE marca NOT IN('MOTOROLA','NOKIA');
+
+48. SELECT SUM(saldo) FROM usuarios WHERE compañia='TELCEL';
