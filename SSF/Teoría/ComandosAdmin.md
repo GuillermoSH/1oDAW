@@ -54,9 +54,11 @@ Las características principales son:
 - Disponibles siempre (no bajo demanda).
 - Realizan funciones del sistema.
 
-Los servicios pueden acabar en 'd', un ejemplo es "crond" o "atd", y esto significará que son demonios. Esto también se aplica a servidores "httpd".
+Los servicios pueden acabar en 'd', un ejemplo es "crond" o "atd", y esto significará que son demonios. Esto también 
+se aplica a servidores "httpd".
     
-Los servicios dependen unos de los otros, por eso que sean tan dificiles de matar, por lo que en cuanto el servicio que dependa del otro vea que no responde lo intenta revivir.
+Los servicios dependen unos de los otros, por eso que sean tan dificiles de matar, por lo que en cuanto el servicio que
+dependa del otro vea que no responde lo intenta revivir.
 
 ```
 at                              programar ejecuciones de comando
@@ -87,11 +89,39 @@ Ejemplos:
 systemctl list init
           start (servicio)      inicia un servicio.
           unmask (servicio)     desenmascara el servicio.
-          restart (servicio)    para reiniciar servicios automáticamente con motivo de hacer cambios en la configuración del servicio.
-          reload (servicio)     para reiniciar servicios automáticamente con motivo de hacer cambios en la configuración del servicio, pero sin pararlo.
+          restart (servicio)    para reiniciar servicios automáticamente con motivo de hacer cambios en la configuración 
+                                del servicio.
+          reload (servicio)     para reiniciar servicios automáticamente con motivo de hacer cambios en la configuración
+                                del servicio, pero sin pararlo.
           stop (servicio)       para un servicio.
           status (servicio)     nos da informacion sobre el servicio.
+          is-active (servicio)  revisa que un servicio esta activo o no.
+          is-enable (servicio)  revisa que un servicio esta habilitado para iniciarse cuando la máquina lo hace o no.
+          enable (servicio)     habilita un servicio para que se inicie junto a la máquina.
+          mask (servicio)       enmascara un servicio, es decir, no deja que el sistema ni otros servicios inicien ese 
+                                servicio.
           
-systemctl try-reload-or-restart (servicio)
-          
+systemctl try-reload-or-restart (servicio)      intenta primero recargar el servicio y si no lo reinicia (solo si esta 
+                                                activo, si quieres iniciarlo también usa 'reload-or-restart' simplemente).
+systemctl list-units --type=service             ve todos los servicios.
+systemctl is-active (servicio) ; echo $?        si es 0 está activo y si da superior a 0 está inactivo.
+
 ```
+> Un servicio "masked" bloquea cualquier intento de iniciar ese servicio.
+---
+**Niveles de ejecución.-**
+
+Niveles estandar:
+- 0  ->  modo apagado.
+- 1  ->  monousuario: root,no hay red, no hay entorno gráfico.
+- 6  ->  modo reinicio.
+
+Otros niveles:
+- 2  ->  multiusuario: root, no hay red, no hay entorno gráfico.
+- 3  ->  multiusuario: root, con red, no hay entorno gráfico.
+- 4  ->  experimental.
+- 5  ->  multiusuario: root, con red y con entorno gráfico.
+```
+systemctl runlevel(nivel)   inicia la maquina con el nivel que se le asigne
+```
+
