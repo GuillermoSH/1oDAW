@@ -1,0 +1,4 @@
+Exportar BBDD: mysql -u username -p database_name > data_dump.sql
+                                     "nombre bbdd"  "nombre que le vamos a dar"
+
+Importar BBDD: mysql -u username -p new_database > data_dump.sql
