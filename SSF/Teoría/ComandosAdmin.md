@@ -41,7 +41,7 @@ apt remove vlc                  quita solo el repositorio de vlc sin quitar toda
 aptitude                        igual que el apt pero con una interfaz gráfica
 ```
 
-<h2>SERVICIOS Y DEMONIOS.-</h2>
+<h2>SERVICIOS Y DEMONIOS LINUX.-</h2>
 
 <h4>Características.-</h4>
 
@@ -124,4 +124,35 @@ Otros niveles:
 ```
 systemctl runlevel(nivel)   inicia la maquina con el nivel que se le asigne
 ```
+---
+**Usuarios.-**
 
+La gran mayoría de los usuarios del sistema los crean los servicios. Los servicios normalmente se arrancar con el usuario root, es decir, el usuario real, y en cuanto el servicio está totalmente arrancado se para a otro usuario con permisos limitados, un usuario efectivo.
+
+<h2>SERVICIOS Y DEMONIOS LINUX.-</h2>
+
+<h4>TIPO DE INICIO.-</h4>
+
+```
+WINDOWS         LINUX       DESCRIPCIÓN
+______________  __________  __________________________________________________
+auto            enable      se inicia con el arranque del sistema
+demand          disabled    no se iniciará con el arranque del sistema
+disabled        masked      el sistema ni otro servicio podrán levantarlo
+delayed-auto                inicio retardado
+```
+**Commandos:**
+
+```
+sc query                                                lista todos los servicios en "cola" existentes con su información.
+sc query | find "NOMBRE_SERVICIO" | find /v "" /c       cantidad de servicios existentes.
+sc query | find "NOMBRE_SERVICIO" | find /i "servicio"  encuentra todo servicio que contenga "servicio" en su nombre.
+sc query "servicio"                                     muestra la información del servicio.
+sc query state="inactive"                               muestra la lista de servicios inactivos.
+sc start "servicio"                                     arranca un servicio.
+sc pause "servicio"                                     pausa un servicio.
+sc qfailure "servicio"                                  protocolo que realiza el servicio en caso de error.
+sc qc "servicio"                                        información de arranque del servicio.
+sc qdescrition "servicio"                               descripción del servicio.
+sc config "servicio"                                    muestra las opciones de configuración del servicio.
+```
