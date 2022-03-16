@@ -1,0 +1,47 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'1.7'
+-sourcepath
+'/home/daw/Escritorio/ejercicioEts/ejercicioets/area/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'${etiqueta-hijo} area 1.0.0 API'
+-linkoffline
+'https://docs.oracle.com/javase/7/docs/api' '/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'${etiqueta-hijo} area 1.0.0 API'
+es.iespuerto.area
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/src/main/java = 1647442572855
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/package-search-index.js = 1647444066254
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/allpackages-index.html = 1647444066270
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/deprecated-list.html = 1647444066274
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/index-all.html = 1647444066262
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/type-search-index.js = 1647444066262
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/search.js = 1647444066282
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/member-search-index.zip = 1647444066262
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/member-search-index.js = 1647444066262
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/package-search-index.zip = 1647444066262
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/index.html = 1647444066274
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/stylesheet.css = 1647444066282
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/element-list = 1647444066182
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/constant-values.html = 1647444066210
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/type-search-index.zip = 1647444066262
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/overview-tree.html = 1647444066242
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/script.js = 1647444066282
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/allclasses-index.html = 1647444066266
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/help-doc.html = 1647444066278
+/home/daw/Escritorio/ejercicioEts/ejercicioets/area/target/site/apidocs/allclasses.html = 1647444066274
