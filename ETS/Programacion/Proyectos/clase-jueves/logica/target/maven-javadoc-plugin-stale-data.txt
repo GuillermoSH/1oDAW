@@ -1,0 +1,47 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'1.7'
+-sourcepath
+'/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Modulo logica 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/7/docs/api' '/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Modulo logica 1.0-SNAPSHOT API'
+es.iespuerto.ets
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/src/main/java = 1646939748710
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/allclasses-index.html = 1646941302166
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/allclasses.html = 1646941302176
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/allpackages-index.html = 1646941302169
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/constant-values.html = 1646941302125
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/deprecated-list.html = 1646941302174
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/element-list = 1646941302106
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/help-doc.html = 1646941302182
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/index-all.html = 1646941302161
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/index.html = 1646941302178
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/member-search-index.js = 1646941302159
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/member-search-index.zip = 1646941302159
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/overview-tree.html = 1646941302141
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/package-search-index.js = 1646941302148
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/package-search-index.zip = 1646941302155
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/script.js = 1646941302187
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/search.js = 1646941302189
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/stylesheet.css = 1646941302185
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/type-search-index.js = 1646941302157
+/media/daw/Toshiba DDe/Programacion/ETS/Programacion/Proyectos/clase-jueves/logica/target/site/apidocs/type-search-index.zip = 1646941302158
