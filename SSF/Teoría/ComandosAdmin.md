@@ -129,7 +129,7 @@ systemctl runlevel(nivel)   inicia la maquina con el nivel que se le asigne
 
 La gran mayoría de los usuarios del sistema los crean los servicios. Los servicios normalmente se arrancar con el usuario root, es decir, el usuario real, y en cuanto el servicio está totalmente arrancado se para a otro usuario con permisos limitados, un usuario efectivo.
 
-<h2>SERVICIOS Y DEMONIOS LINUX.-</h2>
+<h2>SERVICIOS Y DEMONIOS WINDOWS.-</h2>
 
 <h4>TIPO DE INICIO.-</h4>
 
