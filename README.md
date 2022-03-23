@@ -21,4 +21,4 @@
 - [**:floppy_disk: SSF.**](/SSF)
   - [Ejercicios](https://github.com/GuillermoSH/1oDAW/tree/main/SSF/Ejercicios)
     - [Scripts](https://github.com/GuillermoSH/1oDAW/tree/main/SSF/Ejercicios/Scripts)
-  - [Teoría](https://github.com/GuillermoSH/1oDAW/tree/main/SSF/Teoria)
+  - [Teoría](https://github.com/GuillermoSH/1oDAW/tree/main/SSF/Teoría)
