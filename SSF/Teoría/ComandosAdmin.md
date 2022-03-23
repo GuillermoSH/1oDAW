@@ -156,3 +156,12 @@ sc qc "servicio"                                        información de arranque
 sc qdescrition "servicio"                               descripción del servicio.
 sc config "servicio"                                    muestra las opciones de configuración del servicio.
 ```
+
+**Ejecución de tareas programadas en Windows**
+
+```
+schtasks                                                muestra las tareas programadas del sistema
+schtasks /Create /?                                     muestra las opciones de creación de tareas
+
+schtasks /create /tn Prueba /tr "rutaPrograma" /st 21:15 /sc once  ➡️  realiza una tarea "Prueba" que está en "rutaPrograma" una sola vez a las 21:15
+```
