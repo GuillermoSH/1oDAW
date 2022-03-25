@@ -1,5 +1,3 @@
-package main.java;
-
 /**
  * 4.- Método que reciba dos arrays de números enteros ordenados y devuelve un único array con todos los
  * elementos de los dos arrays ordenados.

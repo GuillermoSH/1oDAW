@@ -1,0 +1,20 @@
+Real Madrid,Atlético Madrid,2
+Real Sociedad,Betis,2
+Sevilla,Alavés,1
+Valencia,Villarreal,1
+Athletic Bilbao,Getafe,1
+Levante,Osasuna,X
+Barcelona,Celta de Vigo,2
+Real Madrid,Real Sociedad,1
+Betis,Sevilla,1
+Valencia,Getafe,X
+Levante,Elche,2
+Tenerife,Las Palmas,X
+Barcelona,Alavés,1
+Celta de Vigo,Atlético Madrid,2
+Athletic Bilbao,Villarreal,X
+Osasuna,Cádiz,1
+Real Madrid,Getafe,2
+Betis,Tenerife,1
+Las Palmas,Sevilla,1
+Mallorca,Levante,2

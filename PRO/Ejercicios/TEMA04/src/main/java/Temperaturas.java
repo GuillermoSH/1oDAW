@@ -1,4 +1,5 @@
-package main.java;
+import java.io.*;
+import java.util.Scanner;
 
 /**
  * 5.- Ver el vídeo https://youtu.be/0_PO-77gu_E. Diseñar una matriz bidimensional de 12 filas
@@ -16,13 +17,32 @@ package main.java;
  *   d) El día más frío del año.
  * 
  * @author Guillermo Sicilia Hernández
- * @version 0.1
+ * @version 0.2
  */
 public class Temperaturas {
-    static int temperaturas[][]=new int[12][];
+    static int temperaturas[][]=new int[12][31];
 
-    public static void leerDatos(){
-        String fichero="/rutaAbsoluta";
+    /**
+     * Método para leer los datos de ambas columnas desde un fichero de texto. Para ello leeremos el fichero y
+     * dividiremos sus columnas de datos en datos por separado (meses y temperaturas) para poder usarlos luego en
+     * otros métodos.
+     * @throws FileNotFoundException Error de lectura de fichero, no se encuentra o no existe.
+     */
+    public static void leerDatos() throws FileNotFoundException {
+        File archivo=null;
+        try {
+            archivo=new File("D:\\Tema04-ExtraArrays.E05.DatosTemperaturas.txt"); // apertura del fichero
+            String linea="";
+            while(linea!=null){
+                for(int i=0;i<temperaturas[0].length;i++){
+                    for(int j=0;j<temperaturas[0].length;j++){
+                        //temperaturas[i][j]="la tabla del archivo";
+                    }
+                }
+            }
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void medias(){
@@ -39,19 +59,20 @@ public class Temperaturas {
 
     public static int[] mediasV2(){
         int res[]=new int[temperaturas.length];
-        int suma;
 
         for(int i=0;i<temperaturas.length;i++){ //recorro meses
-            suma=0;
             for(int j=0;j<temperaturas.length;j++){
-                suma+=temperaturas[i][j];
+                res[i]+=temperaturas[i][j];
             }
         }
         return res;
     }
 
     public static void main(String args[]){
-        leerDatos();
-        medias();
+        try {
+            leerDatos();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

@@ -14,7 +14,7 @@
  * Utilizar un fichero de texto para la entrada igual que se hizo en ejercicios anteriores
  * 
  * @author Guillermo Sicilia Hernández
- * @version 0.1
+ * @version 0.2
  */ 
 public class Burbuja {
     public static void swap(int v[], int i, int j){
@@ -36,5 +36,20 @@ public class Burbuja {
                 }
             }
         }
+        System.out.print("Este es su vector ordenado: ");
+        for(i=0;i<vector.length;i++){
+            System.out.print("  "+vector[i]);
+        }
+    }
+
+    public static void main(String args[]){
+        int vector[]={12,1,5,3,14,13,24,21};
+        
+        System.out.print("\nEste es su vector desordenado: ");
+        for(int i=0;i<vector.length;i++){
+            System.out.print("  "+vector[i]);
+        }
+        System.out.println("\n");
+        burbuja(vector);
     }
 }
