@@ -165,3 +165,58 @@ schtasks /Create /?                                     muestra las opciones de 
 
 schtasks /create /tn Prueba /tr "rutaPrograma" /st 21:15 /sc once  ➡️  realiza una tarea "Prueba" que está en "rutaPrograma" una sola vez a las 21:15
 ```
+
+---
+
+### Alias.-
+
+> /etc/profile.d ve los ficheros de consiguracion de las shells
+
+Se programan en la carpeta /etc/bash.bashrc para bash.
+
+```
+alias=`comando que quieres ejecutar`
+```
+
+---
+
+## COMANDOS DE EVENTOS.-
+
+El comando watch ejecutará un comando cada cierto tiempo, sin que sean alias (no los reconoce):
+> watch -n SEGUNDOS -d COMANDO
+
+---
+
+### AT:
+
+Estructura del comando:
+
+> at 'absoluto' + 'relativo' 
+> absoluto = now, tomorrow, noon, teatime, midnight, next month/week/year
+> relativo = minute,hour
+
+El 'at' se ejecuta en una terminal "virtual", para poder ver las salidas hay que redirigirla.
+
+---
+
+### CRON:
+
+```
+crontab -l                      lista los eventos programados
+crontab -e                      edita el archivo de eventos
+crontab -r                      borra los eventos programados
+
+Formato de programación de eventos
+        m       h       dom     mon     dow     command
+ej:     45      16      *       *       *       cmd         todos los dias se ejecuta cmd a las 16:45
+        45      16      6-9     *       1       cmd         todos los dias del verano se ejecuta cmd a las 16:45
+        45      16      1,4,7,9 *       *       cmd         todos los 1,4,7,9 de cada mes se ejecuta cmd
+        10      */2     *       *       *       cmd         cada 2h iniciando desde la hora 0 se ejecuta cmd
+        0       3/5     *       *       *       cmd         cada 3 horas a partir de la hora 3 se ejecuta cmd
+        
+@reboot comando                                             cada inicio de la máquina se ejecuta
+@monthly comando                                            cada mes
+
+```
+
+[crontab.guru](https://crontab.guru/) es una página que comprueba la ejecución de los eventos.
