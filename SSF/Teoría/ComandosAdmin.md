@@ -124,10 +124,6 @@ Otros niveles:
 ```
 systemctl runlevel(nivel)   inicia la maquina con el nivel que se le asigne
 ```
----
-**Usuarios.-**
-
-La gran mayoría de los usuarios del sistema los crean los servicios. Los servicios normalmente se arrancar con el usuario root, es decir, el usuario real, y en cuanto el servicio está totalmente arrancado se para a otro usuario con permisos limitados, un usuario efectivo.
 
 <h2>SERVICIOS Y DEMONIOS WINDOWS.-</h2>
 
@@ -220,3 +216,38 @@ ej:     45      16      *       *       *       cmd         todos los dias se ej
 ```
 
 [crontab.guru](https://crontab.guru/) es una página que comprueba la ejecución de los eventos.
+
+## Usuarios.-
+
+La gran mayoría de los usuarios del sistema los crean los servicios. Los servicios normalmente se arrancar con el usuario root, es decir, el usuario real, y en cuanto el servicio está totalmente arrancado se para a otro usuario con permisos limitados, un usuario efectivo.
+
+`/etc/passwd` muestra la información sobre usuarios
+
+`/etc/shadow` muestra las contraseñas de usuarios
+
+`/etc/group` muestra información sobre los grupos
+
+Información sobre usuarios:
+
+1) login: nombre usuario
+2) contraseña * : 
+3) UID (user id): id del usuario
+4) GID: se coge el grupo primario que si no se modifica será igual al nombre de usuario
+5) GECOS: información extra de los usuarios
+6) Home: el espacio personal 
+7) shell: shell desde la cuál se ejecuta el usuario
+
+**Diferenciación de usuarios.-**
+
+`0` ------> root
+
+`1-999` --> sistema
+
+`>=1000` -> usuarios reales
+
+**Información sobre contraseñas.-**
+
+`X` --> con contraseña: el $6$ por ejemplo, es el algoritmo de encriptado de la contraseña
+`*` --> sin contraseña asignada (no puedes usar el usuario)
+`!` --> bloqueado
+`!!` -> sin contraseña y bloqueado
