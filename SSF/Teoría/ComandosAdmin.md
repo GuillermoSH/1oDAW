@@ -100,6 +100,7 @@ systemctl list init
           enable (servicio)     habilita un servicio para que se inicie junto a la máquina.
           mask (servicio)       enmascara un servicio, es decir, no deja que el sistema ni otros servicios inicien ese 
                                 servicio.
+journalctl                      ver los logs del sistema                     
           
 systemctl try-reload-or-restart (servicio)      intenta primero recargar el servicio y si no lo reinicia (solo si esta 
                                                 activo, si quieres iniciarlo también usa 'reload-or-restart' simplemente).
@@ -217,7 +218,7 @@ ej:     45      16      *       *       *       cmd         todos los dias se ej
 
 [crontab.guru](https://crontab.guru/) es una página que comprueba la ejecución de los eventos.
 
-## Usuarios.-
+## USUARIOS LINUX.-
 
 La gran mayoría de los usuarios del sistema los crean los servicios. Los servicios normalmente se arrancar con el usuario root, es decir, el usuario real, y en cuanto el servicio está totalmente arrancado se para a otro usuario con permisos limitados, un usuario efectivo.
 
@@ -226,6 +227,11 @@ La gran mayoría de los usuarios del sistema los crean los servicios. Los servic
 `/etc/shadow` muestra las contraseñas de usuarios
 
 `/etc/group` muestra información sobre los grupos
+
+```
+who                     te da informacion sobre el usuario
+w                       te da la informacion sobre el usuario y lo que está ejecutando en ese momento
+```
 
 Información sobre usuarios:
 
@@ -248,6 +254,62 @@ Información sobre usuarios:
 **Información sobre contraseñas.-**
 
 `X` --> con contraseña: el $6$ por ejemplo, es el algoritmo de encriptado de la contraseña
+
 `*` --> sin contraseña asignada (no puedes usar el usuario)
+
 `!` --> bloqueado
+
 `!!` -> sin contraseña y bloqueado
+
+**Mensajes del sistema por niveles.-**
+
+```
+1. CRITICAL --> puede llegar a cargarse el sistema
+2. ERROR -----> no se ejecuta                        (rojo)
+3. WARNING ---> hay algo raro                        (amarillo)
+4. INFO ------> da informacion de la situacion       (azul)
+5. DEBUG -----> mensajes de depuracion
+```
+
+**Permisos ACL.-**
+
+ACCESS CONTROL LIST: 
+
+Se ve reflejado en los permisos del fichero como un '+':
+
+-rw-rw-r--+ <-- aquí
+
+```
+getfacl "fichero"                                           ver permisos del fichero
+setfactl -m (usuario):(nombreusuario):(permiso) "fichero"   asignar permisos especiales a un usuario en especifico
+
+Ejemplos:
+setfacl -m u:ssf4:4 hola.txt
+getfacl hola.txt
+```
+
+## USUARIOS WINDOWS.-
+
+**WINDOWS ACTIVE DIRECTORY.-**
+
+```
+net user(s)                                                 usuarios del sistema
+net user /?                                                 help
+net user "nombre" /add                                      añadir usuario
+net user "nombre"                                           información específica del usuario
+net user "nombre" * /add                                    pregunta por la contraseña
+net user "nombre" /times:lunes-viernes,2pm-9pm              set de horario para el usuario
+net user "nombre" /active:yes                               activa el usuario
+net localgroup                                              grupos del sistema local
+net localgroup "nombre" /add                                quita "nombre" de los grupos locales
+net localgroup "nombre" /delete                             añade "nombre" a los grupos locales
+net localgroup Administradores "nombre" /add                añadir "nombre" al grupo de administradores
+net localgroup Usuarios "nombre" /delete                    quita a "nombre" del grupo usuarios
+net localgroup Administradores                              lista los miembros del grupo Administradores
+net acount(s)                                               configuración de las contraseñas
+net accounts /?                                             help
+net accounts /minpwage:8                                    longitud mínima de la contraseña
+gpedit                                                      entorno gráfico de configuracion de contraseñas
+```
+
+USER ACCOUNT CONTROL (UAC): interfaz de comprobacion de que se va a ejecutar algo con permisos de administrador
