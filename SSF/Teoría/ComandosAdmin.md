@@ -313,3 +313,26 @@ gpedit                                                      entorno gráfico de 
 ```
 
 USER ACCOUNT CONTROL (UAC): interfaz de comprobacion de que se va a ejecutar algo con permisos de administrador
+
+**DISCOS LINUX.-**
+
+Los discos instalados en Linux se encuentran en /dev y se denotarán como sd (sata disk). El primero será sda el siguiente sdb y las particiones serán las siguientes: sda1 sda2 sdb1 sdb2.
+
+Para la instalación de Windows en un disco MBR se consumiran las primeras 3 particiones primarias en el EFI, Windows en sí y un sistema de recuperación del sistema. La cuarta partición es la extendida y contendrá particiones lógicas.
+
+Pasos para montar un disco:
+
+1) Esquema de particionado: GPT o MBR (msdos)
+2) Particionar
+3) Asignar Sistema de Ficheros: NTFS, FAT32,...
+4) Formatear
+5) Montarlo
+
+```
+fdisk -l                                                    lista los discos en el sistema
+mkfs."sistema de ficheros"                                  particionado de discos
+gparted                                                     entorno gráfico para particionado de discos
+mount                                                       ver discos montados del sistema
+mount "ruta disco" "ruta link montado"                      montar un disco teniendo que ser superusuario, ej: mount /dev/sdc1 /mnt/ssf/disco2
+pmount                                                      monta discos sin necesidad de permisos de superusuario
+```
