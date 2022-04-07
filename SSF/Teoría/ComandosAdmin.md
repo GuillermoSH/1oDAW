@@ -314,7 +314,7 @@ gpedit                                                      entorno gráfico de 
 
 USER ACCOUNT CONTROL (UAC): interfaz de comprobacion de que se va a ejecutar algo con permisos de administrador
 
-**DISCOS LINUX.-**
+## DISCOS LINUX.-
 
 Los discos instalados en Linux se encuentran en /dev y se denotarán como sd (sata disk). El primero será sda el siguiente sdb y las particiones serán las siguientes: sda1 sda2 sdb1 sdb2.
 
