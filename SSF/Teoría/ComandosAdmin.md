@@ -288,6 +288,8 @@ setfacl -m u:ssf4:4 hola.txt
 getfacl hola.txt
 ```
 
+---
+
 ## USUARIOS WINDOWS.-
 
 **WINDOWS ACTIVE DIRECTORY.-**
@@ -313,6 +315,8 @@ gpedit                                                      entorno gráfico de 
 ```
 
 USER ACCOUNT CONTROL (UAC): interfaz de comprobacion de que se va a ejecutar algo con permisos de administrador
+
+---
 
 ## DISCOS LINUX.-
 
