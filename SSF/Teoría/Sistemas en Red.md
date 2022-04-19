@@ -137,3 +137,11 @@ Capas OSI:
 2. ENLACE (distribucion local)                2. ENLACE               <-- ACE
 1. FISICO                                     1. FISICO               <-- FISICO
 ```
+
+1. Fisico: 0 y 1 (Bits)
+2. Enlace: comunicacion con todos los equipos de area local (Tramas)
+3. Red: diseña el camino que debe llevar el mensaje hasta el destinatario (hace su mejor intento) (Paquetes o datagramas)
+4. Transporte: divide el mensaje en trozos mas pequeños y controla que llegue a su destinatario. (Segmentos)
+5. Sesion: controla que las sesiones esten iniciadas y los niveles de privacidad (DATOS)
+6. Presentacion: decide como se lleva el mensaje (PPD)
+7. Aplicación: app de comunicación con el cliente (APDU)
