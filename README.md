@@ -19,6 +19,7 @@
 - [**:bar_chart: BAE.**](/BAE)
   - [Primer Trimestre](https://github.com/GuillermoSH/1oDAW/tree/main/BAE/Tareas/Primer%20Trimestre)
   - [Segundo Trimestre](https://github.com/GuillermoSH/1oDAW/tree/main/BAE/Tareas/Segundo%20Trimestre)
+  - [Tercer Trimestre](https://github.com/GuillermoSH/1oDAW/tree/main/BAE/Tareas/Tercer%20Trimestre)
 - [**:floppy_disk: SSF.**](/SSF)
   - [Ejercicios](https://github.com/GuillermoSH/1oDAW/tree/main/SSF/Ejercicios)
     - [Scripts](https://github.com/GuillermoSH/1oDAW/tree/main/SSF/Ejercicios/Scripts)
