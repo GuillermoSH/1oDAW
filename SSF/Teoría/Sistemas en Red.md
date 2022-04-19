@@ -33,13 +33,18 @@ TransductorEntrada      Emisor                  Canal                     Recept
 
 #### Por área:
 
-  - **LAN** (Local Area Network) desde 10m hasta 1km. Son independientes las unas de las otras.
-  - **MAN** (Metropolitan Area Network) desde 10km hasta 100km.
-  - **WAN** (World Area Network) 1000km
-  - **SAN** (Storage Area Network) son redes de almacenaje. Un ejemplo son los NAS
+  - **LAN** (Local Area Network) desde 10m hasta 1km. Son independientes las unas de las otras. Ethernet.
+  - **MAN** (Metropolitan Area Network) desde 10km hasta 100km. Fibra óptica.
+  - **WAN** (World Area Network) 1000km.
+  - **SAN** (Storage Area Network) son redes de almacenaje. Un ejemplo son los NAS.
   - **PAN** (Personal Area Network) desde 1m hasta 10m. Bluetooth es un ejemplo.
+  - **CAN** (Controller Area Network)
+  - **HAN** (Home Area Network) casas domotizadas
 
-Cuando contienen W delante de cada tipo de red significará que son "Wireless".
+Cuando contienen W delante de cada tipo de red significará que son "Wireless". 
+
+  - WiFi (Wireless Fidelity).
+  - WiMax (Worldwide Interoperability for Microwave Access).
 
 <div align="center">
   <img src="https://github.com/GuillermoSH/1oDAW/blob/main/Imagenes/tipos-de-redes-de-computadoras.jpg" width="50%"/>
@@ -59,15 +64,17 @@ Cuando contienen W delante de cada tipo de red significará que son "Wireless".
 
 #### Por relación funcional:
 
-  - Cliente-servidor: equipos especiales que solo realizan una acción.
-  - P2P (peer-to-peer): todos los equipos son iguales
+  - Cliente-servidor: equipos especiales que solo realizan una acción. (Empresas con servidor centralizado) 
+  - P2P (peer-to-peer): todos los equipos son iguales. (Utorrent)
 
 #### Por grado de autentificación:
 
-  - Red de acceso público: Internet
+  - Red de acceso público: Internet (extranet)
   - Red privada: Intranet
 
-#### Por topología de red:
+La mezcla de ambas redes se denomina DMZ (Zona desmilitarizada).
+
+#### Por topología física de red:
 
   - Estrella: un equipo es el central y el resto de equipos se conectan al central. Cables usados son n-1 y desventaja que si se rompe el central la red se va con el.
   - Bus: solo un cable y se conectan todos los equipos a ese cable. Desventajas que si uno esta usando la red el resto no podrán acceder.
@@ -75,13 +82,13 @@ Cuando contienen W delante de cada tipo de red significará que son "Wireless".
   - Anillo: se conectan por un cable entre todos pero en circulo no lineal como el bus.
   - Árbol: se conectan de forma jerarquica.
 
-### Transmisión de mensajes.-
+### Por topología lógica de red:
 
   - Difusión o broadcast: todos los equipos de la red ven el mensaje
 
   - Token: va pasando por los equipos hasta llegar a su receptor
 
-### Protocolos y estándares.-
+### Protocolos y estándares:
 
   - Protocolos de comunicaciones: 
   - Estandares de red:
@@ -90,23 +97,25 @@ Cuando contienen W delante de cada tipo de red significará que son "Wireless".
 
 #### Organismos reguladores de ambito internacional:
 
-ITU
-ONU
-ISO
-IEEE
+  - ONU - ITU (International Telecommunication Union)
+  - ISO (International Organization for Standardization)
+  - IEEE (Institute of Electrical and Electronics Engineers)
 
 #### Organismos reguladores de EEUU:
 
+  - ANSI (American National Standards Institute)
+  - TIA (Technology Innovation Agency)
+
 #### Organismos reguladores de Europa:
 
-CEN (Comité Europeo de Normalización)
-CENELEC (Comite Europeo de Normalización Electrotécnica)
-ETSI (Instituto Europeo de Estándares de Telecomunicaciones)
+  - CEN (Comité Europeo de Normalización)
+  - CENELEC (Comite Europeo de Normalización Electrotécnica)
+  - ETSI (Instituto Europeo de Estándares de Telecomunicaciones)
 
 #### Organismos reguladores de España:
 
-CTN (Comités Técnicos de Normalización)
-AENOR (Asociación Española de Normalización y Certificación)
+  - CTN (Comités Técnicos de Normalización)
+  - AENOR (Asociación Española de Normalización y Certificación)
 
 ### Arquitecturas de red basadas en capas.-
 
