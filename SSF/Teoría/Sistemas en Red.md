@@ -145,3 +145,23 @@ Capas OSI:
 5. Sesion: controla que las sesiones esten iniciadas y los niveles de privacidad (DATOS)
 6. Presentacion: decide como se lleva el mensaje (PPD)
 7. Aplicación: app de comunicación con el cliente (APDU)
+
+## Comunicaciones cableadas.-
+
+### Par trenzado:
+
+#### RJ45:
+
+Tiene 8 hilos con un total de 4 señales.
+
+Tipos de apantallamiento del RJ45:
+
+- FTP (Foiled Twisted Pair) cubierta protectora de aluminio normalmente. Más resistentes a interferencias externas, pero más caro y más rigido.
+- STP (Shielded Twisted Pair) cubierta protectora en cada uno de los trenzados.
+- SSTP (Screened Shielded Twisted Pair) cubierta protectora en cada uno de los trenzados y de todos ellos en general.
+- SFTP (Screened Foilled Twisted Pair) lleva una pieza en medio para separar los trenzados en cruz y cubierta protectora de los trenzados.
+- UTP (Unshielded Twisted Pair) es el mas común. Flexible y barato.
+
+```
+
+```
