@@ -134,7 +134,7 @@ Capas OSI:
                                                                     --+
 4. TRANSPORTE                                 4. TRANSPORTE           <-- TCP
 3. RED (distribucion global)                  3. RED                  <-- IP
-2. ENLACE (distribucion local)                2. ENLACE               <-- ACE
+2. ENLACE (distribucion local)                2. ENLACE               <-- MAC (dni del equipo, único)
 1. FISICO                                     1. FISICO               <-- FISICO
 ```
 
