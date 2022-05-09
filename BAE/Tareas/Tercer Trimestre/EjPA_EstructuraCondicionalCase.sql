@@ -69,4 +69,4 @@ DELIMITER ;
 /*
 4.-
 */
-CALL pa_masCantidadClientes('Neuquen','Corrientes');
+CALL pa_masCantidadClientes('Neuquen','Corrientes');vnc
