@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Baraja Española</title>
+	<script>
+		function tablaBaraja() {
+			const path="/m/tmp/barajaEspa/";
+			const palos=["bastos","copas","espadas","oros"];
+			const tabla=document.createElement("table");
+			const tbody=document.createElement("tbody");
+			for(var palo of palos) {
+				const fila=document.createElement("tr");
+				for(var i=1;i<=12;i++) {
+					const td=document.createElement("td");
+					const img=document.createElement("img");
+					img.src=path+palo+"/"+palo+i+".png";
+					img.style.setProperty("width","8vw");
+					td.appendChild(img);
+					fila.appendChild(td);
+				}
+				tbody.appendChild(fila);
+			}
+			tabla.appendChild(tbody);
+			return tabla;
+		}
+		function alCargarPagina() {
+			document.getElementById("cartas").appendChild(tablaBaraja());
+		}
+	</script>
+</head>
+<body onload="alCargarPagina();">
+	<h1>Baraja Española</h1>
+	<div id="cartas">
+	</div>
+</body>
+</html>

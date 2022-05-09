@@ -1,0 +1,6 @@
+avena 2,21
+garbanzos 2,39
+tomate 1,59
+jengibre 3,13
+quinoa 4,5
+guisantes 1,6
