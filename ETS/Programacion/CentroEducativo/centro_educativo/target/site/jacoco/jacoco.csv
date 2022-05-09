@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+centro_educativo,es.iespuerto.ets,Fecha,0,290,3,29,0,36,3,20,0,7
+centro_educativo,es.iespuerto.ets,Tema,0,32,0,0,0,7,0,4,0,4
+centro_educativo,es.iespuerto.ets,Alumno,0,309,0,10,0,43,0,17,0,12
+centro_educativo,es.iespuerto.ets,Matricula,0,310,1,15,0,51,1,21,0,14
+centro_educativo,es.iespuerto.ets,Profesor,0,278,0,22,0,50,0,23,0,12
+centro_educativo,es.iespuerto.ets,Asignatura,0,61,0,0,0,10,0,5,0,5
+centro_educativo,es.iespuerto.ets,Temario,0,128,0,8,0,28,0,12,0,8
+centro_educativo,es.iespuerto.ets,Usuario,3,190,5,35,1,52,5,25,0,10

@@ -3,7 +3,10 @@ package es.iespuerto.ets;
 import java.util.*;
 
 /**
- * Clase Temario que contiene los datos de cada asignatura impartida
+ * Clase Temario que contiene los datos de cada Tema impartido
+ * 
+ * @author GuillermoSH
+ * @version 0.4
  */
 public class Temario {
     private String nombre;
@@ -35,7 +38,7 @@ public class Temario {
      * 
      * @return coleccion de temas de la asignatura
      */
-    public List<Tema> getTemas() {
+    public ArrayList<Tema> getTemas() {
         return this.temas;
     }
 
@@ -62,9 +65,17 @@ public class Temario {
      * Metodo para añadir objetos de la clase Tema a la lista temas
      * 
      * @param newTema nuevo objeto Tema a añadir
+     * @return true si se ha añadido correctamente el tema
+     * @throws Exception si el tema ya existe en la lista
      */
-    public void crear(Tema newTema) {
-        temas.add(newTema);
+    public boolean agregarTema(Tema newTema) throws Exception {
+        if (temas.contains(newTema)) {
+            throw new Exception("Error Temario.agregarTema(): el tema ya existe.");
+        } else {
+            temas.add(newTema);
+
+            return true;
+        }
     }
 
     /**
@@ -74,12 +85,12 @@ public class Temario {
      * @return true si existia el objeto a eliminar
      * @throws Exception Error Temario.eliminar(): no existe ese tema.
      */
-    public boolean eliminar(Tema oldTema) throws Exception {
+    public boolean eliminarTema(Tema oldTema) throws Exception {
         if (temas.contains(oldTema)) {
             temas.remove(oldTema);
             return true;
         } else {
-            throw new Exception("Error Temario.eliminar(): no existe ese tema.");
+            throw new Exception("Error Temario.eliminarTema(): no existe ese tema.");
         }
     }
 
@@ -91,45 +102,24 @@ public class Temario {
      * @return true si existia eñ objeto a editar
      * @throws Exception Error Temario.editar(): no existe ese tema
      */
-    public boolean editar(Tema oldTema, Tema newTema) throws Exception {
+    public boolean editarTema(Tema oldTema, Tema newTema) throws Exception {
         if (temas.contains(oldTema)) {
             temas.set(temas.indexOf(oldTema), newTema);
             return true;
         } else {
-            throw new Exception("Error Temario.editar(): no existe ese tema");
+            throw new Exception("Error Temario.editarTema(): no existe ese tema");
         }
     }
 
     /**
-     * Metodo sobrecargado del metodo {@link #toString()} de java para imprimir los objetos Tema de la lista temas
+     * Metodo para devolver un string con los datos de cada temario con un formato
+     * dado
+     * 
+     * @return los datos de cada temario
      */
-    @Override
-    public String toString() {
-        return String.format("\n· Temario %s con %d horas totales:\n  %s\n",this.nombre,getHorasTotales(),this.temas.toString());
+    public String imprimeTemario() {
+        return String.format("Temario %s con %d horas totales: %s", this.nombre, getHorasTotales(),
+                this.temas.toString());
 
     }
-    /*
-    public static void main(String args[]) throws Exception {
-        ArrayList<Tema> temas = new ArrayList<>();
-        Temario t = new Temario("Fisica y Química", temas);
-        Tema t1 = new Tema("Tema1: Magintudes y Unidades", 24);
-        Tema t2 = new Tema("Tema2: La Materia", 12);
-        Tema t3 = new Tema("Tema3: Formulación Inorgánica", 18);
-        Tema t4 = new Tema("Tema4: Reacciones Químicas", 30);
-        Tema t5 = new Tema("Tema5: Termoquímica", 20);
-
-        t.crear(t1);
-        t.crear(t2);
-        t.crear(t3);
-        t.crear(t4);
-
-        t.editar(t2, t5);
-
-        t.eliminar(t4);
-
-        t.getHorasTotales();
-
-        System.out.println(t);
-    }
-    */
 }

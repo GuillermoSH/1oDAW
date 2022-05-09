@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Usuario.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">centro_educativo</a> &gt; <a href="index.source.html" class="el_package">es.iespuerto.ets</a> &gt; <span class="el_source">Usuario.java</span></div><h1>Usuario.java</h1><pre class="source lang-java linenums">package es.iespuerto.ets;
+
+/**
+ * Clase Usuario para el registro de usuarios que quieran usar la aplicacion
+ * guardando asi su contraseña, que sera validada dentro de la clase, y su
+ * email
+ * 
+ * @author GuillermoSH
+ * @version 0.4
+ */
+public class Usuario {
+    private String email;
+    private String password;
+    private int contMayusculas, contDigitos, contMinusculas;
+<span class="fc" id="L15">    private final int minCaracteres = 6;</span>
+<span class="fc" id="L16">    private final int minMinusculas = 1;</span>
+<span class="fc" id="L17">    private final int minMayusculas = 1;</span>
+<span class="fc" id="L18">    private final int minDigitos = 1;</span>
+
+    /**
+     * Contructor parametrizado de la clase Usuario
+     * 
+     * @param email       del usuario
+     * @param password del usuario a validar
+     */
+<span class="fc" id="L26">    public Usuario(String email, String password) throws Exception {</span>
+<span class="pc bpc" id="L27" title="1 of 2 branches missed.">        if (validarEmail(email)) {</span>
+<span class="fc" id="L28">            this.email = email;</span>
+        }
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">        if (comprobarPassword(password)) {</span>
+<span class="fc" id="L31">            this.password = password;</span>
+        }
+<span class="fc" id="L33">    }</span>
+
+    /**
+     * Getter del email del usuario
+     * 
+     * @return email validado
+     */
+    public String getEmail() {
+<span class="fc" id="L41">        return this.email;</span>
+    }
+
+    /**
+     * Setter del email del usuario, permitiendo modificarlo si se cumplen los
+     * requisitos de validacion
+     * 
+     * @param email a validar y modificar por el anterior
+     */
+    public void setEmail(String email) throws Exception {
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">        if (validarEmail(email)) {</span>
+<span class="fc" id="L52">            this.email = email;</span>
+        }
+<span class="fc" id="L54">    }</span>
+
+    /**
+     * Getter de la contrasenia del usuario
+     * 
+     * @return contrasenia validada
+     */
+    public String getPassword() {
+<span class="fc" id="L62">        return this.password;</span>
+    }
+
+    /**
+     * Setter de la contrasenia del usuario, permitiendo modificarla si se cumplen
+     * los requisitos de validacion
+     * 
+     * @param password a validar y modificar por la anterior
+     * @throws Exception
+     */
+    public void setPassword(String password) throws Exception {
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">        if (comprobarPassword(password)) {</span>
+<span class="fc" id="L74">            this.password = password;</span>
+        }
+<span class="fc" id="L76">    }</span>
+
+    /**
+     * Comprobacion de que la contrasenia cumple los requisitos de formato de la
+     * misma devolviendo true o false dependiendo si se ha pasado el
+     * {@link #validarPassword(String)}. Si da falso lanzara una
+     * exception con los requisitos a cumplir.
+     * 
+     * @param password para su validacion
+     * @see #requisitosPassword(String,int,int,int)
+     * @return true o false si se ha validado o no la contrasenia
+     */
+    private boolean comprobarPassword(String password) throws Exception {
+<span class="fc" id="L89">        boolean comprobacion = false;</span>
+<span class="fc" id="L90">        contMayusculas = 0;</span>
+<span class="fc" id="L91">        contDigitos = 0;</span>
+<span class="fc" id="L92">        contMinusculas = 0;</span>
+
+<span class="fc" id="L94">        contarCaracteres(password);</span>
+
+<span class="pc bpc" id="L96" title="1 of 2 branches missed.">        if (validarPassword(password)) {</span>
+<span class="fc" id="L97">            comprobacion = true;</span>
+        } else {
+<span class="nc" id="L99">            requisitosPassword(password);</span>
+        }
+<span class="fc" id="L101">        return comprobacion;</span>
+    }
+
+    /**
+     * Metodo que cuenta la cantidad de caracteres especiales, digitos y mayusculas
+     * que existen dentro de la contrasenia para su validacion
+     * 
+     * @param password a estudiar
+     */
+    private void contarCaracteres(String password) {
+<span class="fc bfc" id="L111" title="All 2 branches covered.">        for (int i = 0; i &lt; password.length(); i++) {</span>
+<span class="fc" id="L112">            char c = password.charAt(i);</span>
+
+<span class="fc bfc" id="L114" title="All 2 branches covered.">            if (Character.isUpperCase(c)) {</span>
+<span class="fc" id="L115">                this.contMayusculas++;</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">            } else if (Character.isDigit(c)) {</span>
+<span class="fc" id="L117">                this.contDigitos++;</span>
+<span class="fc bfc" id="L118" title="All 2 branches covered.">            } else if (Character.isLowerCase(c)) {</span>
+<span class="fc" id="L119">                this.contMinusculas++;</span>
+            }
+        }
+<span class="fc" id="L122">    }</span>
+
+    /**
+     * Comprobacion de que la contrasenia cumple los requisitos de formato de la
+     * misma devolviendo true o false dependiendo si se ha pasado la validacion
+     * 
+     * @param password         para su validacion
+     * @param contMayusculas      contador de mayusculas en la contrasenia
+     * @param contDigitos         contador de digitos en la contrasenia
+     * @param contMinusculas contador de caracteres especiales en la
+     *                            contrasenia
+     * @return true o false si se ha validado o no la contrasenia
+     */
+    private boolean validarPassword(String password) {
+<span class="fc bfc" id="L136" title="All 8 branches covered.">        if (password.length() &gt;= minCaracteres &amp;&amp; this.contMayusculas &gt;= minMayusculas</span>
+                &amp;&amp; this.contDigitos &gt;= minDigitos &amp;&amp; this.contMinusculas &gt;= minMinusculas) {
+<span class="fc" id="L138">            return true;</span>
+        } else {
+<span class="fc" id="L140">            return false;</span>
+        }
+    }
+
+    /**
+     * Metodo que devuelve una Exception con los requisitos que no se han cumplido
+     * en la modificacion de la contraseña mediante el metodo
+     * {@link #setPassword(String)} o creando un nuevo usuario mediante el
+     * constructor de la clase
+     * 
+     * @param password         a revisar
+     * @param contMayusculas      contador de mayusculas en la contrasenia
+     * @param contDigitos         contador de digitos en la contrasenia
+     * @param contMinusculas contador de caracteres especiales en la
+     *                            contrasenia
+     * @throws Exception con los requisitos a cumplir en el siguente intento
+     */
+    private void requisitosPassword(String password) throws Exception {
+<span class="fc" id="L158">        String respuesta = &quot;Su contraseña no cumple los siguientes requisitos:&quot;;</span>
+<span class="fc bfc" id="L159" title="All 2 branches covered.">        if (password.length() &lt; minCaracteres) {</span>
+<span class="fc" id="L160">            respuesta += &quot;\n - Al menos 6 caracteres.&quot;;</span>
+        }
+<span class="fc bfc" id="L162" title="All 2 branches covered.">        if (this.contMayusculas &lt; minMayusculas) {</span>
+<span class="fc" id="L163">            respuesta += &quot;\n - Minimo 1 caracter en mayusculas.&quot;;</span>
+        }
+<span class="fc bfc" id="L165" title="All 2 branches covered.">        if (this.contDigitos &lt; minDigitos) {</span>
+<span class="fc" id="L166">            respuesta += &quot;\n - Minimo 1 digito.&quot;;</span>
+        }
+<span class="fc bfc" id="L168" title="All 2 branches covered.">        if (this.contMinusculas &lt; minMinusculas) {</span>
+<span class="fc" id="L169">            respuesta += &quot;\n - Minimo 1 caracter en minusculas.&quot;;</span>
+        }
+<span class="fc" id="L171">        throw new Exception(respuesta);</span>
+    }
+
+    /**
+     * Comprobacion de que el email contiene una de las siguientes terminaciones:
+     * &quot;@gmail.com&quot;, &quot;@hotmail.com&quot; o &quot;@gobiernodecanarias.org&quot;
+     * 
+     * @param email a validar
+     * @return true si el email es correcto
+     * @throws Exception si el email no contiene alguna de las terminaciones
+     *                   nombradas
+     */
+    private boolean validarEmail(String email) throws Exception {
+<span class="fc bfc" id="L184" title="All 4 branches covered.">        if (email.contains(&quot;@gmail.com&quot;) || email.contains(&quot;@hotmail.com&quot;)</span>
+<span class="fc bfc" id="L185" title="All 2 branches covered.">                || email.contains(&quot;@gobiernodecanarias.org&quot;)) {</span>
+<span class="fc" id="L186">            return true;</span>
+        } else {
+<span class="fc" id="L188">            throw new Exception(&quot;Su email debe ser '@gmail.com', '@hotmail.com' o '@gobiernodecanarias.org'.&quot;);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

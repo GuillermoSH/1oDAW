@@ -3,6 +3,9 @@ package es.iespuerto.ets;
 /**
  * Clase de almacenamiento de datos relacionados con el tema de cada temario de
  * las asignaturas impartidas
+ * 
+ * @author GuillermoSH
+ * @version 1.1
  */
 public class Tema {
     private String nombre;
@@ -38,11 +41,11 @@ public class Tema {
     }
 
     /**
-     * Metodo sobrecargado del metodo toString() de java para imprimir los datos de
-     * la clase
+     * Metodo para devolver un string con los datos de cada tema con el formato dado
+     * 
+     * @return los datos de cada tema
      */
-    @Override
-    public String toString() {
-        return String.format("[Nombre: %s, Horas: %d]", this.nombre, this.horas);
+    public String imprimeTema() {
+        return String.format("%s con %d horas", this.nombre, this.horas);
     }
 }
