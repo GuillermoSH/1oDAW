@@ -125,18 +125,12 @@ Las diferentes capas trabajan especializadas en una cosa unicamente y se comunic
 
 Capas OSI:
 
-```
-    ENVIA                                         RECIBE
-                                                                    --+
-7. APLICACIÓN                                 7. APLICACIÓN           |
-6. PRESENTACIÓN                               6. PRESENTACIÓN         |-- Esto es la capa de la aplicacion (desarrolador web)
-5. SESIÓN                                     5. SESIÓN               |
-                                                                    --+
-4. TRANSPORTE                                 4. TRANSPORTE           <-- TCP
-3. RED (distribucion global)                  3. RED                  <-- IP
-2. ENLACE (distribucion local)                2. ENLACE               <-- MAC (dni del equipo, único)
-1. FISICO                                     1. FISICO               <-- FISICO
-```
+| Capa | Nombre | Principal contribución en la comunicación | Principal concepto | Dispositivos | Protocolos | PDU |
+| --- | --- | --- | --- | --- | --- | --- |
+| 4 | Transporte | Divide el mensaje en trozos mas pequeños (MTU) y controla que llegue a su destinatario (envios confiables) |  |  | TCP | Segmentos |
+| 3 | Red | Diseña el camino que debe llevar el mensaje hasta el destinatario (hace su mejor intento) |  | Switch | IP, ARP, ICMP, IGMP, rARP | Paquetes o datagramas |
+| 2 | Enlace | Comunicacion con todos los equipos de area local |  | HUB, repetidor | MAC | Tramas |
+| 1 | Fisico | Envios confiables |  |  |  | Bits |
 
 1. Fisico: 0 y 1 (Bits)
 2. Enlace: comunicacion con todos los equipos de area local (Tramas)
@@ -161,7 +155,3 @@ Tipos de apantallamiento del RJ45:
 - SSTP (Screened Shielded Twisted Pair) cubierta protectora en cada uno de los trenzados y de todos ellos en general.
 - SFTP (Screened Foilled Twisted Pair) lleva una pieza en medio para separar los trenzados en cruz y cubierta protectora de los trenzados.
 - UTP (Unshielded Twisted Pair) es el mas común. Flexible y barato.
-
-```
-
-```
