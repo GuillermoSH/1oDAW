@@ -127,8 +127,8 @@ Capas OSI:
 
 | Capa | Nombre | Principal contribución en la comunicación | Principal concepto | Dispositivos | Protocolos | PDU |
 | --- | --- | --- | --- | --- | --- | --- |
-| 4 | Transporte | Divide el mensaje en trozos mas pequeños (MTU) y controla que llegue a su destinatario (envios confiables) |  |  | TCP | Segmentos |
-| 3 | Red | Diseña el camino que debe llevar el mensaje hasta el destinatario (hace su mejor intento) |  | Switch | IP, ARP, ICMP, IGMP, rARP | Paquetes o datagramas |
+| 4 | Transporte | Divide el mensaje en trozos mas pequeños (MTU) y controla que llegue a su destinatario (envios confiables) |  |  | TCP, UDP | Segmentos |
+| 3 | Red | Diseña el camino que debe llevar el mensaje hasta el destinatario (hace su mejor intento) |  | Switch | **IP, ARP, ICMP**, IGMP, rARP | Paquetes o datagramas |
 | 2 | Enlace | Comunicacion con todos los equipos de area local |  | HUB, repetidor | MAC | Tramas |
 | 1 | Fisico | Envios confiables |  |  |  | Bits |
 
