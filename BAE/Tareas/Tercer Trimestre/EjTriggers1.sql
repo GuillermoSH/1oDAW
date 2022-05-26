@@ -151,9 +151,13 @@ BEFORE DELETE
 ON Sala
 FOR EACH ROW
 BEGIN
-    DELETE FROM Plantilla WHERE Plantilla.Sala_Cod = Sala.Sala_Cod;
+    DELETE FROM Plantilla WHERE Plantilla.Sala_Cod = old.Sala_Cod;
 END //
 DELIMITER ;
+
+DELETE FROM Sala WHERE Sala_Cod=2;
+SELECT * FROM Sala;
+SELECT * FROM Plantilla;
 
 -- 2) Crear un Trigger que se active cuando Actualicemos alguna sala del hospital,
 -- modificando sus tablas relacionadas. Mostrar el registro Actualizado. 
@@ -165,7 +169,7 @@ BEFORE UPDATE
 ON Sala
 FOR EACH ROW
 BEGIN
-    UPDATE Plantillas SET Sala_Cod = new.Sala_Cod WHERE Sala_Cod = old.Sala_Cod;
+    UPDATE Plantilla SET Plantilla.Sala_Cod = new.Sala_Cod WHERE Plantilla.Sala_Cod = old.Sala_Cod;
 END //
 DELIMITER ;
 
@@ -179,8 +183,8 @@ BEFORE UPDATE
 ON Hospital
 FOR EACH ROW
 BEGIN
-    DELETE FROM Doctor WHERE Doctor.Hospital_Cod = Hospital.Hospital_Cod;
-    DELETE FROM Sala WHERE Sala.Hospital_Cod = Hospital.Hospital_Cod;
-    DELETE FROM Plantilla WHERE Plantilla.Hospital_Cod = Hospital.Hospital_Cod;
+    DELETE FROM Doctor WHERE Doctor.Hospital_Cod = old.Hospital_Cod;
+    DELETE FROM Sala WHERE Sala.Hospital_Cod = old.Hospital_Cod;
+    DELETE FROM Plantilla WHERE Plantilla.Hospital_Cod = old.Hospital_Cod;
 END //
 DELIMITER ;
