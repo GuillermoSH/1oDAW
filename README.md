@@ -7,7 +7,6 @@
   - [TEMA04.](/PRO/Ejercicios/TEMA04)
   - [TEMA05.](/PRO/Ejercicios/TEMA05)
   - [TEMA06.](/PRO/Ejercicios/TEMA06)
-  - [TEMA07.](/PRO/Ejercicios/TEMA07)
 - [**:gear: ETS.**](/ETS)
   - [Especificación de diagramas de casos de uso.](/ETS/Especificacion%20Diagramas%20de%20C.U.)
   - [Examenes.](/ETS/Examenes)
