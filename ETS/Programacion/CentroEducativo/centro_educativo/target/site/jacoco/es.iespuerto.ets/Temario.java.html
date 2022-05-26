@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Temario.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">centro_educativo</a> &gt; <a href="index.source.html" class="el_package">es.iespuerto.ets</a> &gt; <span class="el_source">Temario.java</span></div><h1>Temario.java</h1><pre class="source lang-java linenums">package es.iespuerto.ets;
+
+import java.util.*;
+import java.io.*;
+
+/**
+ * Clase Temario que contiene los datos de cada Tema impartido
+ * 
+ * @author GuillermoSH
+ * @version 0.4
+ */
+public class Temario {
+    private String nombre;
+<span class="fc" id="L14">    private List&lt;Tema&gt; temas = new ArrayList&lt;&gt;();</span>
+
+    /**
+     * Contructor parametrizado de la clase Temario
+     * 
+     * @param nombre nombre de la asignatura referida al temario
+     * @param temas  coleccion de temas de la asignatura
+     */
+<span class="fc" id="L22">    public Temario(String nombre, List&lt;Tema&gt; temas) {</span>
+<span class="fc" id="L23">        this.nombre = nombre.toUpperCase();</span>
+<span class="fc" id="L24">        this.temas = temas;</span>
+<span class="fc" id="L25">    }</span>
+
+    /**
+     * Getter del parametro nombre de la clase Temario
+     * 
+     * @return nombre de la asignatura referida al temario
+     */
+    public String getNombre() {
+<span class="fc" id="L33">        return this.nombre;</span>
+    }
+
+    /**
+     * Getter de la lista de objetos de Tema, temas de la clase Temario
+     * 
+     * @return coleccion de temas de la asignatura
+     */
+    public List&lt;Tema&gt; getTemas() {
+<span class="fc" id="L42">        return this.temas;</span>
+    }
+
+    /**
+     * Getter del parametro horasTotales de la clase Temario
+     * 
+     * @return horas totales de cada temario
+     */
+    public int getHorasTotales() {
+<span class="fc" id="L51">        int sumaHorasTotales = 0;</span>
+
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        for (int i = 0; i &lt; this.temas.size(); i++) {</span>
+<span class="fc" id="L54">            Tema tema = this.temas.get(i);</span>
+<span class="fc" id="L55">            int horas = tema.getHoras();</span>
+<span class="fc" id="L56">            sumaHorasTotales += horas;</span>
+        }
+<span class="fc" id="L58">        return sumaHorasTotales;</span>
+    }
+
+    /**
+     * Metodo para añadir objetos de la clase Tema a la lista temas
+     * 
+     * @param newTema nuevo objeto Tema a añadir
+     * @return true si se ha añadido correctamente el tema
+     * @throws Exception si el tema ya existe en la lista
+     */
+    public boolean agregarTema(Tema newTema) throws IOException {
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (temas.contains(newTema)) {</span>
+<span class="fc" id="L70">            throw new IOException(&quot;Error Temario.agregarTema(): el tema ya existe.&quot;);</span>
+        } else {
+<span class="fc" id="L72">            temas.add(newTema);</span>
+
+<span class="fc" id="L74">            return true;</span>
+        }
+    }
+
+    /**
+     * Metodo para eliminar un objeto de la clase Tema de la lista temas
+     * 
+     * @param oldTema objeto existente Tema a eliminar
+     * @return true si existia el objeto a eliminar
+     * @throws Exception Error Temario.eliminar(): no existe ese tema.
+     */
+    public boolean eliminarTema(Tema oldTema) throws IOException {
+<span class="fc bfc" id="L86" title="All 2 branches covered.">        if (temas.contains(oldTema)) {</span>
+<span class="fc" id="L87">            temas.remove(oldTema);</span>
+<span class="fc" id="L88">            return true;</span>
+        } else {
+<span class="fc" id="L90">            throw new IOException(&quot;Error Temario.eliminarTema(): no existe ese tema.&quot;);</span>
+        }
+    }
+
+    /**
+     * Metodo para editar un objeto de la clase Tema de la lista temas
+     * 
+     * @param oldTema objeto existente Tema a editar
+     * @param newTema objeto nuevo Tema a reemplazar por el anterior
+     * @return true si existia eñ objeto a editar
+     * @throws Exception Error Temario.editar(): no existe ese tema
+     */
+    public boolean editarTema(Tema oldTema, Tema newTema) throws IOException {
+<span class="fc bfc" id="L103" title="All 2 branches covered.">        if (temas.contains(oldTema)) {</span>
+<span class="fc" id="L104">            temas.set(temas.indexOf(oldTema), newTema);</span>
+<span class="fc" id="L105">            return true;</span>
+        } else {
+<span class="fc" id="L107">            throw new IOException(&quot;Error Temario.editarTema(): no existe ese tema&quot;);</span>
+        }
+    }
+
+    /**
+     * Metodo para devolver un string con los datos de cada temario con un formato
+     * dado
+     * 
+     * @return los datos de cada temario
+     */
+    public String imprimeTemario() {
+<span class="fc" id="L118">        return String.format(&quot;Temario %s con %d horas totales: %s&quot;, this.nombre, getHorasTotales(),</span>
+<span class="fc" id="L119">                this.temas.toString());</span>
+
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

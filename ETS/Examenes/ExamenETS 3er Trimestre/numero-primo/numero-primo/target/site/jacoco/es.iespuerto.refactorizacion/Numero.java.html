@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Numero.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ejercicio numero primo</a> &gt; <a href="index.source.html" class="el_package">es.iespuerto.refactorizacion</a> &gt; <span class="el_source">Numero.java</span></div><h1>Numero.java</h1><pre class="source lang-java linenums">package es.iespuerto.refactorizacion;
+
+/**
+ * Clase para generar obtener los primos a partir de un numero maximo de numeros
+ * a estudiar
+ * 
+ * @author GuillermoSH
+ */
+public class Numero {
+    private int dimension;
+    private boolean esPrimo[];
+    private int primos[];
+
+    /**
+     * Constructor parametrizado de la clase que genera la lista de numeros a partir
+     * del parametro introducido
+     * 
+     * @param maximo de numeros a estudiar
+     */
+<span class="fc" id="L20">    public Numero(int maximo) {</span>
+<span class="fc" id="L21">        this.primos = primos(maximo);</span>
+<span class="fc" id="L22">    }</span>
+
+    public int[] getPrimos() {
+<span class="fc" id="L25">        return this.primos;</span>
+    }
+
+    /**
+     * Metodo para la obtencion de los numeros primos entre 0 y el numero maximo
+     * introducido
+     * 
+     * @see #generarArray()
+     * @see #noPrimosIgualFalse()
+     * @see #contarPrimos()
+     * 
+     * @param maximo numero a estudiar
+     * @return numeros primos entre 0 y maximo
+     */
+    private int[] primos(int maximo) {
+<span class="fc" id="L40">        int i = 0, j = 0;</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if (maximo &gt;= 2) {</span>
+<span class="fc" id="L42">            this.dimension = maximo + 1;</span>
+
+<span class="fc" id="L44">            generarArray();</span>
+
+<span class="fc" id="L46">            noPrimosIgualFalse();</span>
+
+<span class="fc" id="L48">            int cuenta = contarPrimos();</span>
+
+<span class="fc" id="L50">            int[] numerosPrimos = new int[cuenta];</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">            for (i = 0, j = 0; i &lt; dimension; i++) {</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">                if (esPrimo[i]) {</span>
+<span class="fc" id="L53">                    numerosPrimos[j++] = i;</span>
+                }
+            }
+<span class="fc" id="L56">            return numerosPrimos;</span>
+        } else {
+<span class="fc" id="L58">            return new int[0];</span>
+        }
+    }
+
+    /**
+     * Metodo que pasa todos los pares y numeros no primos a false
+     */
+    private void noPrimosIgualFalse() {
+<span class="fc" id="L66">        int i = 0, j = 0;</span>
+
+        // 0 y 1 no son primos
+<span class="fc" id="L69">        esPrimo[0] = esPrimo[1] = false;</span>
+
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        for (i = 2; i &lt; Math.sqrt(dimension) + 1; i++) {</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">            if (esPrimo[i]) {</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">                for (j = 2 * i; j &lt; dimension; j += i)</span>
+<span class="fc" id="L74">                    esPrimo[j] = false;</span>
+            }
+        }
+<span class="fc" id="L77">    }</span>
+
+    /**
+     * Metodo que cuenta la cantidad de numeros primos que hay en el array esPrimo
+     * dependiendo si la posicion del array es true o false
+     * 
+     * @return cuenta de trues en el array esPrimo
+     */
+    private int contarPrimos() {
+<span class="fc" id="L86">        int cuenta = 0;</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        for (int i = 0; i &lt; dimension; i++) {</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">            if (esPrimo[i]) {</span>
+<span class="fc" id="L89">                cuenta++;</span>
+            }
+        }
+<span class="fc" id="L92">        return cuenta;</span>
+    }
+
+    /**
+     * Metodo para generar el array de booleanos igualados a true, para luego
+     * cambiar sus valores a false si no son primos
+     */
+    private void generarArray() {
+<span class="fc" id="L100">        esPrimo = new boolean[dimension];</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        for (int i = 0; i &lt; dimension; i++) {</span>
+<span class="fc" id="L102">            esPrimo[i] = true;</span>
+        }
+<span class="fc" id="L104">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

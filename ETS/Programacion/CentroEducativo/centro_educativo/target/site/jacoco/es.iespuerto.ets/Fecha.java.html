@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Fecha.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">centro_educativo</a> &gt; <a href="index.source.html" class="el_package">es.iespuerto.ets</a> &gt; <span class="el_source">Fecha.java</span></div><h1>Fecha.java</h1><pre class="source lang-java linenums">package es.iespuerto.ets;
+
+import java.io.*;
+
+/**
+ * Clase Fecha capaz de verificar de que la fecha introducida es la correcta o
+ * no dependiendo del mes que se le introduzca o del anyo si es bisiesto o no.
+ * 
+ * @author GuillermoSH
+ * @version 1.0
+ */
+public class Fecha {
+    private int dia;
+    private int mesNumerico;
+    private int anio;
+<span class="fc" id="L16">    private final String[] meses = { &quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;, &quot;abril&quot;, &quot;mayo&quot;, &quot;junio&quot;, &quot;julio&quot;, &quot;agosto&quot;,</span>
+            &quot;septiembre&quot;, &quot;octubre&quot;, &quot;noviembre&quot;, &quot;diciembre&quot; };
+<span class="fc" id="L18">    private final int[] dias = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };</span>
+
+    /**
+     * Constructor parametrizado de la clase Fecha
+     * 
+     * @param fecha a evaluar
+     * @throws IOException si alguno de los parametros de la fecha es incorrecto
+     */
+<span class="fc" id="L26">    public Fecha(String fecha) throws IOException {</span>
+<span class="fc" id="L27">        String[] fechaSeparada = new String[3];</span>
+
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        for (int i = 0; i &lt; fechaSeparada.length; i++) {</span>
+<span class="fc" id="L30">            fechaSeparada = fecha.split(&quot;[/-]&quot;);</span>
+        }
+
+<span class="fc" id="L33">        this.anio = obtenerAnio(fechaSeparada[2]);</span>
+<span class="fc" id="L34">        this.mesNumerico = obtenerMes(fechaSeparada[1]);</span>
+<span class="fc" id="L35">        this.dia = obtenerDia(fechaSeparada[0]);</span>
+<span class="fc" id="L36">    }</span>
+
+    /**
+     * Getter del parametro anio
+     * 
+     * @return anio
+     */
+    public int getAnio() {
+<span class="fc" id="L44">        return this.anio;</span>
+    }
+
+    /**
+     * Getter del parametro mesNumerico
+     * 
+     * @return mesNumerico
+     */
+    public int getMesNumerico() {
+<span class="fc" id="L53">        return this.mesNumerico;</span>
+    }
+
+    /**
+     * Getter del parametro mesNombre
+     * 
+     * @return mes, pero su nombre
+     */
+    public String getMesNombre() {
+<span class="fc" id="L62">        return meses[this.mesNumerico - 1];</span>
+    }
+
+    /**
+     * Getter del parametro dia
+     * 
+     * @return dia
+     */
+    public int getDia() {
+<span class="fc" id="L71">        return this.dia;</span>
+    }
+
+    /**
+     * Metodo que genera las excepciones dependiendo de la condicion de entrada y la
+     * cadena a añadir en el mensaje de la excepcion
+     * 
+     * @param condicion a evaluar
+     * @param cadena    a añadir en el mensaje de excepcion
+     * @throws IOException si la condicion se cumple
+     */
+    public void exception(boolean condicion, String cadena) throws IOException {
+<span class="fc bfc" id="L83" title="All 2 branches covered.">        if (condicion) {</span>
+<span class="fc" id="L84">            throw new IOException(&quot;Error Fecha.&quot; + cadena);</span>
+        }
+<span class="fc" id="L86">    }</span>
+
+    /**
+     * Metodo para la obtencion del parametro anio con su previa validacion a partir
+     * del String de fecha
+     * 
+     * @param strAnio la parte del String fecha despues de hacer el split
+     * @return anio como int
+     * @throws IOException si el anio es incorrecto
+     */
+    public int obtenerAnio(String strAnio) throws IOException {
+<span class="fc" id="L97">        int numAnio = Integer.parseInt(strAnio);</span>
+
+<span class="pc bpc" id="L99" title="1 of 4 branches missed.">        exception(numAnio &lt; 1999 || numAnio &gt; 9999, &quot;obtenerAnio(): el anio es incorrecto.&quot;);</span>
+
+<span class="fc" id="L101">        return numAnio;</span>
+    }
+
+    /**
+     * Metodo para la obtencion del parametro mes con su previa validacion a partir
+     * del String de fecha
+     * 
+     * @param strMes la parte del String fecha despues de hacer el split
+     * @return mes como int
+     * @throws IOException si el mes es incorrecto
+     */
+    public int obtenerMes(String strMes) throws IOException {
+<span class="fc" id="L113">        int numMes = Integer.parseInt(strMes);</span>
+
+<span class="pc bpc" id="L115" title="2 of 4 branches missed.">        exception(numMes &gt; 12 || numMes &lt; 1, &quot;obtenerMes(): el mes es incorrecto.&quot;);</span>
+
+<span class="fc" id="L117">        return numMes;</span>
+    }
+
+    /**
+     * Metodo para la obtencion del parametro dia con su previa validacion a partir
+     * del String de fecha
+     * 
+     * @param strDia la parte del String fecha despues de hacer el split
+     * @return dia como int
+     * @throws IOException si el dia es incorrecto
+     */
+    public int obtenerDia(String strDia) throws IOException {
+<span class="fc" id="L129">        int numDia = Integer.parseInt(strDia);</span>
+
+<span class="fc bfc" id="L131" title="All 2 branches covered.">        if (esBisiesto(this.anio)) {</span>
+<span class="fc" id="L132">            dias[1] = 29;</span>
+        }
+<span class="pc bpc" id="L134" title="1 of 4 branches missed.">        exception((numDia &lt; 1 || numDia &gt; dias[this.mesNumerico - 1]), &quot;obtenerDia(): el dia es incorrecto.&quot;);</span>
+
+<span class="fc" id="L136">        return numDia;</span>
+    }
+
+    /**
+     * Metodo para la verificacion de que el anyo es bisiesto
+     * 
+     * @param anio a verificar si es bisiesto o no
+     * @return True o false dependiendo de si es bisiesto
+     */
+    private boolean esBisiesto(int anio) {
+<span class="fc bfc" id="L146" title="All 6 branches covered.">        return (anio % 4 == 0 &amp;&amp; anio % 100 != 0 || anio % 400 == 0);</span>
+    }
+
+    /**
+     * Metodo que devuelve como String la fecha con el mes en formato numerico o
+     * como nombre dependiendo de la entrada que de el usuario en el constructor de
+     * la clase
+     * 
+     * @param numerico si se quiere la fecha con mes numerico o no
+     * @return como String la fecha con el mes en formato numerico o como nombre
+     * @throws Exception si algun parametro de la fecha es incorrecto
+     */
+    public String imprimeFecha(boolean numerico) {
+<span class="fc bfc" id="L159" title="All 2 branches covered.">        if (!numerico) {</span>
+<span class="fc" id="L160">            return String.format(&quot;%d de %s de %d&quot;, this.dia, getMesNombre(), this.anio);</span>
+        }
+<span class="fc" id="L162">        return String.format(&quot;%02d/%02d/%d&quot;, this.dia, this.mesNumerico, this.anio);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

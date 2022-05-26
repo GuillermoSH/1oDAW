@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="libreria.xsl"?>
+<libreria>
+    <iva>4</iva>
+    <libro precio="51.33">
+        <titulo>Antalogía de la Programación en Java</titulo>
+        <autor>John Goodman</autor>
+        <editor>Joel Cohen</editor>
+        <isbn>978-1584503804</isbn>
+        <numPaginas>175</numPaginas>
+    </libro>
+    <libro precio="14.00">
+        <titulo>Principios de la Relatividad</titulo>
+        <autor>Albert Einstein</autor>
+        <editor>Ethan Cohen</editor>
+        <isbn>978-84-9849-998-8</isbn>
+        <numPaginas>275</numPaginas>
+    </libro>
+    <libro precio="9.50">
+        <titulo>Principios de la Relatividad General</titulo>
+        <autor>Albert Einstein</autor>
+        <editor>Ethan Cohen</editor>
+        <isbn>978-84-9849-998-8</isbn>
+        <numPaginas>175</numPaginas>
+    </libro>
+    <libro precio="8.50">
+        <titulo>Programación en Python</titulo>
+        <autor>John Goodman</autor>
+        <editor>Ethan Cohen</editor>
+        <isbn>978-84-9849-998-8</isbn>
+        <numPaginas>875</numPaginas>
+    </libro>
+    <libro precio="11.00">
+        <titulo>Circuitos y electrónica</titulo>
+        <autor>Agnat Argwald</autor>
+        <editor>Joe Fraizier</editor>
+        <isbn>978-84-9849-703-8</isbn>
+        <numPaginas>375</numPaginas>
+    </libro>
+</libreria>

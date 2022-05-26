@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bailes>
+    <baile id="1">
+        <nombre>Tango </nombre>
+        <precio cuota="mensual" moneda="euro">27</precio>
+        <plazas>20</plazas>
+        <comienzo>2022-01-01</comienzo>
+        <fin>2022-12-01</fin>
+        <profesor>Roberto Garcia</profesor>
+        <sala>1</sala>
+    </baile>
+ 
+    <baile id="2">
+        <nombre>Cha-cha-cha </nombre>
+        <precio cuota="trimestral" moneda="euro">80</precio>
+        <plazas>18</plazas>
+        <comienzo>2022-07-11</comienzo>
+        <fin>2022-10-01</fin>
+        <profesor>Miriam Gutiérrez</profesor>
+        <sala>2</sala>
+    </baile>
+ 
+    <baile id="3">
+        <nombre>Rock </nombre>
+        <precio cuota="mensual" moneda="euro">30</precio>
+        <plazas>15</plazas>
+        <comienzo>2022-02-21</comienzo>
+        <fin>2022-12-01</fin>
+        <profesor>Laura Mendiola</profesor>
+        <sala>1</sala>
+    </baile>
+ 
+    <baile id="4">
+        <nombre>Merengue </nombre>
+        <precio cuota="trimestral" moneda="dolares">75</precio>
+        <plazas>12</plazas>
+        <comienzo>2022-03-01</comienzo>
+        <fin>2022-11-01</fin>
+        <profesor>Jesús Lozano</profesor>
+        <sala>2</sala>
+    </baile>
+ 
+    <baile id="5">
+        <nombre>Salsa </nombre>
+        <precio cuota="mensual" moneda="dolares">32</precio>
+        <plazas>10</plazas>
+        <comienzo>2022-04-01</comienzo>
+        <fin>2022-10-01</fin>
+        <profesor>Jesús Lozano</profesor>
+        <sala>1</sala>
+    </baile>
+ 
+    <baile id="6">
+        <nombre>Pasodoble </nombre>
+        <precio cuota="anual" moneda="euro">3200</precio>
+        <plazas>8</plazas>
+        <comienzo>2022-05-01</comienzo>
+        <fin>2023-02-01</fin>
+        <profesor>Miriam Gutiérrez</profesor>
+        <sala>1</sala>
+    </baile>
+ 
+</bailes>
+
+
+
+

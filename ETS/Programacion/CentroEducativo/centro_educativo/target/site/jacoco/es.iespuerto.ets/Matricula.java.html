@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Matricula.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">centro_educativo</a> &gt; <a href="index.source.html" class="el_package">es.iespuerto.ets</a> &gt; <span class="el_source">Matricula.java</span></div><h1>Matricula.java</h1><pre class="source lang-java linenums">package es.iespuerto.ets;
+
+import java.util.*;
+import java.io.*;
+
+/**
+ * Clase Matricula para guardar los datos de cada una de las matriculas
+ * asociadas a los alumnos que lo soliciten
+ * 
+ * @author GuillermoSH
+ * @version 0.9
+ */
+public class Matricula {
+    private String dni;
+    private String nombre;
+<span class="fc" id="L16">    private List&lt;Asignatura&gt; asignaturas = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L17">    private Map&lt;Asignatura, Double&gt; notas = new HashMap&lt;&gt;();</span>
+    private String fecha;
+    private double precio;
+<span class="fc" id="L20">    private boolean pagada = false;</span>
+<span class="fc" id="L21">    private char[] letras = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V',</span>
+            'H', 'L', 'C', 'K', 'E' };
+
+    /**
+     * Constructor parametrizado de la clase Matricula
+     * 
+     */
+    public Matricula(int numDni, String nombre, List&lt;Asignatura&gt; asignaturas, Map&lt;Asignatura, Double&gt; notas,
+<span class="fc" id="L29">            String fecha, boolean numerico) throws IOException {</span>
+<span class="fc" id="L30">        this.dni = obtenerDni(numDni, letras[numDni % 23]);</span>
+<span class="fc" id="L31">        this.nombre = nombre;</span>
+<span class="fc" id="L32">        this.asignaturas = asignaturas;</span>
+<span class="fc" id="L33">        this.notas = notas;</span>
+<span class="fc" id="L34">        this.fecha = obtenerFecha(fecha,numerico);</span>
+<span class="fc" id="L35">        this.precio = obtenerPrecio();</span>
+<span class="fc" id="L36">    }</span>
+
+    /**
+     * Getter del parametro dni
+     * 
+     * @return el dni con la letra calculada
+     */
+    public String getDni() {
+<span class="fc" id="L44">        return this.dni;</span>
+    }
+
+    /**
+     * Getter del parametro nombre
+     * 
+     * @return nombre del centro educativo
+     */
+    public String getNombre() {
+<span class="fc" id="L53">        return this.nombre;</span>
+    }
+
+    /**
+     * Getter del parametro asignaturas
+     * 
+     * @return las asignaturas matriculadas por el alumno
+     */
+    public List&lt;Asignatura&gt; getAsignaturas() {
+<span class="fc" id="L62">        return this.asignaturas;</span>
+    }
+
+    /**
+     * Getter del parametro notas
+     * 
+     * @return las notas asociadas a cada asignatura
+     */
+    public Map&lt;Asignatura, Double&gt; getNotas() {
+<span class="fc" id="L71">        return this.notas;</span>
+    }
+
+    public String getFecha() {
+<span class="fc" id="L75">        return this.fecha;</span>
+    }
+
+    /**
+     * Getter del parametro precio
+     * 
+     * @return el precio total a pagar por la matricula
+     */
+    public double getPrecio() {
+<span class="fc" id="L84">        return this.precio;</span>
+    }
+
+    public boolean isPagada() {
+<span class="fc" id="L88">        return this.pagada;</span>
+    }
+
+    public String obtenerFecha(String fecha,boolean numerico) throws IOException {
+<span class="fc" id="L92">        Fecha fechaObj = new Fecha(fecha);</span>
+
+<span class="fc" id="L94">        return fechaObj.imprimeFecha(numerico);</span>
+    }
+
+    public double obtenerPrecio() {
+<span class="fc" id="L98">        double precioTotal = 0;</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">        for (Asignatura asignatura : asignaturas) {</span>
+<span class="fc" id="L100">            precio += asignatura.getPrecio();</span>
+<span class="fc" id="L101">        }</span>
+<span class="fc" id="L102">        return precioTotal;</span>
+    }
+
+    public String obtenerDni(int numDni, char letraDni) {
+<span class="fc" id="L106">        return numDni + &quot;&quot; + letraDni;</span>
+    }
+
+    public void pagarMatricula(double importe) {
+<span class="pc bpc" id="L110" title="1 of 2 branches missed.">        if (importe &gt;= obtenerPrecio()) {</span>
+<span class="fc" id="L111">            this.pagada = true;</span>
+        }
+<span class="fc" id="L113">    }</span>
+
+    public void exception(boolean condicion, String cadena) throws NoSuchFieldException {
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        if (condicion) {</span>
+<span class="fc" id="L117">            throw new NoSuchFieldException(&quot;Error Matricula.&quot; + cadena);</span>
+        }
+<span class="fc" id="L119">    }</span>
+
+    /**
+     * Metodo que permite agregar asignaturas a la lista, si la matricula esta
+     * pagada se anula la modificacion
+     * 
+     * @param newAsignatura nueva asignatura a añadir
+     * @return true si se ha podido agregar a la lista la nueva asignatura
+     * @throws Exception si ya existe la asignatura a añadir
+     */
+    public boolean agregarAsignatura(Asignatura newAsignatura) throws NoSuchFieldException {
+<span class="fc" id="L130">        exception(pagada, &quot;agregarAsignatura(): la matricula ya ha sido pagada.&quot;);</span>
+<span class="fc" id="L131">        exception(this.asignaturas.contains(newAsignatura), &quot;agregarAsignatura(): la asignatura ya existe.&quot;);</span>
+
+<span class="fc" id="L133">        asignaturas.add(newAsignatura);</span>
+
+<span class="fc" id="L135">        return true;</span>
+    }
+
+    /**
+     * Metodo que permite eliminar asignaturas a no ser que no exista la asignatura,
+     * y si la matricula esta pagada se anula la modificacion
+     * 
+     * @param oldAsignatura asignatura a eliminar
+     * @return true si se ha podido eliminar la asignatura de la lista
+     * @throws Exception si no existe en la lista la asignatura
+     */
+    public boolean eliminarAsignatura(Asignatura oldAsignatura) throws NoSuchFieldException {
+<span class="fc" id="L147">        exception(pagada, &quot;eliminarAsignatura(): la matricula ya ha sido pagada.&quot;);</span>
+<span class="fc bfc" id="L148" title="All 2 branches covered.">        exception(!this.asignaturas.contains(oldAsignatura), &quot;eliminarAsignatura(): no existe esa asignatura.&quot;);</span>
+
+<span class="fc" id="L150">        this.asignaturas.remove(oldAsignatura);</span>
+
+<span class="fc" id="L152">        return true;</span>
+    }
+
+    /**
+     * Metodo que permite editar asignaturas si existen dentro de la lista, y si la
+     * matricula esta pagada se anula la modificacion
+     * 
+     * @param oldAsignatura antigua asignatura a modificar
+     * @param newAsignatura nueva asignatura a añadir
+     * @return true si se ha podido editar la asignatura
+     * @throws Exception si no existe en la lista la asignatura
+     */
+    public boolean editarAsignatura(Asignatura oldAsignatura, Asignatura newAsignatura) throws NoSuchFieldException {
+<span class="fc" id="L165">        exception(pagada, &quot;editarAsignatura(): la matricula ya ha sido pagada.&quot;);</span>
+<span class="fc bfc" id="L166" title="All 2 branches covered.">        exception(!this.asignaturas.contains(oldAsignatura), &quot;editarAsignatura(): no existe esa asignatura.&quot;);</span>
+
+<span class="fc" id="L168">        this.asignaturas.set(asignaturas.indexOf(oldAsignatura), newAsignatura);</span>
+
+<span class="fc" id="L170">        return true;</span>
+    }
+
+    /**
+     * Metodo para devolver un string con el formato deseado de los datos de la
+     * matricula
+     * 
+     * @param numerico si se desea la fecha con mes numerico o no
+     * @return los datos de la matricula del alumno
+     * @throws Exception si la fecha es incorrecta
+     */
+    public String imprimeMatricula() {
+<span class="fc" id="L182">        return String.format(&quot;Matricula del alumno con dni: %s, en el centro %s, a %s&quot;, this.dni, this.nombre,</span>
+                this.fecha);
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

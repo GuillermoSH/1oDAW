@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+proyecto-ets,es.iespuerto.ets,App,4,0,0,0,2,0,1,0,1,0
+proyecto-ets,es.iespuerto.ets.calculadora,Subtraction,0,15,0,0,0,3,0,2,0,2
+proyecto-ets,es.iespuerto.ets.calculadora,Operation,0,69,0,0,0,20,0,4,0,4
+proyecto-ets,es.iespuerto.ets.calculadora,Division,0,26,0,2,0,6,0,3,0,2
+proyecto-ets,es.iespuerto.ets.calculadora,Sum,0,16,0,0,0,4,0,2,0,2
+proyecto-ets,es.iespuerto.ets.calculadora,Multiply,0,15,0,0,0,3,0,2,0,2

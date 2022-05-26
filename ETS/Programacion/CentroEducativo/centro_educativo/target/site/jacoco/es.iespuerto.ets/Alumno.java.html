@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Alumno.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">centro_educativo</a> &gt; <a href="index.source.html" class="el_package">es.iespuerto.ets</a> &gt; <span class="el_source">Alumno.java</span></div><h1>Alumno.java</h1><pre class="source lang-java linenums">package es.iespuerto.ets;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Clase de almacenamiento de datos relacionados con cada uno de los alumnos
+ * 
+ * @author GuillermoSH
+ * @version 0.4
+ */
+public class Alumno {
+    private String nombre;
+    private String apellidos;
+    private String dni;
+    private String fechaNacimiento;
+<span class="fc" id="L18">    private List&lt;Matricula&gt; matriculas = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L19">    private char[] letras = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V',</span>
+            'H', 'L', 'C', 'K', 'E' };
+
+    /**
+     * Constructor parametrizado de la clase Alumno
+     * 
+     * @param nombre          del alumno
+     * @param apellidos       del alumno
+     * @param numeroDni       del alumno (sin letra)
+     * @param fechaNacimiento del alumno
+     * @param matriculas      puestas a cursar por el alumno
+     */
+    public Alumno(String nombre, String apellidos, int numDni, List&lt;Matricula&gt; matriculas, String fecha,
+<span class="fc" id="L32">            boolean numerico) throws IOException {</span>
+<span class="fc" id="L33">        this.nombre = nombre;</span>
+<span class="fc" id="L34">        this.apellidos = apellidos;</span>
+<span class="fc" id="L35">        this.dni = obtenerDni(numDni, letras[numDni % 23]);</span>
+<span class="fc" id="L36">        this.fechaNacimiento = obtenerFecha(fecha, numerico);</span>
+<span class="fc" id="L37">        this.matriculas = matriculas;</span>
+<span class="fc" id="L38">    }</span>
+
+    /**
+     * Getter del parametro nombre de la clase Alumno
+     * 
+     * @return el nombre del profesor en cuestion capitalizado
+     * @see #capitalizarCadenaCompuesta(String)
+     * @see #capitalizarCadenaSimple(String)
+     */
+    public String getNombre() {
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (this.nombre.contains(&quot; &quot;)) {</span>
+<span class="fc" id="L49">            this.nombre = capitalizarCadenaCompuesta(this.nombre);</span>
+        } else {
+<span class="fc" id="L51">            this.nombre = capitalizarCadenaSimple(this.nombre);</span>
+        }
+
+<span class="fc" id="L54">        return this.nombre;</span>
+    }
+
+    /**
+     * Getter del parametro apellidos de la clase Alumno
+     * 
+     * @return apellidos del profesor sea 1 o 2 capitalizados
+     * @see #capitalizarCadenaCompuesta(String)
+     * @see #capitalizarCadenaSimple(String)
+     */
+    public String getApellidos() {
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (this.apellidos.contains(&quot; &quot;)) {</span>
+<span class="fc" id="L66">            this.apellidos = capitalizarCadenaCompuesta(this.apellidos);</span>
+        } else {
+<span class="fc" id="L68">            this.apellidos = capitalizarCadenaSimple(this.apellidos);</span>
+        }
+
+<span class="fc" id="L71">        return this.apellidos;</span>
+    }
+
+    /**
+     * Getter del parametro dni con la letra del mismo calculada
+     * 
+     * @return el dni con la letra calculada
+     */
+    public String getDni() {
+<span class="fc" id="L80">        return this.dni;</span>
+    }
+
+    /**
+     * Getter del parametro fecha en el formato que quiera el usuario
+     * 
+     * @param numerico si se desea la fecha con mes numerico o no
+     * @return la fecha comprobada mediante la clase {@link Fecha}
+     * @throws Exception si la fecha introducida es incorrecta
+     */
+    public String getFechaNacimiento(boolean numerico) throws IOException {
+<span class="fc" id="L91">        Fecha fechaObj = new Fecha(this.fechaNacimiento);</span>
+<span class="fc" id="L92">        this.fechaNacimiento = fechaObj.imprimeFecha(numerico);</span>
+
+<span class="fc" id="L94">        return this.fechaNacimiento;</span>
+    }
+
+    /**
+     * Getter del parametro matriculas
+     * 
+     * @return la lista de matriculas asociadas al alumno
+     */
+    public List&lt;Matricula&gt; getMatriculas() {
+<span class="fc" id="L103">        return this.matriculas;</span>
+    }
+
+    public String obtenerDni(int numDni, char letraDni) {
+<span class="fc" id="L107">        return numDni + &quot;&quot; + letraDni;</span>
+    }
+
+    public String obtenerFecha(String fecha, boolean numerico) throws IOException {
+<span class="fc" id="L111">        Fecha fechaObj = new Fecha(fecha);</span>
+
+<span class="fc" id="L113">        return fechaObj.imprimeFecha(numerico);</span>
+    }
+
+    /**
+     * Metodo para capitalizar una cadena compuesta de caracteres. Ej: &quot;juan
+     * antonio&quot; -&gt; &quot;Juan Antonio&quot;
+     * 
+     * @param cadena de caracteres compuesta a capitalizar
+     * @return cadena de caracteres capitalizando el primer caracter
+     */
+    private String capitalizarCadenaCompuesta(String cadena) {
+<span class="fc" id="L124">        String[] cadenas = cadena.split(&quot; &quot;);</span>
+<span class="fc" id="L125">        cadenas[0] = cadenas[0].substring(0, 1).toUpperCase() + cadenas[0].substring(1).toLowerCase();</span>
+<span class="fc" id="L126">        cadenas[1] = cadenas[1].substring(0, 1).toUpperCase() + cadenas[1].substring(1).toLowerCase();</span>
+
+<span class="fc" id="L128">        return &quot;&quot; + cadenas[0] + &quot; &quot; + cadenas[1];</span>
+    }
+
+    /**
+     * Metodo para capitalizar una cadena simple de caracteres. Ej: &quot;guillermo&quot; -&gt;
+     * &quot;Guillermo&quot;
+     * 
+     * @param cadena de caracteres simple a capitalizar
+     * @return cadena de caracteres capitalizando el primer caracter
+     */
+    private String capitalizarCadenaSimple(String cadena) {
+<span class="fc" id="L139">        return cadena.substring(0, 1).toUpperCase() + cadena.substring(1).toLowerCase();</span>
+    }
+
+    /**
+     * Metodo que permite al usuario agregar nuevas matriculas a su lista de
+     * matriculas
+     * 
+     * @param newMatricula nueva matricula a añadir
+     * @return true si se ha añadido correctamente la matricula a la lista
+     * @throws Exception si la matricula ya existia en la lista
+     */
+    public boolean agregarMatricula(Matricula newMatricula) throws IOException {
+<span class="fc bfc" id="L151" title="All 2 branches covered.">        if (this.matriculas.contains(newMatricula)) {</span>
+<span class="fc" id="L152">            throw new IOException(&quot;Error Alumno.agregarMatricula(): esa matricula ya existe.&quot;);</span>
+        }
+
+<span class="fc" id="L155">        matriculas.add(newMatricula);</span>
+
+<span class="fc" id="L157">        return true;</span>
+    }
+
+    /**
+     * Metodo que permite al usuario eliminar una matricula ya existente dentro de
+     * su lista de matriculas
+     * 
+     * @param oldMatricula matricula existente dentro de su lista de matriculas
+     * @return true si se ha podido eliminar la matricula correctamente
+     * @throws Exception si la matricula no existe dentro de la lista
+     */
+    public boolean eliminarMatricula(Matricula oldMatricula) throws IOException {
+<span class="fc bfc" id="L169" title="All 2 branches covered.">        if (this.matriculas.contains(oldMatricula)) {</span>
+<span class="fc" id="L170">            matriculas.remove(oldMatricula);</span>
+
+<span class="fc" id="L172">            return true;</span>
+        } else {
+<span class="fc" id="L174">            throw new IOException(&quot;Error Alumno.eliminarMatricula(): esa matricula no existe.&quot;);</span>
+        }
+    }
+
+    /**
+     * Metodo que permite al usuario editar una matricula ya existente dentro de su
+     * lista de matriculas
+     * 
+     * @param newMatricula nueva matricula a añadir en la lista en sustitucion de la
+     *                     antigua
+     * @param oldMatricula matricula ya existente en la lista a modificar
+     * @return true si se ha podido editar la matricula anterior correctamente
+     * @throws Exception si no se ha encontrado la matricula anterior
+     */
+    public boolean editarMatricula(Matricula oldMatricula, Matricula newMatricula) throws IOException {
+<span class="fc bfc" id="L189" title="All 2 branches covered.">        if (this.matriculas.contains(oldMatricula)) {</span>
+<span class="fc" id="L190">            matriculas.set(matriculas.indexOf(oldMatricula), newMatricula);</span>
+<span class="fc" id="L191">            return true;</span>
+        } else {
+<span class="fc" id="L193">            throw new IOException(&quot;Error Alumno.editarMatricula(): esa matricula no existe.&quot;);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

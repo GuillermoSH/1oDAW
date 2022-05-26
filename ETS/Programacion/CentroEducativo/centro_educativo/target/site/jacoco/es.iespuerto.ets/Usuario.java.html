@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Usuario.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">centro_educativo</a> &gt; <a href="index.source.html" class="el_package">es.iespuerto.ets</a> &gt; <span class="el_source">Usuario.java</span></div><h1>Usuario.java</h1><pre class="source lang-java linenums">package es.iespuerto.ets;
+
+import java.util.concurrent.locks.Condition;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * Clase Usuario para el registro de usuarios que quieran usar la aplicacion
+ * guardando asi su contraseña, que sera validada dentro de la clase, y su
+ * email
+ * 
+ * @author GuillermoSH
+ * @version 0.4
+ */
+public class Usuario {
+    private String email;
+    private String password;
+
+    /**
+     * Contructor parametrizado de la clase Usuario
+     * 
+     * @param email    del usuario
+     * @param password del usuario a validar
+     */
+<span class="fc" id="L25">    public Usuario(String email, String password) throws IllegalArgumentException {</span>
+<span class="fc" id="L26">        validarEmail(email);</span>
+<span class="fc" id="L27">        this.email = email;</span>
+<span class="fc" id="L28">        comprobarPassword(password);</span>
+<span class="fc" id="L29">        this.password = password;</span>
+<span class="fc" id="L30">    }</span>
+
+    /**
+     * Getter del email del usuario
+     * 
+     * @return email validado
+     */
+    public String getEmail() {
+<span class="fc" id="L38">        return this.email;</span>
+    }
+
+    /**
+     * Setter del email del usuario, permitiendo modificarlo si se cumplen los
+     * requisitos de validacion
+     * 
+     * @param email a validar y modificar por el anterior
+     */
+    public void setEmail(String email) throws IllegalArgumentException {
+<span class="fc" id="L48">        validarEmail(email);</span>
+<span class="fc" id="L49">        this.email = email;</span>
+<span class="fc" id="L50">    }</span>
+
+    /**
+     * Getter de la contrasenia del usuario
+     * 
+     * @return contrasenia validada
+     */
+    public String getPassword() {
+<span class="fc" id="L58">        return this.password;</span>
+    }
+
+    /**
+     * Setter de la contrasenia del usuario, permitiendo modificarla si se cumplen
+     * los requisitos de validacion
+     * 
+     * @param password a validar y modificar por la anterior
+     * @throws Exception
+     */
+    public void setPassword(String password) throws IllegalArgumentException {
+<span class="fc" id="L69">        comprobarPassword(password);</span>
+<span class="fc" id="L70">        this.password = password;</span>
+<span class="fc" id="L71">    }</span>
+
+    /**
+     * Comprobacion de que la contrasenia cumple los requisitos de formato de la
+     * misma devolviendo true o false dependiendo si se ha pasado el
+     * {@link #validarPassword(String)}. Si da falso lanzara una
+     * exception con los requisitos a cumplir.
+     * 
+     * @param password para su validacion
+     * @see #requisitosPassword(String,int,int,int)
+     * @return true o false si se ha validado o no la contrasenia
+     */
+    private void comprobarPassword(String password) throws IllegalArgumentException {
+<span class="fc" id="L84">        Pattern pattern = Pattern.compile(&quot;^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,50}$&quot;);</span>
+<span class="fc" id="L85">        Matcher matcher = pattern.matcher(password);</span>
+<span class="fc" id="L86">        boolean valido = matcher.find();</span>
+
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (!valido) {</span>
+<span class="fc" id="L89">            throw new IllegalArgumentException(&quot;Su contraseña no cumple los siguientes requisitos:\n - Al menos 6 caracteres.\n - Minimo 1 digito, 1 caracter en mayusculas y otro en minusculas.&quot;);</span>
+        }
+<span class="fc" id="L91">    }</span>
+
+    /**
+     * Comprobacion de que el email contiene una de las siguientes terminaciones:
+     * &quot;@gmail.com&quot;, &quot;@hotmail.com&quot; o &quot;@gobiernodecanarias.org&quot;
+     * 
+     * @param email a validar
+     * @return true si el email es correcto
+     * @throws Exception si el email no contiene alguna de las terminaciones
+     *                   nombradas
+     */
+
+    private void validarEmail(String email) throws IllegalArgumentException {
+        // Patron para validar el email
+<span class="fc" id="L105">        Pattern pattern = Pattern.compile(&quot;^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$&quot;, Pattern.CASE_INSENSITIVE);</span>
+<span class="fc" id="L106">        Matcher matcher = pattern.matcher(email);</span>
+<span class="fc" id="L107">        boolean valido = matcher.find();</span>
+<span class="fc bfc" id="L108" title="All 2 branches covered.">        if (!valido) {</span>
+<span class="fc" id="L109">            throw new IllegalArgumentException(</span>
+<span class="fc" id="L110">                    &quot;Su email debe ser '@gmail.com', '@hotmail.com' o '@gobiernodecanarias.org'.&quot;);</span>
+        }
+
+<span class="fc" id="L113">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

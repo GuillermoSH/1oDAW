@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cd_p1V2.xsl"?>
+<cds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cds.xsd">
+    <cd>
+        <titulo>Finisterre</titulo>
+        <artista>Mago de Oz</artista>
+        <cancion duracion="00:02:00" nombre="Prólogo"/>
+        <cancion duracion="00:05:20" nombre="La Cruz de Santiago"/>
+        <cancion duracion="00:05:14" nombre="La Danza del Fuego"/>
+        <cancion duracion="00:04:33" nombre="Hasta que el Cuerpo Aguante"/>
+        <cancion duracion="00:04:31" nombre="Sin comentarios"/>
+        <sello>Box Madrid</sello>
+        <año>2000</año>
+    </cd>
+    <cd>
+        <titulo>Almanauta</titulo>
+        <artista>Nach</artista>
+        <cancion duracion="00:03:48" nombre="Grande"/>
+        <cancion duracion="00:04:29" nombre="Los dos lados del telón"/>
+        <cancion duracion="00:04:11" nombre="Antártida"/>
+        <cancion duracion="00:06:01" nombre="Rap Bruto"/>
+        <cancion duracion="00:07:37" nombre="Los zurdos mueren antes"/>
+        <sello>Universal Music Spain, S.L.</sello>
+        <año>2018</año>
+    </cd>
+    <cd>
+        <titulo>Estopa</titulo>
+        <artista>Estopa</artista>
+        <cancion duracion="00:03:18" nombre="Tu Calor"/>
+        <cancion duracion="00:03:32" nombre="La raja de tu falda"/>
+        <cancion duracion="00:03:51" nombre="Me falta el aliento"/>
+        <cancion duracion="00:04:38" nombre="Tan sólo"/>
+        <cancion duracion="00:03:13" nombre="Poquito a poco"/>
+        <cancion duracion="00:03:23" nombre="Suma y sigue"/>
+        <sello>Universal Music Span, S.L.</sello>
+        <año>1999</año>
+    </cd>
+    <cd>
+        <titulo>Zaptillas</titulo>
+        <artista>El Canto del Loco</artista>
+        <cancion duracion="00:02:53" nombre="Zapatillas"/>
+        <cancion duracion="00:03:04" nombre="Canciones"/>
+        <cancion duracion="00:03:50" nombre="Volvera"/>
+        <cancion duracion="00:04:08" nombre="Sera"/>
+        <sello>SONY</sello>
+        <año>2005</año>
+    </cd>
+    <cd>
+        <titulo>Metálica</titulo>
+        <artista>Metálica</artista>
+        <cancion duracion="00:05:32" nombre="Enter Sandman"/>
+        <cancion duracion="00:05:25" nombre="Sad but true"/>
+        <cancion duracion="00:03:48" nombre="Holier than thou"/>
+        <cancion duracion="00:06:23" nombre="The Unforgiven"/>
+        <cancion duracion="00:06:25" nombre="Nothing else matters"/>
+        <sello>SONY</sello>
+        <año>1991</año>
+    </cd>
+    <cd>
+        <titulo>Emergency on planet Earth</titulo>
+        <artista>Jamiroquai</artista>
+        <cancion duracion="00:03:50" nombre="When you gonna learn"/>
+        <cancion duracion="00:06:05" nombre="Too young to die"/>
+        <cancion duracion="00:04:35" nombre="Hooked up"/>
+        <cancion duracion="00:06:22" nombre="Music of the mind"/>
+        <cancion duracion="00:04:05" nombre="Emergency on planet Earth"/>
+        <cancion duracion="00:08:32" nombre="Blow your mind"/>
+        <cancion duracion="00:10:16" nombre="Revolution 1993"/>
+        <sello>Columbia Records</sello>
+        <año>1993</año>
+    </cd>
+    <cd>
+        <titulo>Heaven and hell</titulo>
+        <artista>Black Sabbath</artista>
+        <cancion duracion="00:03:53" nombre="Neon knights"/>
+        <cancion duracion="00:05:35" nombre="Children of the sea"/>
+        <cancion duracion="00:04:25" nombre="Lady evel"/>
+        <cancion duracion="00:06:57" nombre="Heaven and hell"/>
+        <cancion duracion="00:04:08" nombre="Wishing well"/>
+        <cancion duracion="00:04:45" nombre="Die young"/>
+        <cancion duracion="00:04:25" nombre="Walk away"/>
+        <cancion duracion="00:05:48" nombre="Lonely is the word"/>
+        <sello>Columbia Records</sello>
+        <año>1980</año>
+    </cd>
+    <cd>
+        <titulo>Led Zeppelin IV</titulo>
+        <artista>Led Zeppelin</artista>
+        <cancion duracion="00:04:55" nombre="Black dog"/>
+        <cancion duracion="00:03:40" nombre="Rock and roll"/>
+        <cancion duracion="00:05:49" nombre="The battle of evermore"/>
+        <cancion duracion="00:07:58" nombre="Stairway to heaven"/>
+        <cancion duracion="00:04:40" nombre="Misty mountain hop"/>
+        <cancion duracion="00:04:46" nombre="Four sticks"/>
+        <cancion duracion="00:03:36" nombre="Going to California"/>
+        <cancion duracion="00:07:08" nombre="When the leeve breaks"/>
+        <sello>Atlantic</sello>
+        <año>1971</año>
+    </cd>
+    <cd>
+        <titulo>Yo, minoría absoluta</titulo>
+        <artista>Extremoduro</artista>
+        <cancion duracion="00:05:28" nombre="A fuego"/>
+        <cancion duracion="00:04:05" nombre="La vereda de la puerta de atrás"/>
+        <cancion duracion="00:03:30" nombre="Standby"/>
+        <cancion duracion="00:03:10" nombre="Menamoro"/>
+        <cancion duracion="00:03:54" nombre="Luce la oscuridad"/>
+        <cancion duracion="00:04:20" nombre="Buitre no come alpiste"/>
+        <cancion duracion="00:04:44" nombre="Cerca del suelo"/>
+        <cancion duracion="00:04:42" nombre="La vieja"/>
+        <sello>Discos Radiactivos Organizados</sello>
+        <año>2002</año>
+    </cd>
+    <cd>
+        <titulo>Pulse</titulo>
+        <artista>Pink Floyd</artista>
+        <cancion duracion="00:07:08" nombre="Another brick in the wall"/>
+        <cancion duracion="00:08:54" nombre="Money"/>
+        <cancion duracion="00:02:38" nombre="Eclipse"/>
+        <cancion duracion="00:10:49" nombre="Sorrow"/>
+        <cancion duracion="00:04:40" nombre="Hey you"/>
+        <cancion duracion="00:13:35" nombre="Shine on you crazy diamond"/>
+        <cancion duracion="00:04:40" nombre="Astronomy domine"/>
+        <cancion duracion="00:04:10" nombre="What do you want from me"/>
+        <sello>Columbia Records</sello>
+        <año>1995</año>
+    </cd>
+    <cd>
+        <titulo>Dark side of the moon</titulo>
+        <artista>Pink Floyd</artista>
+        <cancion duracion="00:08:54" nombre="Money"/>
+        <cancion duracion="00:03:58" nombre="Speak to me"/>
+        <cancion duracion="00:03:35" nombre="On the run"/>
+        <cancion duracion="00:07:05" nombre="Time"/>
+        <sello>Columbia Records</sello>
+        <año>1972</año>
+    </cd>
+</cds>

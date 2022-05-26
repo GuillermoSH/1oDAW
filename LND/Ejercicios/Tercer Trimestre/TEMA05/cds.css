@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+* {margin:0;padding:0;border:0;box-sizing:border-box;}
+
+table{ margin:0 auto;}
+
+tr:nthchild(even){
+    background-color: green;
+}
+
+tr:nthchild(odd){
+    background-color: lightgreen;
+}
+

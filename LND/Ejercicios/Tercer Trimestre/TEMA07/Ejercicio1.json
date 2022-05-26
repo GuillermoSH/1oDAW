@@ -1,0 +1,64 @@
+{
+    "cds": [
+        {
+            "cd": [
+                {
+                    "titulo": "Finisterre",
+                    "artista": "Mago de Oz",
+                    "cancion": [
+                        {
+                            "duracion": "00:02:00",
+                            "nombre": "Prólogo"
+                        },
+                        {
+                            "duracion": "00:05:20",
+                            "nombre": "La Cruz de Santiago"
+                        },
+                        {
+                            "duracion": "00:05:14",
+                            "nombre": "La Danza del Fuego"
+                        },
+                        {
+                            "duracion": "00:04:33",
+                            "nombre": "Hasta que el Cuerpo Aguante"
+                        },
+                        {
+                            "duracion": "00:04:31",
+                            "nombre": "Sin comentarios"
+                        }
+                    ],
+                    "sello": "Box Madrid",
+                    "año": "2000"
+                },
+                {
+                    "titulo": "Almanauta",
+                    "artista": "Nach",
+                    "cancion": [
+                        {
+                            "duracion": "00:03:48",
+                            "nombre": "Grande"
+                        },
+                        {
+                            "duracion": "00:04:29",
+                            "nombre": "Los dos lados del telón"
+                        },
+                        {
+                            "duracion": "00:04:11",
+                            "nombre": "Antártida"
+                        },
+                        {
+                            "duracion": "00:06:01",
+                            "nombre": "Rap Bruto"
+                        },
+                        {
+                            "duracion": "00:07:37",
+                            "nombre": "Los zurdos mueren antes"
+                        }
+                    ],
+                    "sello": "Universal Music Spain, S.L.",
+                    "año": "2018"
+                }
+            ]
+        }
+    ]
+}

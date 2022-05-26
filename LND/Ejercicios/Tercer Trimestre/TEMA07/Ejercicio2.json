@@ -1,0 +1,40 @@
+{
+    "libros": [
+        {
+            "libro": [
+                {
+                    "publicacion": 2003,
+                    "edicion": 2,
+                    "titulo": "Learning XML",
+                    "autores": [
+                        {
+                            "apellido": "Ray",
+                            "nombre": "Erik T."
+                        }
+                    ],
+                    "editorial": "O'Reilly",
+                    "paginas": 16,
+                    "versionElectronica": true
+                },
+                {
+                    "publicacion": 2003,
+                    "edicion": 2,
+                    "titulo": "XML Imprescindible",
+                    "autores": [
+                        {
+                            "apellido": "Harold",
+                            "nombre": "Elliot Rusty"
+                        },
+                        {
+                            "apellido": "Means",
+                            "nombre": "W. Scott"
+                        }
+                    ],
+                    "editorial": "O'Reilly",
+                    "paginas": 832,
+                    "versionElectronica": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Profesor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">centro_educativo</a> &gt; <a href="index.source.html" class="el_package">es.iespuerto.ets</a> &gt; <span class="el_source">Profesor.java</span></div><h1>Profesor.java</h1><pre class="source lang-java linenums">package es.iespuerto.ets;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Clase Profesor para el almacenaje de asignaturas impartidas por el mismo y
+ * comprobacion de que no supera el limite de 3000h de docencia.
+ * 
+ * @author GuillermoSH
+ * @version 0.2
+ */
+public class Profesor {
+    private String nombre;
+    private String apellidos;
+    private String titulacion;
+<span class="fc" id="L18">    private List&lt;Asignatura&gt; asignaturas = new ArrayList&lt;&gt;();</span>
+
+    /**
+     * Constructor parametrizado de la clase Profesor
+     * 
+     * @param nombre      nombre del profesor compuesto o simple
+     * @param apellidos   apellidos del profesor
+     * @param titulacion  titulacion del profesor
+     * @param asignaturas asignaturas impartidas por el profesor
+     */
+<span class="fc" id="L28">    public Profesor(String nombre, String apellidos, String titulacion, List&lt;Asignatura&gt; asignaturas) {</span>
+<span class="fc" id="L29">        this.nombre = nombre;</span>
+<span class="fc" id="L30">        this.apellidos = apellidos;</span>
+<span class="fc" id="L31">        this.titulacion = titulacion;</span>
+<span class="fc" id="L32">        this.asignaturas = asignaturas;</span>
+<span class="fc" id="L33">    }</span>
+
+    /**
+     * Getter del parametro nombre de la clase Profesor
+     * 
+     * @return el nombre del profesor en cuestion capitalizado
+     * @see #capitalizarCadenaCompuesta(String)
+     * @see #capitalizarCadenaSimple(String)
+     */
+    public String getNombre() {
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if (this.nombre.contains(&quot; &quot;)) {</span>
+<span class="fc" id="L44">            this.nombre = capitalizarCadenaCompuesta(this.nombre);</span>
+<span class="fc" id="L45">        } else {</span>
+<span class="fc" id="L46">            this.nombre = capitalizarCadenaSimple(this.nombre);</span>
+        }
+
+<span class="fc" id="L49">        return this.nombre;</span>
+    }
+
+    /**
+     * Getter del parametro apellidos
+     * 
+     * @return apellidos del profesor sea 1 o 2 capitalizados
+     * @see #capitalizarCadenaCompuesta(String)
+     * @see #capitalizarCadenaSimple(String)
+     */
+    public String getApellidos() {
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        if (this.apellidos.contains(&quot; &quot;)) {</span>
+<span class="fc" id="L61">            this.apellidos = capitalizarCadenaCompuesta(this.apellidos);</span>
+<span class="fc" id="L62">        } else {</span>
+<span class="fc" id="L63">            this.apellidos = capitalizarCadenaSimple(this.apellidos);</span>
+        }
+
+<span class="fc" id="L66">        return this.apellidos;</span>
+    }
+
+    /**
+     * Getter del parametro titulacion
+     * 
+     * @return titulacion del profesor
+     */
+    public String getTitulacion() {
+<span class="fc" id="L75">        return this.titulacion;</span>
+    }
+
+    /**
+     * Getter de la lista de objetos Asignaturas
+     * 
+     * @return lista de objetos de la clase Asignatura
+     */
+    public List&lt;Asignatura&gt; getAsignaturas() {
+<span class="fc" id="L84">        return this.asignaturas;</span>
+    }
+
+    /**
+     * Metodo que permite agregar asignaturas a impartir por el profesor siempre y
+     * cuando no {@link #superaLimiteHorasTotales(Temario)}, ni existe ya dentro de
+     * la lista
+     * 
+     * @param newAsignatura nueva asignatura a añadir
+     * @return true si se ha podido agregar a la lista la nueva asignatura
+     * @throws Exception si se supera el limite de horas a impartir o si ya existe
+     *                   la asignatura a añadir
+     */
+    public boolean agregarAsignatura(Asignatura newAsignatura) throws IOException {
+<span class="fc" id="L98">        superaLimiteHorasTotales();</span>
+
+<span class="fc bfc" id="L100" title="All 2 branches covered.">        if (this.asignaturas.contains(newAsignatura)) {</span>
+<span class="fc" id="L101">            throw new IOException(&quot;Error Profesor.agregarAsignatura(): la asignatura ya existe.&quot;);</span>
+        }
+<span class="fc" id="L103">        asignaturas.add(newAsignatura);</span>
+
+<span class="fc" id="L105">        return true;</span>
+    }
+
+    /**
+     * Metodo que permite eliminar asignaturas que imparte por el profesor a no ser
+     * que no exista la asignatura
+     * 
+     * @param oldAsignatura asignatura a eliminar
+     * @return true si se ha podido eliminar la asignatura de la lista
+     * @throws Exception si no existe la asignatura
+     */
+    public boolean eliminarAsignatura(Asignatura oldAsignatura) throws IOException {
+<span class="fc bfc" id="L117" title="All 2 branches covered.">        if (this.asignaturas.contains(oldAsignatura)) {</span>
+<span class="fc" id="L118">            this.asignaturas.remove(oldAsignatura);</span>
+<span class="fc" id="L119">            return true;</span>
+        } else {
+<span class="fc" id="L121">            throw new IOException(&quot;Error Profesor.eliminarAsignatura(): no existe esa asignatura.&quot;);</span>
+        }
+    }
+
+    /**
+     * Metodo que permite editar asignaturas a impartir por el profesor siempre y
+     * cuando no {@link #superaLimiteHorasTotales(Temario)}, si existe dentro de
+     * la lista
+     * 
+     * @param oldAsignatura antigua asignatura a modificar
+     * @param newAsignatura nueva asignatura a añadir
+     * @return true si se ha podido agregar a la lista la nueva asignatura
+     * @throws Exception si se supera el limite de horas a impartir o si no existe
+     *                   en la lista
+     */
+    public boolean editarAsignatura(Asignatura oldAsignatura, Asignatura newAsignatura) throws IOException {
+<span class="fc" id="L137">        superaLimiteHorasTotales();</span>
+
+<span class="fc bfc" id="L139" title="All 2 branches covered.">        if (this.asignaturas.contains(oldAsignatura)) {</span>
+<span class="fc" id="L140">            this.asignaturas.set(this.asignaturas.indexOf(oldAsignatura), newAsignatura);</span>
+<span class="fc" id="L141">            return true;</span>
+        } else {
+<span class="fc" id="L143">            throw new IOException(&quot;Error Profesor.editarAsignatura(): no existe esa asignatura.&quot;);</span>
+        }
+    }
+
+    /**
+     * Metodo para capitalizar una cadena compuesta de caracteres. Ej: &quot;juan
+     * antonio&quot; -&gt; &quot;Juan Antonio&quot;
+     * 
+     * @param cadena de caracteres compuesta a capitalizar
+     * @return cadena de caracteres capitalizando el primer caracter
+     */
+    private String capitalizarCadenaCompuesta(String cadena) {
+<span class="fc" id="L155">        String[] cadenas = cadena.split(&quot; &quot;);</span>
+<span class="fc" id="L156">        cadenas[0] = cadenas[0].substring(0, 1).toUpperCase() + cadenas[0].substring(1).toLowerCase();</span>
+<span class="fc" id="L157">        cadenas[1] = cadenas[1].substring(0, 1).toUpperCase() + cadenas[1].substring(1).toLowerCase();</span>
+
+<span class="fc" id="L159">        return &quot;&quot; + cadenas[0] + &quot; &quot; + cadenas[1];</span>
+    }
+
+    /**
+     * Metodo para capitalizar una cadena simple de caracteres. Ej: &quot;guillermo&quot; -&gt;
+     * &quot;Guillermo&quot;
+     * 
+     * @param cadena de caracteres simple a capitalizar
+     * @return cadena de caracteres capitalizando el primer caracter
+     */
+    private String capitalizarCadenaSimple(String cadena) {
+<span class="fc" id="L170">        return cadena.substring(0, 1).toUpperCase() + cadena.substring(1).toLowerCase();</span>
+    }
+
+    /**
+     * Metodo para comprobar que el limite estipulado de 3000h maximo por profesor
+     * de docencia escolar no se supera
+     */
+    private void superaLimiteHorasTotales() throws IOException {
+<span class="fc" id="L178">        int horasTotales = 0;</span>
+
+<span class="fc bfc" id="L180" title="All 2 branches covered.">        for (Asignatura asignatura : asignaturas) {</span>
+<span class="fc" id="L181">            Temario temario = asignatura.getTemario();</span>
+
+<span class="fc" id="L183">            horasTotales += temario.getHorasTotales();</span>
+
+<span class="fc bfc" id="L185" title="All 2 branches covered.">            if (horasTotales &gt; 3000) {</span>
+<span class="fc" id="L186">                throw new IOException(</span>
+<span class="fc" id="L187">                        &quot;Error, el límite de horas totales a impartir se ha superado.&quot;);</span>
+            }
+        }
+<span class="fc" id="L190">    }</span>
+
+    /**
+     * Metodo para devolver un string con formato dado con los datos de cada
+     * profesor
+     * 
+     * @return los datos de cada profesor
+     */
+    public String imprimeProfesor() {
+<span class="fc" id="L199">        return String.format(&quot;Profesor: %s %s, con titulación: %s y asignaturas impartidas:  %s&quot;, getNombre(),</span>
+<span class="fc" id="L200">                getApellidos(), this.titulacion, this.asignaturas);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
