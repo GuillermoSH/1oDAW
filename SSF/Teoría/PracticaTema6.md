@@ -1,15 +1,18 @@
 1) Con ifconfig (o ip a) muestra la configuración de red en tu máquina virtual (añade captura). Localiza cada interfaz de red, explicando cuál es cada una.
 
+![Captura de pantalla_2022-06-02_16-20-02](https://user-images.githubusercontent.com/92543128/171652690-934519cc-9faa-4cac-b52e-04accc2607ac.png)
+
 2) Para la interfaz de red que te da conexión a Internet, indica:
 
-    - Tipo (ethernet, wifi, etc).
-    - MAC
-    - IP
-    - Máscara
-    - CIDR
-    - Clase
-    - Velocidad
-    - MTU
+enp0s3
+    - Tipo (ethernet, wifi, etc): ethernet
+    - MAC: 08:00:27:2a:32:d5
+    - IP: 172.18.9.100
+    - Máscara: 255.255.0.0
+    - CIDR: /16
+    - Clase: B
+    - Velocidad: 1000Mb/s
+    - MTU: 1500
 
  
 3) La IP que tienes asignada, ¿es pública o privada? ¿por qué es así?
