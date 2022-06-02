@@ -62,6 +62,7 @@ sudo ifconfig enp0s3 172.20.25.100 netmask 255.255.0.0
 
 Ahora prueba con ifconfig a ver si realmente ha cambiado la IP
 
+![Captura de pantalla_2022-06-02_16-20-02](https://user-images.githubusercontent.com/92543128/171651372-1d377917-8628-4ce7-ab10-f96707a24ce6.png)
 
 b) Sin embargo, este cambio NO es permanente, si reiniciamos el equipo, o simplemente la red, el cambio no se conserva:
 
@@ -78,13 +79,15 @@ auto <interfaz>
     netmask <máscara>
     gateway <puerta de enlace>
     dns-nameservers <dns>
+    
+![Captura de pantalla_2022-06-02_15-23-44](https://user-images.githubusercontent.com/92543128/171651809-416f782e-750e-4fe2-a494-74242a3320ee.png)
 
-    ¿Qué es el gateway y para qué se usa?
-    Para el gateway, puedes mirar con el comando route (o route -n) que vimos en clase. Captura la salida del comando route y explica qué significa cada línea.
-    Si se ha seguido el convenio, si estás en la red 172.20.0.0, entonces lo más probable es que esté en la primera IP útil: 172.20.0.1
+¿Qué es el gateway y para qué se usa?
+Para el gateway, puedes mirar con el comando route (o route -n) que vimos en clase. Captura la salida del comando route y explica qué significa cada línea.
+Si se ha seguido el convenio, si estás en la red 172.20.0.0, entonces lo más probable es que esté en la primera IP útil: 172.20.0.1
 
-    ¿Qué es el DNS y para qué se usa?
-    Para el DNS, puedes coger el que ya tenías, o bien los DNS públicos de Google ( https://developers.google.com/speed/public-dns/): 8.8.8.8 y/o 8.8.4.4
+¿Qué es el DNS y para qué se usa?
+Para el DNS, puedes coger el que ya tenías, o bien los DNS públicos de Google ( https://developers.google.com/speed/public-dns/): 8.8.8.8 y/o 8.8.4.4
 
 Por ejemplo (adapta a tu caso):
 
@@ -102,6 +105,7 @@ systemctl restart networking
 
 Prueba que tienes la IP asignada correctamente, y que se conserva incluso aunque reinicies la red o el equipo.
 
+![Captura de pantalla_2022-06-02_16-20-02](https://user-images.githubusercontent.com/92543128/171651949-0657895e-8a5b-43f0-bf3a-5096b505674e.png)
 
 c) Prueba a abrir un navegador (firefox, por ejemplo) e intenta visitar alguna web... ¿funciona? ¿sabrías por qué?
 
@@ -112,13 +116,19 @@ ping www.google.com
 ¿funciona? ¿Y si pruebas con su IP? (puedes usar el ping en tu máquina real para averiguar la IP de google).
 
 ping 172.217.17.4
+    
+> Con el nombre del servicio no, pero con su IP si.
 
 ¿Cómo es posible que no funcione por la URL, pero sí por la IP?
+
+> Porque el DNS no se ha puesto como configuracion de internet
 
 Para resolver este problema, añade los nuevos DNS al fichero /etc/resolv.conf (IMPORTANTE, es un fichero del sistema, AÑADE AL FINAL SIN TOCAR NADA MÁS):
 
 nameserver 8.8.8.8
 nameserver 8.8.4.4
+    
+![Captura de pantalla_2022-06-02_15-20-23](https://user-images.githubusercontent.com/92543128/171652169-0f4c5d43-d24f-40f7-8fde-1f8e77dac091.png)
 
 Prueba ahora que sí puedes navegar por Internet, así como hacer ping a la URL o buscar por nombre:
 
